@@ -7,7 +7,7 @@ function Page({ pageContext }) {
 return (
   <Layout>
   <h1>{pageContext.title}</h1>
-   <p dangerouslySetInnerHTML={{__html: pageContext.content}} />
+   <div dangerouslySetInnerHTML={{__html: pageContext.content}} />
   </Layout>
 )
 }
