@@ -13,7 +13,7 @@ return (
   <h1>{pageContext.title}</h1>
    <div dangerouslySetInnerHTML={{__html: pageContext.content}} />
    <div>
-   <div className="grid-img"></Image></di>
+   <div className="grid-img"><Image /></di>
    </div>
   </Layout>
 )
