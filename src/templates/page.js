@@ -9,12 +9,13 @@ function Page({ pageContext }) {
 return (
   <Layout>
   <div className="grid-container">
-  <div className="grid-text">
-  <h1>{pageContext.title}</h1>
-   <div dangerouslySetInnerHTML={{__html: pageContext.content}} />
-   <div>
-   <div className="grid-img"><Image /></di>
-   </div>
+    <div className="grid-text">
+      <h1>{pageContext.title}</h1>
+      <div dangerouslySetInnerHTML={{__html: pageContext.content}} />
+    </div>
+    <div className="grid-img"><Image />
+    </div>
+  </div>
   </Layout>
 )
 }
