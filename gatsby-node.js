@@ -26,9 +26,15 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             content
             slug
+            featured_media {
+              localFile {
+                base
+              }
+            }
           }
         }
       }
+
       allWordpressPost {
         edges {
           node {
@@ -36,13 +42,18 @@ exports.createPages = async ({ graphql, actions }) => {
             path
             status
             template
-            format
             title
             content
             slug
+            featured_media {
+              localFile {
+                base
+              }
+            }
           }
         }
       }
+
     }
   `)
 
@@ -56,11 +67,13 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create Page pages.
   const pageTemplate = path.resolve(`./src/templates/page.js`)
+  const articlesListTemplate = path.resolve(`./src/templates/articlesList.js`)
   // We want to create a detailed page for each page node.
   // The path field contains the relative original WordPress link
   // and we use it for the slug to preserve url structure.
   // The Page ID is prefixed with 'PAGE_'
   allWordpressPage.edges.forEach(edge => {
+
     // Gatsby uses Redux to manage its internal state.
     // Plugins and sites can use functions like "createPage"
     // to interact with Gatsby.
@@ -70,27 +83,31 @@ exports.createPages = async ({ graphql, actions }) => {
       // optional but is often necessary so the template
       // can query data specific to each page.
       path: `/${edge.node.slug}`,
-      component: slash(pageTemplate),
+      component: slash(edge.node.template === 'articles-list.php' ? articlesListTemplate : pageTemplate),
       context: {
         content: edge.node.content,
-        title: edge.node.title
+        title: edge.node.title,
+        template: edge.node.template,
+        image: edge.node.featured_media.localFile.base
       },
     })
   })
 
   const postTemplate = path.resolve(`./src/templates/post.js`)
-  // We want to create a detailed page for each post node.
-  // The path field stems from the original WordPress link
-  // and we use it for the slug to preserve url structure.
-  // The Post ID is prefixed with 'POST_'
-  allWordpressPost.edges.forEach(edge => {
-    createPage({
-      path: edge.node.path,
-      component: slash(postTemplate),
-      context: {
-        content: edge.node.content,
-        title: edge.node.title
-      },
-    })
+// We want to create a detailed page for each post node.
+// The path field stems from the original WordPress link
+// and we use it for the slug to preserve url structure.
+// The Post ID is prefixed with 'POST_'
+allWordpressPost.edges.forEach(edge => {
+  createPage({
+    path: `/articles/${edge.node.slug}`,
+    component: slash(postTemplate),
+    context: {
+      content: edge.node.content,
+      title: edge.node.title,
+      image: edge.node.featured_media.localFile.base
+    },
   })
+})
+
 }

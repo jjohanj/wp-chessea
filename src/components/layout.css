@@ -8,6 +8,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.img {
+  margin-bottom: 2rem;
+}
+em {
+  display: none;
+}
 article,
 aside,
 details,

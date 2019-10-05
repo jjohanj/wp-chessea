@@ -1,10 +1,11 @@
 import React from "react"
 import Layout from "../components/layout"
 import Image from "../components/image"
+import Articles from "../components/articles"
 import './page.css';
 
 
-function Page({ pageContext }) {
+function ArticlesList({ pageContext }) {
 
 // var str = pageContext.content;
 //
@@ -30,13 +31,11 @@ return (
   <div className="grid-container">
     <div className="grid-text">
       <Image imgName={pageContext.image}/>
-      <div dangerouslySetInnerHTML={{__html: pageContext.content}} />
-    </div>
-    <div className="grid-img"><Image imgName="gatsby-astronaut.png"/>
-    {pageContext.template}
+      <div dangerouslySetInnerHTML={{__html: pageContext.content.content}} />
+      <Articles />
     </div>
   </div>
   </Layout>
 )
 }
-export default Page
+export default ArticlesList
