@@ -1,22 +1,20 @@
 import React from "react"
-import { Link } from "gatsby"
-import Layout from "../components/layout"
-import Image from "../components/image"
 import MainMenu from "../components/mainmenu"
-import SEO from "../components/seo"
-import {graphql, StaticQuery, useStaticQuery } from "gatsby"
 import Articles from "../components/articles"
 import Calender from "../components/calender"
-import Page from "../templates/articlesList"
+import Comments from "../components/comments1"
+import "../components/layout.css"
 
 const IndexPage = () => {
 
   return (
-    <Layout>
-    <MainMenu />
-    <Articles />
-    <Calender />
-  </Layout>
+    <div className="grid-container">
+      <h1>Chessea</h1>
+      <MainMenu />
+      <Articles liststart ="0"  listend="2" />
+      <Calender />
+    </div>
+
 )}
 
 export default IndexPage

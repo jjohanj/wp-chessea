@@ -1,5 +1,6 @@
 import React from "react"
 import {graphql, useStaticQuery, Link } from "gatsby"
+import "./mainmenu.css"
 
 function MainMenu() {
   var data = useStaticQuery(graphql`
@@ -19,21 +20,20 @@ function MainMenu() {
           }
         }
       }
-
   `)
 
   var menu =  data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map((item, i) => {
 
     return (
-      <ul key={i}>
-            <li><Link to={`/${item.object_slug}`}>{item.title}</Link></li>
-          </ul>)})
+            <li key={i}><Link to={`/${item.object_slug}`}>{item.title}</Link></li>
+    )})
 
 return (
-  <div>
-  {console.log(menu)}
-    {menu}
-  </div>
+  <nav>
+    <ul>
+      {menu}
+    </ul>
+  </nav>
 )
 }
 export default MainMenu

@@ -23,15 +23,12 @@ const Calender = () => {
     const post =  data.allWordpressWpCalender.edges.map((item, i) => {
 
       return (
-        <ul key={i}>
-          <li>{item.node.acf.date} - {item.node.title}</li>
-        </ul>
-
+          <li key={i}>{item.node.acf.date} - {item.node.title}</li>
       )})
   return (
-    <>
+    <ul className="calender">
       {post}
-    </>
+    </ul>
 )}
 
 export default Calender

@@ -1,6 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import Image from "../components/image"
+import Comments from "../components/comments1"
+import Commentslist from "../components/commentslist"
 import './page.css';
 
 
@@ -19,6 +21,8 @@ return (
     </div>
     <div className="grid-img"> <Image imgName={pageContext.image}/>
     </div>
+    <Comments wpId={pageContext.wp_id} slug={pageContext.slug}/>
+    <Commentslist wpId={pageContext.wp_id} />
   </div>
   </Layout>
 )

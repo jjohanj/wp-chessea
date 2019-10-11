@@ -39,6 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
+            wordpress_id
             path
             status
             template
@@ -103,9 +104,11 @@ allWordpressPost.edges.forEach(edge => {
     path: `/articles/${edge.node.slug}`,
     component: slash(postTemplate),
     context: {
+      wp_id: edge.node.wordpress_id,
       content: edge.node.content,
       title: edge.node.title,
-      image: edge.node.featured_media.localFile.base
+      image: edge.node.featured_media.localFile.base,
+      slug: edge.node.slug
     },
   })
 })
