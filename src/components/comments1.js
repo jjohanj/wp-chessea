@@ -26,6 +26,10 @@ class Comments extends Component {
       textAreaValue,
     } = this.state;
 
+    if (this.state.formSubmittedSuccessfully == true ){
+      setTimeout(function(){ window.location.reload()}, 20 );
+
+    }
 
     const submitButtonMarkup = formIsSubmitting ? (
       <input type="submit" value="Submitting comment..." disabled />
@@ -90,8 +94,6 @@ class Comments extends Component {
   handleSubmit(evt) {
     evt.preventDefault();
 
-
-setTimeout(function(){ window.location.reload()}, 20 );
 
     const [postId, name, email, website, comment] = evt.target.elements;
     const sendData = JSON.stringify({

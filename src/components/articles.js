@@ -33,19 +33,24 @@ const Articles = (props) => {
         }
       }
   `)
-    console.log(props.list);
+
+   var handleClick = (type, val) => {
+    document.getElementById(type+'-link-'+val).click();
+    }
+
+    console.log(props.type);
     if (props.list != "undefined") {
     var post =  data.allWordpressPost.edges.slice(props.liststart, props.listend).map((item, i) => {
 
       return (
-        <article className={`head-articles article-${i}`} key={i}>
+        <article className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
           <Image imgName={item.node.featured_media.localFile.base}/>
           <div className="content">
-            <h3>{item.node.title}</h3>
-            <p class="date">{item.node.acf.date}</p>
-            <div dangerouslySetInnerHTML={{__html: item.node.content}} />
-            <Link to= {`/articles/${item.node.slug}`}> {item.node.title} </Link>
+            <h3 >    <Link id={`${props.type}-link-${i}`} to={`/articles/${item.node.slug}`}>{item.node.title}</Link></h3>
+            <p className="date">{item.node.acf.date}</p>
+            <div dangerouslySetInnerHTML={{__html: item.node.content.substring(0,50) + ' ...' }} />
           </div>
+
         </article>
 
       )})

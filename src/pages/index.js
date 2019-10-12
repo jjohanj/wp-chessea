@@ -11,8 +11,9 @@ const IndexPage = () => {
     <div className="grid-container">
       <h1>Chessea</h1>
       <MainMenu />
-      <Articles liststart ="0"  listend="2" />
+      <Articles liststart ="0"  listend="2" type="main"/>
       <Calender />
+      <Articles liststart ="2"  listend="6" type="secondary"/>
     </div>
 
 )}
