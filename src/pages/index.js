@@ -9,7 +9,6 @@ const IndexPage = () => {
 
   return (
     <div className="grid-container">
-      <h1>Chessea</h1>
       <MainMenu />
       <Articles liststart ="0"  listend="2" type="main"/>
       <Calender />

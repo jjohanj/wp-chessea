@@ -29,11 +29,14 @@ function MainMenu() {
     )})
 
 return (
+  <>
+  <h1><Link to="/"> Chessea </Link></h1>
   <nav>
     <ul>
       {menu}
     </ul>
   </nav>
+  </>
 )
 }
 export default MainMenu

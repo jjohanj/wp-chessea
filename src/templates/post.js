@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import Comments from "../components/comments1"
 import Commentslist from "../components/commentslist"
+import MainMenu from "../components/mainmenu"
 import './page.css';
 
 
@@ -14,17 +15,17 @@ function Post({ pageContext }) {
 // console.log(matches);
 
 return (
-  <Layout>
   <div className="grid-container">
-    <div className="grid-text">
+    <MainMenu />
+    <article className="article-selected">
+      <h2>{pageContext.title}</h2>
       <div dangerouslySetInnerHTML={{__html: pageContext.content}} />
-    </div>
-    <div className="grid-img"> <Image imgName={pageContext.image}/>
+    </article>
+    <div className="image-selected"> <Image imgName={pageContext.image}/>
     </div>
     <Comments wpId={pageContext.wp_id} slug={pageContext.slug}/>
     <Commentslist wpId={pageContext.wp_id} />
   </div>
-  </Layout>
 )
 }
 export default Post

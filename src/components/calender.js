@@ -23,7 +23,7 @@ const Calender = () => {
     const post =  data.allWordpressWpCalender.edges.map((item, i) => {
 
       return (
-          <li key={i}>{item.node.acf.date} - {item.node.title}</li>
+          <li key={i}><a href="#"><span className="calender-date">{item.node.acf.date}</span><span  className="event"> {item.node.title}</span></a>s</li>
       )})
   return (
     <ul className="calender">

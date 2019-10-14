@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { navigate } from 'gatsby';
-import Commentslist from "./commentslist"
-
 
 
 const ACTION_URL = "https://www.flonxchess.nl/wp-json/wp/v2/comments";
@@ -11,7 +9,6 @@ class Comments extends Component {
     super();
 
     this.state = {
-      update: false,
       formIsSubmitting: false,
       formSubmittedSuccessfully: false,
       formSubmittedFailed: false,
@@ -33,38 +30,49 @@ class Comments extends Component {
     const submitButtonMarkup = formIsSubmitting ? (
       <input type="submit" value="Submitting comment..." disabled />
     ) : (
-        <input className="btn btn-sm btn-info" type="submit" value="Plaats reactie!" />
+        <input type="submit" value="Post comment!" />
       );
 
     const successMessageMarkup = formSubmittedSuccessfully ? (
-      <div class="alert alert-primary" role="alert">
-        This is a primary alert—check it out!
-      </div>
+      <p>
+        Thanks for your comment! It will appear once approved.
+      </p>
     ) : null;
 
     const errorMessageMarkup = formSubmittedFailed && formSubmittedSuccessfully === false ? (
       <p>
-        Sorry er is iets misgegaan, dit ligt waarschijnlijk aan de webbouwer...
+        test
       </p>
     ) : null;
 
     return (
-      <div className="comments-form">
-        <h4 id="CommentsHeading">Plaats reactie</h4>
+      <div>
+        <h2 id="CommentsHeading">Post a comment</h2>
         {successMessageMarkup}
         {errorMessageMarkup}
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input type="hidden" id="postId" value={this.props.wpId} />
           <div>
-            <label className="sr-only" htmlFor="name">Naam</label>
-            <input id="name" type="text" placeholder="naam" required disabled={formIsSubmitting} />
+            <label htmlFor="name">Name*</label>
+            <input id="name" type="text" required disabled={formIsSubmitting} />
           </div>
           <div>
-            <label className="sr-only" htmlFor="comment">Reactie</label>
+            <label htmlFor="email">Email*</label>
+            <input
+              id="email"
+              type="email"
+              disabled={formIsSubmitting}
+            />
+          </div>
+          <div>
+            <label htmlFor="website">Website</label>
+            <input id="website" type="text" disabled={formIsSubmitting} />
+          </div>
+          <div>
+            <label htmlFor="comment">Comment*</label>
             <textarea
-            placeholder="reactie"
               id="comment"
-              rows="8"
+              rows="10"
               required
               disabled={formIsSubmitting}
               onChange={evt => {
@@ -73,7 +81,7 @@ class Comments extends Component {
               value={textAreaValue}
             />
           </div>
-          <div>{submitButtonMarkup}</div>
+          <div className="test">{submitButtonMarkup}</div>
         </form>
       </div>
     );
@@ -85,10 +93,12 @@ class Comments extends Component {
 
 // setTimeout(function(){ window.location.reload()}, 20 );
 
-    const [postId, name, comment] = evt.target.elements;
+    const [postId, name, email, website, comment] = evt.target.elements;
     const sendData = JSON.stringify({
       post: postId.value,
       author_name: name.value,
+      author_url: website.value,
+      author_email: email.value,
       content: comment.value,
     });
 
@@ -105,9 +115,7 @@ class Comments extends Component {
             formIsSubmitting: false,
             formSubmittedSuccessfully: true,
             textAreaValue: '',
-            update: true
           });
-          window.location.reload();
         }
 
         return response.json();
