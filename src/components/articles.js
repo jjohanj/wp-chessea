@@ -46,11 +46,10 @@ const Articles = (props) => {
         <article className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
           <Image imgName={item.node.featured_media.localFile.base}/>
           <div className="content">
-            <h3 >    <Link id={`${props.type}-link-${i}`} to={`/articles/${item.node.slug}`}>{item.node.title}</Link></h3>
+            <h3><Link id={`${props.type}-link-${i}`} to={`/articles/${item.node.slug}`}>{item.node.title}</Link></h3>
             <p className="date">{item.node.acf.date}</p>
             <div dangerouslySetInnerHTML={{__html: item.node.content.substring(0,50) + ' ...' }} />
           </div>
-
         </article>
 
       )})
@@ -60,9 +59,14 @@ const Articles = (props) => {
     var post =  data.allWordpressPost.edges.map((item, i) => {
 
       return (
-        <div key={i}>
-          <Link to= {`/articles/${item.node.slug}`}> {item.node.title} </Link>
-        </div>
+        <article className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
+          <Image imgName={item.node.featured_media.localFile.base}/>
+          <div className="content">
+            <h3><Link id={`${props.type}-link-${i}`} to={`/articles/${item.node.slug}`}>{item.node.title}</Link></h3>
+            <p className="date">{item.node.acf.date}</p>
+            <div dangerouslySetInnerHTML={{__html: item.node.content.substring(0,50) + ' ...' }} />
+          </div>
+        </article>
       )})
     }
 
