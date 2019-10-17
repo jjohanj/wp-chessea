@@ -80,12 +80,10 @@ nav li {
 .main-article-0  {
   grid-column: 1 / -1;
   grid-row: 2;
-  padding-right: 25px;
 }
 .main-article-1  {
   grid-column: 1 / -1;
   grid-row: 3;
-  padding-right: 25px;
 }
 .calender {
   display: grid;
