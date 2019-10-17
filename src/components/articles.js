@@ -48,7 +48,7 @@ const Articles = (props) => {
           <div className="content">
             <h3><Link id={`${props.type}-link-${i}`} to={`/articles/${item.node.slug}`}>{item.node.title}</Link></h3>
             <p className="date">{item.node.acf.date}</p>
-            <div dangerouslySetInnerHTML={{__html: item.node.content.substring(0,50) + ' ...' }} />
+            <div dangerouslySetInnerHTML={{__html: item.node.content.substring(0,44) + ' ...' }} />
           </div>
         </article>
 
