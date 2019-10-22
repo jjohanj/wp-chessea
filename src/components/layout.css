@@ -5,6 +5,9 @@ html {
 * {
   margin: 0;
 }
+ul {
+  list-style: none;
+}
 
 .grid-container {
   display: grid;
@@ -17,7 +20,24 @@ html {
     background-color: #cce5ff;
     border-color: #b8daff;
 }
+.matches {
+  cursor: pointer;
+}
+.matches:hover svg {
+  transform: scale(1.2);
+}
 
+.matches svg {
+  position: absolute;
+  top: 0.3rem;
+  right: 0;
+  background: #fff;
+  padding: 0.1rem;
+  font-size: 1em;
+  color: #087F8C;
+  transform: scale(1);
+  transition: transform 0.4s ease;
+}
 .alert {
     position: relative;
     padding: .75rem 1.25rem;

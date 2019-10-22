@@ -4,7 +4,9 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import MainMenu from "../components/mainmenu"
 import SEO from "../components/seo"
+import Parser from 'html-react-parser'
 import {graphql, StaticQuery, useStaticQuery } from "gatsby"
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const Matches = (props) => {
   const data = useStaticQuery(graphql`
@@ -16,11 +18,11 @@ const Matches = (props) => {
               localFile {
                 base
               }
-              title
             }
             acf {
               link
             }
+            title
             content
           }
         }
@@ -29,29 +31,29 @@ const Matches = (props) => {
 
   `)
 
-   var handleClick = (type, val) => {
+   var handleClick = (i) => {
     // document.getElementById(type+'-link-'+val).click();
-    document.getElementsByClassName(type+'-article-'+val)[0].getElementsByTagName('a')[0].click();
+    document.getElementsByClassName('matches-'+i)[0].getElementsByTagName('a')[0].click();
 
     }
 
     var matches =  data.allWordpressWpMatch.edges.map((item, i) => {
 
       return (
-        <article className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
+        <li className={`matches matches-${i}`} key={i}  onClick={() => handleClick(i)} >
           <Image imgName={item.node.featured_media.localFile.base}/>
           <div className="content">
-            <h3><Link to={`/articles/${item.node.title}`}>{item.node.title}</Link></h3>
-            <p className="date">{item.node.acf.link}</p>
-            <div dangerouslySetInnerHTML={{__html: item.node.content.substring(0,50) + ' ...' }} />
+          <FaExternalLinkAlt />
+            <h3><a href={item.node.acf.link} target="blank" rel="noopener" >{item.node.title}</a></h3>
+            <div>{Parser(item.node.content)}</div>
           </div>
-        </article>
+        </li>
 
       )})
   return (
-    <>
+    <ul>
       {matches}
-    </>
+    </ul>
 )}
 
 export default Matches
