@@ -5,6 +5,7 @@ import Comments from "../components/comments1"
 import Commentslist from "../components/commentslist"
 import MainMenu from "../components/mainmenu"
 import './page.css';
+import Parser from 'html-react-parser'
 
 
 function Post({ pageContext }) {
@@ -18,8 +19,8 @@ return (
   <div className="grid-container">
     <MainMenu />
     <article className="article-selected">
-      <h2>{pageContext.title}</h2>
-      <div dangerouslySetInnerHTML={{__html: pageContext.content}} />
+      <h2>{Parser(pageContext.title)}</h2>
+      <div>{Parser(pageContext.content)} </div>
     </article>
     <div className="image-selected"> <Image imgName={pageContext.image}/>
     </div>

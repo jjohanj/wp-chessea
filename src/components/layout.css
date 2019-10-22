@@ -361,9 +361,16 @@ h2,
   color: #da4167;
   font-size: .8em;
   padding-bottom: 1rem;
+  font-weight: bold;
+}
+article:not(.main-articles) .date {
+  font-size: 0.925em;
 }
 .secondary-articles .calender {
   padding: 2rem;
+}
+.main-articles h3 {
+  font-size: 1.325em;
 }
 
 
@@ -562,7 +569,7 @@ font-size: 3rem;
 
 
 .article-list .content {
-  margin-left: 0.75rem;
+  margin-left: 2rem;
   top: -4rem;
   position: relative;
   background: #fff;

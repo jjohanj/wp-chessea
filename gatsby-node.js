@@ -46,6 +46,9 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             content
             slug
+            author {
+              name
+            }
             featured_media {
               localFile {
                 base
@@ -111,7 +114,8 @@ allWordpressPost.edges.forEach(edge => {
       content: edge.node.content,
       title: edge.node.title,
       image: edge.node.featured_media.localFile.base,
-      slug: edge.node.slug
+      slug: edge.node.slug,
+      author: edge.node.author.name
     },
   })
 })
