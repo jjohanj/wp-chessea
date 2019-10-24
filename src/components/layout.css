@@ -87,6 +87,7 @@ nav li {
   grid-row: 2;
   grid-column: 2;
   top: 4rem;
+  border-top-left-radius: 0.5em;
 }
 .secondary-articles .content,
 .main-articles  .content {
@@ -94,7 +95,18 @@ nav li {
   position: relative;
   z-index: 2;
   padding: 1.75rem;
-  border-top-left-radius: 0.5em;
+}
+.article-list .date,
+.secondary-articles .date {
+  background: #fff;
+  border: 2px solid #fff;
+  margin-right: 10%;
+  left:-1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+  padding-top: 0.5rem;
+  border-top-right-radius: 0.5em;
+  text-align: center;
 }
 .main-articles .gatsby-image-wrapper {
   grid-column: 1 / 3;
@@ -157,7 +169,9 @@ nav li {
   align-self: center;
   flex-direction: column;
   top: -4rem;
-  margin-left: 2rem;
+  margin-right: 2rem;
+  border-top-right-radius: 0.5em;
+  background: transparent;
 }
 
 .article-list .list {
@@ -183,12 +197,12 @@ nav li {
 
 .comments-form {
   grid-row: 4;
-  grid-column:  3 / 19;
+  grid-column:  2 / 19;
  margin: 4rem 0 2rem;
 }
 .comments-list {
   grid-row: 5;
-  grid-column: 3 / 19;
+  grid-column: 2 / 19;
 }
 @media (min-width:600px) {
   .main-article-0  {
@@ -335,36 +349,37 @@ nav li {
     grid-column: 15 / 20;
   }
   .secondary-article-0  {
-    grid-column: 2 / 11;
+    grid-column: 3 / 11;
     grid-row: 3;
   }
   .secondary-article-1  {
-    grid-column: 11 / 20;
+    grid-column: 11 / 19;
     grid-row: 3;
   }
   .secondary-article-2  {
-    grid-column: 2 / 11;
+    grid-column: 3 / 11;
     grid-row: 4;
   }
   .secondary-article-3  {
-    grid-column: 11 / 20;
+    grid-column: 11 / 19;
     grid-row: 4;
   }
   .article-list .list {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+    grid-column: 3 / 19;
   }
   .article-selected {
-    grid-column:  3 / 12;
+    grid-column:  4 / 12;
   }
 
   .image-selected {
     grid-column: 12 /18;
   }
   .comments-form {
-    grid-column:  4 / 17;
+    grid-column:  5 / 17;
   }
   .comments-list {
-    grid-column: 4 / 17;
+    grid-column: 5 / 17;
   }
 }
 h2,
@@ -381,7 +396,6 @@ h2,
   color: #da4167;
   font-size: .8em;
   padding-bottom: 1rem;
-  font-weight: bold;
 }
 article:not(.main-articles) .date {
   font-size: 0.925em;
@@ -589,12 +603,11 @@ font-size: 3rem;
 
 
 .article-list .content {
-  margin-left: 2rem;
+  margin-right: 2rem;
   top: -4rem;
   position: relative;
-  background: #fff;
+  background: #transparent;
   padding: 1.5rem;
-  border-top-left-radius: .5rem;
 }
 div.hero {
   grid-row: 2;
