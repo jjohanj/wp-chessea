@@ -23,7 +23,7 @@ const Articles = (props) => {
               path,
               slug
               acf {
-                date
+                datum
               }
               featured_media {
                 localFile {
@@ -51,8 +51,8 @@ const Articles = (props) => {
           <Image imgName={item.node.featured_media.localFile.base}/>
           <div className="content">
           {props.type !== 'main' ?
-                    <><p className="date">{item.node.acf.date}</p><h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3></> :
-                    <><h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3><p className="date">{item.node.acf.date}</p></> }
+                    <><p className="date"><span>{item.node.acf.datum}</span></p><h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3></> :
+                    <><h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3><p className="date"><span>{item.node.acf.datum}</span></p></> }
             <div>{Parser(item.node.content.substring(0,50) + ' ...' )} </div>
           </div>
         </article>
@@ -66,7 +66,7 @@ const Articles = (props) => {
       return (
         <article className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
           <Image imgName={item.node.featured_media.localFile.base}/>
-          <p className="date">{item.node.acf.date}</p>
+          <p className="date"><span>{item.node.acf.datum}</span></p>
           <div className="content">
             <h3><Link id={`${props.type}-link-${i}`} to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3>
             <div>{Parser(item.node.content.substring(0,50) + ' ...' )} </div>

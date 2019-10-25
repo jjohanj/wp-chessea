@@ -23,6 +23,10 @@ ul {
 .matches {
   cursor: pointer;
 }
+.matches .content {
+  background: rgba(255,255,255,0.9);
+  border-top-right-radius: 0.5em;
+}
 .matches:hover svg {
   transform: scale(1.2);
 }
@@ -30,7 +34,7 @@ ul {
 .matches svg {
   position: absolute;
   top: 0.3rem;
-  right: 0;
+  right: 0.3rem;
   background: #fff;
   padding: 0.1rem;
   font-size: 1em;
@@ -100,13 +104,18 @@ nav li {
 .secondary-articles .date {
   background: #fff;
   border: 2px solid #fff;
-  margin-right: 10%;
-  left:-1.5rem;
+  left:-1.8rem;
   position: relative;
-  padding-left: 1.5rem;
-  padding-top: 0.5rem;
+  padding-top: 0.75rem;
   border-top-right-radius: 0.5em;
-  text-align: center;
+  white-space: nowrap;
+  height: 1rem;
+}
+.article-list .date span,
+.secondary-articles .date span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .main-articles .gatsby-image-wrapper {
   grid-column: 1 / 3;
@@ -267,6 +276,21 @@ nav li {
   .secondary-articles .content > div {
     display: block;
   }
+    .secondary-articles .content {
+      margin-right: 0;
+    }
+  .secondary-articles .date {
+    background: #fff;
+    border: 2px solid #fff;
+    left: 0;
+    position: relative;
+    padding-left: 0;
+  }
+    .secondary-articles .date span {
+      left: 0;
+      transform: translateX(0);
+      position: relative;
+    }
   .article-list .list {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -389,17 +413,16 @@ h2,
 }
  a {
   text-decoration: none;
-  color: #511A8B;
+  color: #0c0c0c;
 }
 
 .date {
   color: #da4167;
   font-size: .8em;
   padding-bottom: 1rem;
+  font-weight: 500;
 }
-article:not(.main-articles) .date {
-  font-size: 0.925em;
-}
+
 .secondary-articles .calender {
   padding: 2rem;
 }
