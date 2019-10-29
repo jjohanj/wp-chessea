@@ -1,8 +1,10 @@
 html {
   font-family: 'raleway';
-  overflow: hidden;
 }
+body {
+  overflow-x: hidden;
 
+}
 * {
   margin: 0;
 }
@@ -554,7 +556,6 @@ textarea {
 .btn:hover, .btn:focus {
   text-decoration: none;
 }
-
 .btn:focus, .btn.focus {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(218, 65, 103, 0.25);
