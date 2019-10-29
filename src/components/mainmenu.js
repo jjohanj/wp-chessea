@@ -1,8 +1,22 @@
-import React from "react"
+import React, { useState, useLayoutEffect, useEffect } from "react"
 import {graphql, useStaticQuery, Link } from "gatsby"
 import "./mainmenu.css"
-
+import { FaBars } from 'react-icons/fa';
 function MainMenu() {
+
+  const [size, setSize] = useState([0, 0]);
+
+    useLayoutEffect(() => {
+      function updateSize() {
+        setSize([window.innerWidth, window.innerHeight]);
+      }
+      window.addEventListener('resize', updateSize);
+      updateSize();
+      return () => window.removeEventListener('resize', updateSize);
+      }, []);
+
+  const [nav, setNav] = useState("closed");
+
   var data = useStaticQuery(graphql`
     query {
         allWordpressWpApiMenusMenusItems(filter: {
@@ -22,6 +36,7 @@ function MainMenu() {
       }
   `)
 
+
   var menu =  data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map((item, i) => {
 
     return (
@@ -31,8 +46,9 @@ function MainMenu() {
 return (
   <>
   <h1><Link to="/"> Chessea </Link></h1>
-  <nav>
-    <ul>
+  <nav className={nav}>
+  <button className="btn btn-nav" onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><FaBars /></button>
+    <ul className={size[0] > 768 ? "big" : "small"}>
       {menu}
     </ul>
   </nav>
