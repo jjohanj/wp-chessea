@@ -1,5 +1,6 @@
 html {
-  font-family: 'raleway';
+  font-family: 'catamaran';
+  font-weight: 300;
 }
 body {
   overflow-x: hidden;
@@ -11,7 +12,16 @@ body {
 ul {
   list-style: none;
 }
-
+h1, h2, h3, h4, h5 {
+  font-family: "raleway";
+}
+p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+.comment p {
+  font-size: 1em;
+}
 .grid-container {
   display: grid;
   grid-template-rows: 6.5rem repeat(8, min-content) 10rem;
@@ -52,7 +62,7 @@ ul {
     border: 1px solid transparent;
     border-radius: .25rem;
 }
-article {
+article:not(.article-selected) {
   cursor: pointer;
 }
 
