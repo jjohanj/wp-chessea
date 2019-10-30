@@ -37,11 +37,14 @@ p {
   cursor: pointer;
 }
 .matches .content {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,1);
   border-top-right-radius: 0.5em;
 }
 .matches:hover svg {
   transform: scale(1.2);
+}
+.list ul {
+  padding-left: 0;
 }
 
 .matches svg {
