@@ -16,6 +16,10 @@ h1, h2, h3, h4, h5 {
   font-family: "raleway";
 }
 p {
+  font-size: 1.125em;
+  line-height: 1.2;
+}
+.article-selected p {
   font-size: 1.2em;
   line-height: 1.5;
 }
@@ -88,9 +92,19 @@ nav {
   display: flex;
 }
 
+nav li a {
+  font-weight: 500;
+  font-size: 1.125em;
+}
 nav li {
   display: inline;
   padding: 1rem;
+}
+nav.closed li:first-of-type {
+  display: none;
+}
+nav.open li:first-of-type {
+  font-size: 1.6em;
 }
 /*
 .main-article {

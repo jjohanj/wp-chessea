@@ -49,6 +49,7 @@ return (
   <nav className={nav}>
   <button className="btn btn-nav" onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><FaBars /></button>
     <ul className={size[0] > 768 ? "big" : "small"}>
+      <li><Link to="/">Chessea</Link></li>
       {menu}
     </ul>
   </nav>
