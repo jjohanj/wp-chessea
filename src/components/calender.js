@@ -17,7 +17,6 @@ const Calender = () => {
         }
       }
     }
-
   `)
 
     const post =  data.allWordpressWpCalender.edges.map((item, i) => {

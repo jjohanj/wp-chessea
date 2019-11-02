@@ -10,7 +10,7 @@ function Page({ pageContext }) {
 return (
   <div className="grid-container">
     <MainMenu />
-    <div className="hero"><Image imgName={pageContext.image}/></div>
+    <div className="hero header"><Image imgName={pageContext.image}/></div>
     <h2>{Parser(pageContext.title)}</h2>
     <div>{Parser(pageContext.content)} </div>
   </div>
