@@ -6,6 +6,10 @@ body {
   overflow-x: hidden;
 
 }
+a {
+  color: #D83860;
+
+}
 * {
   margin: 0;
 }
@@ -457,7 +461,7 @@ h2,
 }
 
 .date {
-  color: #da4167;
+  color: #D83860;
   font-size: .8em;
   padding-bottom: 1rem;
   font-weight: 500;
@@ -473,6 +477,7 @@ h2,
 
 ul.calender {
   list-style: none;
+  margin-bottom: 2rem;
 }
 
 /* buttons */
