@@ -27,12 +27,16 @@ const Gallery = ({pageContext}) => {
     var text= "";
     switch(i) {
       case 0:
-      case 1:
-        return <div key={i} className={`img-lg-${i}`}>
-                  <div className="hero"><Image imgName={item.node.localFile.base} /></div>
-                </div>
+      return <div  key={i} className={`img-xl-${i}`}>
+                <div className="hero"><Image imgName={item.node.localFile.base} /></div>
+              </div>
         break;
+      case 1:
       case 2:
+      return <div key={i} className={`img-lg-${i}`}>
+                <div className="hero"><Image imgName={item.node.localFile.base} /></div>
+              </div>
+      break;
       case 3:
       case 4:
       case 5:
@@ -44,10 +48,6 @@ const Gallery = ({pageContext}) => {
                 </div>
       break;
       case 9:
-      return <div  key={i} className={`img-xl-${i}`}>
-                <div className="hero"><Image imgName={item.node.localFile.base} /></div>
-              </div>
-        break;
       default:
       return <div  key={i} className="img-gallery">
                 <div className="hero"><Image imgName={item.node.localFile.base} /></div>

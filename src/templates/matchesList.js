@@ -10,7 +10,7 @@ function MatchesList({ pageContext }) {
 
 
 return (
-  <div className="grid-container article-list">
+  <div className="grid-container matches-list">
     <MainMenu />
     <div className="hero header"><Image imgName={pageContext.image}/></div>
     <h2>{Parser(pageContext.title)}</h2>

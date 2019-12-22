@@ -40,20 +40,23 @@ const Matches = (props) => {
     var matches =  data.allWordpressWpMatch.edges.map((item, i) => {
 
       return (
-        <li className={`matches matches-${i}`} key={i}  onClick={() => handleClick(i)} >
-          <Image imgName={item.node.featured_media.localFile.base}/>
+        <div className={`matches matches-${i}`} key={i}  onClick={() => handleClick(i)} >
+          <div class="hero">
+            <Image imgName={item.node.featured_media.localFile.base}/>
+          </div>
           <div className="content">
           <FaExternalLinkAlt />
             <h3><a href={item.node.acf.link} target="blank" rel="noopener" >{item.node.title}</a></h3>
             <div>{Parser(item.node.content)}</div>
           </div>
-        </li>
+        </div>
 
       )})
   return (
-    <ul>
+    <>
       {matches}
-    </ul>
+    </>
+
 )}
 
 export default Matches
