@@ -14,6 +14,7 @@ const Gallery = ({pageContext}) => {
       allWordpressWpMedia {
         edges {
           node {
+            title
             localFile {
               base
             }
@@ -23,7 +24,14 @@ const Gallery = ({pageContext}) => {
     }
   `)
 
+
   const post =  data.allWordpressWpMedia.edges.map((item, i) => {
+    if (item.node.title === "board") {
+      return (
+         null
+       )
+    }
+    else {
     var text= "";
     switch(i) {
       case 0:
@@ -53,9 +61,8 @@ const Gallery = ({pageContext}) => {
                 <div className="hero"><Image imgName={item.node.localFile.base} /></div>
               </div>
     }
-    console.log(data, text);
+  }
   })
-  console.log(post);
   return (
     <><div className="grid-container  article-list">
       <MainMenu />

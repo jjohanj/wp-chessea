@@ -705,7 +705,7 @@ textarea {
 }
 .matches-list,
 .article-list {
-    grid-template-rows: 6.5rem 20rem repeat(3, min-content) 10rem;
+    grid-template-rows: 6.5rem 16rem repeat(3, min-content) 10rem;
 
 }
 .matches-list h2,
@@ -957,6 +957,6 @@ nav button {
   }
 }
 
-.article-list .gatsby-image-wrapper {
+.article-list .list .gatsby-image-wrapper {
   height: 250px;
 }
