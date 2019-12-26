@@ -25,6 +25,7 @@ const Gallery = ({pageContext}) => {
   `)
 
 
+  var counter = -1;
   const post =  data.allWordpressWpMedia.edges.map((item, i) => {
     if (item.node.title === "board") {
       return (
@@ -35,29 +36,33 @@ const Gallery = ({pageContext}) => {
     var text= "";
     switch(i) {
       case 0:
-      return <div  key={i} className={`img-xl-${i}`}>
+      counter++
+      return <div  key={counter} className={`img-xl-${counter}`}>
                 <div className="hero"><Image imgName={item.node.localFile.base} /></div>
               </div>
         break;
       case 1:
       case 2:
-      return <div key={i} className={`img-lg-${i}`}>
-                <div className="hero"><Image imgName={item.node.localFile.base} /></div>
-              </div>
-      break;
       case 3:
+      counter++
+      return <div key={counter} className={`img-lg-${counter}`}>
+      <div className="hero"><Image imgName={item.node.localFile.base} /></div>
+      </div>
+      break;
       case 4:
       case 5:
       case 6:
       case 7:
       case 8:
-        return <div  key={i} className={`img-sm-${i}`}>
+      counter++
+        return <div  key={counter} className={`img-sm-${counter}`}>
                   <div className="hero"><Image imgName={item.node.localFile.base} /></div>
                 </div>
       break;
       case 9:
       default:
-      return <div  key={i} className="img-gallery">
+      counter++
+      return <div  key={counter} className="img-gallery">
                 <div className="hero"><Image imgName={item.node.localFile.base} /></div>
               </div>
     }
