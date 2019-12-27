@@ -33,10 +33,10 @@ const Gallery = ({pageContext}) => {
        )
     }
     else {
+    counter++
     var text= "";
-    switch(i) {
+    switch(counter) {
       case 0:
-      counter++
       return <div  key={counter} className={`img-xl-${counter}`}>
                 <div className="hero"><Image imgName={item.node.localFile.base} /></div>
               </div>
@@ -44,7 +44,6 @@ const Gallery = ({pageContext}) => {
       case 1:
       case 2:
       case 3:
-      counter++
       return <div key={counter} className={`img-lg-${counter}`}>
       <div className="hero"><Image imgName={item.node.localFile.base} /></div>
       </div>
@@ -61,7 +60,6 @@ const Gallery = ({pageContext}) => {
       break;
       case 9:
       default:
-      counter++
       return <div  key={counter} className="img-gallery">
                 <div className="hero"><Image imgName={item.node.localFile.base} /></div>
               </div>
