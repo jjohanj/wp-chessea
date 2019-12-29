@@ -44,8 +44,8 @@ const Gallery = ({pageContext}) => {
       case 1:
       case 2:
       return <div key={counter} className={`img-lg-${counter}`}>
-      <div className="hero"><Image imgName={item.node.localFile.base} /></div>
-      </div>
+        <div className="hero"><Image imgName={item.node.localFile.base} /></div>
+        </div>
       case 3:
       break;
       case 4:
