@@ -58,7 +58,7 @@ p {
   bottom: 0;
   position: absolute;
   background: #D83860;
-  opacity: 0.2;
+  opacity: 0.1;
   transition: opacity 0.4s ease;
 }
 .matches .hero {
@@ -76,7 +76,7 @@ p {
   flex-direction: column;
   color: #fff;
   position: relative;
-  padding: 0 2rem;
+  padding: 0.5rem 2rem;
 }
 
 /* .matches .content div {
@@ -92,7 +92,7 @@ p {
   transform: scale(1.2);
 }
 .matches:hover .content::before {
-  opacity: 0.75;
+  opacity: 0.2;
 }
 
 .matches svg {
