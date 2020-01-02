@@ -39,13 +39,9 @@ const Articles = (props) => {
    var handleClick = (type, val) => {
     // document.getElementById(type+'-link-'+val).click();
     document.getElementsByClassName(type+'-article-'+val)[0].getElementsByTagName('a')[0].click();
-
     }
 
-    console.log(props.type);
-    if (props.list != "undefined") {
     var post =  data.allWordpressPost.edges.slice(props.liststart, props.listend).map((item, i) => {
-
       return (
         <article className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
           <Image imgName={item.node.featured_media.localFile.base}/>
@@ -57,7 +53,6 @@ const Articles = (props) => {
         </article>
 
       )})
-    }
 
   return (
     <>

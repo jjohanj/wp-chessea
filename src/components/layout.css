@@ -180,10 +180,13 @@ nav.open li:first-of-type {
   border: 2px solid #fff;
   left:-1.8rem;
   position: relative;
-  padding-top: 0.75rem;
   border-top-right-radius: 0.5em;
   white-space: nowrap;
   height: 1rem;
+}
+.article-list .date {
+  padding-top: 0.75rem;
+
 }
 .article-list .date span,
 .secondary-articles .date span {

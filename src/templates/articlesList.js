@@ -15,7 +15,7 @@ return (
     <div className="hero header"><Image imgName={pageContext.image}/></div>
     <h2>{Parser(pageContext.title)}</h2>
     <div className="list">
-      <Articles />
+      <Articles type="list"/>
     </div>
   </div>
 )
