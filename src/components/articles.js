@@ -51,27 +51,11 @@ const Articles = (props) => {
           <Image imgName={item.node.featured_media.localFile.base}/>
           <div className="content">
           {props.type !== 'main' ?
-                    <><p className="date"><span>{item.node.acf.datum}</span></p><h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3></> :
-                    <><h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3><p className="date"><span>{item.node.acf.datum}</span></p></> }
-            <div>{Parser(item.node.content.substring(0,50) + ' ...' )} </div>
+                    <><p className="date"><span>{item.node.acf.datum}</span></p><h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3><div>{Parser(item.node.content.substring(0,70) + ' ...' )} </div></> :
+                    <><h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3><p className="date"><span>{item.node.acf.datum}</span></p><div>{Parser(item.node.content.substring(0,130) + ' ...' )} </div></> }
           </div>
         </article>
 
-      )})
-    }
-
-    else {
-    var post =  data.allWordpressPost.edges.map((item, i) => {
-
-      return (
-        <article className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
-          <Image imgName={item.node.featured_media.localFile.base}/>
-          <p className="date"><span>{item.node.acf.datum}</span></p>
-          <div className="content">
-            <h3><Link id={`${props.type}-link-${i}`} to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3>
-            <div>{Parser(item.node.content.substring(0,50) + ' ...' )} </div>
-          </div>
-        </article>
       )})
     }
 
