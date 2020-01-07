@@ -69,8 +69,6 @@ const Gallery = ({pageContext}) => {
   return (
     <><div className="grid-container  article-list">
       <MainMenu />
-      <div className="hero header"><Image imgName={pageContext.image}/></div>
-      <h2>{Parser(pageContext.title)}</h2>
       </div>
       <div className="gallery">
         {post}

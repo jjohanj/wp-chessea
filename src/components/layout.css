@@ -20,6 +20,12 @@ ul {
 h1, h2, h3, h4, h5 {
   font-family: "raleway";
 }
+h1 a span {
+  font-size: 0.5em;
+  padding-left: 0.5rem;
+  color: #808080;
+
+}
 p {
   font-size: 1.125em;
   line-height: 1.2;
@@ -118,7 +124,7 @@ article:not(.article-selected) {
 }
 
 h1 {
-  grid-column: 3/6;
+  grid-column: 3/8;
   grid-row: 1;
   position: relative;
   z-index: 2;
@@ -270,7 +276,6 @@ nav.open li:first-of-type {
   grid-template-columns: 1fr;
   grid-column-gap: 1rem;
   grid-row: 3;
-  margin-top: 5rem;
 }
 .matches-list .list {
   grid-gap: 2rem;
@@ -708,7 +713,7 @@ textarea {
 }
 .matches-list,
 .article-list {
-    grid-template-rows: 6.5rem 16rem repeat(3, min-content) 10rem;
+    grid-template-rows: 6.5rem repeat(3, min-content) 10rem;
 
 }
 .matches-list h2,
@@ -916,6 +921,7 @@ nav button {
     max-width: 1200px;
     margin: auto;
     padding: 2rem;
+    padding-top: 0;
       grid-auto-rows: 200px;
   }
   .img-xl-0 {
