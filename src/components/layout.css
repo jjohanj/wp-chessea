@@ -27,8 +27,9 @@ h1 a span {
 
 }
 p {
-  font-size: 1.125em;
+  font-size: 1.05em;
   line-height: 1.2;
+  color: #646464;
 }
 .article-selected p {
   font-size: 1.2em;
@@ -190,6 +191,7 @@ nav.open li:first-of-type {
   white-space: nowrap;
   height: 1rem;
 }
+.secondary-articles .date span,
 .article-list .date {
   padding-top: 0.75rem;
 
@@ -303,6 +305,9 @@ nav.open li:first-of-type {
   grid-column: 2 / 19;
 }
 @media (min-width:600px) {
+  .secondary-articles .date span {
+    padding-top: 0;
+  }
   .main-article-0  {
     grid-column: 1 / 11;
     grid-row: 2;
@@ -733,7 +738,7 @@ font-size: 3rem;
   margin-right: 2rem;
   top: -4rem;
   position: relative;
-  background: #transparent;
+  background: transparent;
   padding: 1.5rem;
 }
 div.hero.header {
@@ -808,7 +813,6 @@ nav button {
   grid-auto-rows: 250px;
   grid-template-columns: repeat(6, 2fr);
   grid-gap: 1rem;
-  margin-bottom: 4rem;
   margin: auto;
   padding: 1rem;
   top: -8rem;
@@ -915,14 +919,17 @@ nav button {
   grid-row: 4;
   grid-column: 6;
 }
+  .img-sm-9 {
+    grid-row: 3;
+    grid-column:  1;
+  }
 }
 @media (min-width: 991px) {
   .gallery {
     max-width: 1200px;
     margin: auto;
-    padding: 2rem;
-    padding-top: 0;
-      grid-auto-rows: 200px;
+    padding: 0 2rem 0;
+    grid-auto-rows: 200px;
   }
   .img-xl-0 {
     grid-row: 1 / 3;
@@ -963,6 +970,10 @@ nav button {
   .img-sm-8 {
     grid-row: 3;
     grid-column: 3;
+  }
+  .img-sm-9 {
+    grid-row: 1;
+    grid-column: 6;
   }
 }
 

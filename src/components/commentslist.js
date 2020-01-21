@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
-import { navigate } from 'gatsby';
 
 function Commentslist (props) {
 
@@ -20,7 +19,7 @@ function Commentslist (props) {
   var comments = data2.map((item, i) => {
   if (item.post === props.wpId) {
   return (
-    <div className="comment" key={item.id} dangerouslySetInnerHTML={{__html: "<p class='comment-author'>" + item.author_name + ":</p>" + item.content.rendered }}/>
+    <div className="comment" key={i} dangerouslySetInnerHTML={{__html: "<p class='comment-author'>" + item.author_name + ":</p>" + item.content.rendered }}/>
     )
   }
   else {

@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import { navigate } from 'gatsby';
-import Commentslist from "./commentslist"
-
-
 
 const ACTION_URL = "https://www.flonxchess.nl/wp-json/wp/v2/comments";
 
@@ -37,7 +33,7 @@ class Comments extends Component {
       );
 
     const successMessageMarkup = formSubmittedSuccessfully ? (
-      <div class="alert alert-primary" role="alert">
+      <div className="alert alert-primary" role="alert">
         This is a primary alert—check it out!
       </div>
     ) : null;

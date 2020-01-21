@@ -2,7 +2,6 @@ import React from "react"
 import MainMenu from "../components/mainmenu"
 import Articles from "../components/articles"
 import Calender from "../components/calender"
-import Comments from "../components/comments1"
 import "../components/layout.css"
 import SEO from "../components/seo"
 
@@ -19,6 +18,6 @@ const IndexPage = () => {
     </div>
     </>
 
-)}
+)};
 
 export default IndexPage

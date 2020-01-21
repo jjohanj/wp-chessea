@@ -1,12 +1,9 @@
 import React from "react"
-import Layout from "../components/layout"
-import Image from "../components/image"
 import Articles from "../components/articles"
 import MainMenu from "../components/mainmenu"
-import Parser from 'html-react-parser'
 
 
-function ArticlesList({ pageContext }) {
+function ArticlesList({ }) {
 
 
 return (
