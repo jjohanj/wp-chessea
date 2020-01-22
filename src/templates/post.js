@@ -5,6 +5,7 @@ import Commentslist from "../components/commentslist"
 import MainMenu from "../components/mainmenu"
 import './page.css';
 import Parser from 'html-react-parser'
+import SEO from '../components/seo';
 
 
 function Post({ pageContext }) {
@@ -15,6 +16,8 @@ function Post({ pageContext }) {
 // console.log(matches);
 
 return (
+  <>
+  <SEO title={pageContext.title}/>
   <div className="grid-container">
     <MainMenu />
     <article className="article-selected">
@@ -26,6 +29,7 @@ return (
     <Comments wpId={pageContext.wp_id} slug={pageContext.slug}/>
     <Commentslist wpId={pageContext.wp_id} />
   </div>
+  </>
 )
 }
 export default Post

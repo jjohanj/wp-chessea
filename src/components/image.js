@@ -50,12 +50,12 @@ const Image = ({ imgName }) => (
     render={data => {
       const image = data.allImageSharp.edges.find(
         edge => edge.node.fluid.originalName === imgName
-      )
+      );
       if (!image) {
         return null
       }
       return <Img fluid={image.node.fluid} />
     }}
   />
-)
+);
 export default Image

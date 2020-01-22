@@ -33,7 +33,7 @@ const Articles = (props) => {
       }
   `);
 
-   var handleClick = (type, val) => {
+   let handleClick = (type, val) => {
     // document.getElementById(type+'-link-'+val).click();
     document.getElementsByClassName(type+'-article-'+val)[0].getElementsByTagName('a')[0].click();
     };
