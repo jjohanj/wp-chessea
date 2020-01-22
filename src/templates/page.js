@@ -15,7 +15,7 @@ return (
     <h2>{Parser(pageContext.title)}</h2>
     <div>{Parser(pageContext.content)} </div>
   </div>
-  <>
+  </>
 )
 }
 export default Page
