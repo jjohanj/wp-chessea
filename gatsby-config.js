@@ -123,6 +123,19 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Chessea`,
+        short_name: `Chessea`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/images/butterfly.jpg`,
+      },
+    },
+    'gatsby-plugin-offline',
     `gatsby-plugin-netlify`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
