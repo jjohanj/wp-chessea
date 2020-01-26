@@ -40,14 +40,14 @@ p {
 }
 .grid-container {
   display: grid;
-  grid-template-rows: 6.5rem repeat(8, min-content);
+  grid-template-rows: 6.5rem repeat(8, min-content) 2rem;
   grid-template-columns: repeat(20, 1fr);
 
 }
 .alert-primary {
-    color: #004085;
-    background-color: #cce5ff;
-    border-color: #b8daff;
+    color: #000;
+    background-color:  rgba(218, 65, 103, 0.1);
+    border-color: #D83860;
 }
 .matches {
   cursor: pointer;
@@ -306,7 +306,7 @@ nav.open li:first-of-type {
 }
 @media (min-width:600px) {
   .grid-container {
-    grid-template-rows: 6.5rem repeat(8, min-content) 4rem;
+    grid-template-rows: 6.5rem repeat(8, min-content) 6rem;
   }
   .secondary-articles .date span {
     padding-top: 0;
@@ -492,7 +492,6 @@ nav.open li:first-of-type {
     grid-template-columns: repeat(4, minmax(180px, 1fr));
     grid-column: 3 / 19;
   }
-
   .article-selected {
     grid-column:  4 / 12;
   }
@@ -732,8 +731,7 @@ textarea {
 }
 .matches-list,
 .article-list {
-    grid-template-rows: 6.5rem repeat(3, min-content);
-
+    grid-template-rows: 6.5rem repeat(3, min-content) 6rem;
 }
 .matches-list h2,
 .article-list h2 {
@@ -1041,8 +1039,9 @@ footer li:last-child {
 footer ul,
 footer h4,
 footer h5 {
-  display: inline-block;
   padding-right: 2rem;
+  padding-bottom: 0.5rem;
+  display: inline-block;
 }
 
 .clubs {

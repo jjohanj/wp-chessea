@@ -34,7 +34,7 @@ class Comments extends Component {
 
     const successMessageMarkup = formSubmittedSuccessfully ? (
       <div className="alert alert-primary" role="alert">
-        This is a primary alert—check it out!
+        Bedankt voor je reactie!
       </div>
     ) : null;
 
