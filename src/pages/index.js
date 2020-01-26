@@ -2,6 +2,7 @@ import React from "react"
 import MainMenu from "../components/mainmenu"
 import Articles from "../components/articles"
 import Calender from "../components/calender"
+import Footer from "../components/footer"
 import "../components/layout.css"
 import SEO from "../components/seo"
 
@@ -16,6 +17,7 @@ const IndexPage = () => {
       <Calender />
       <Articles liststart ="2"  listend="6" type="secondary"/>
     </div>
+    <Footer />
     </>
 
 )};

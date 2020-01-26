@@ -536,7 +536,17 @@ h2,
 ul.calender {
   list-style: none;
   margin-bottom: 2rem;
+  font-weight: 400;
 }
+.calender li:first-child  {
+  grid-column: 1 / -1;
+  background: #fff;
+}
+.calender li {
+  background:#fbebef;
+
+}
+
 
 /* buttons */
 .calender .calender-date {
@@ -979,4 +989,58 @@ nav button {
 
 .article-list .list .gatsby-image-wrapper {
   height: 250px;
+}
+
+/* Footer */
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+footer {
+padding: 2rem 0;
+  background: #1d1d1d;
+  color: #aaaaaa;
+  display: grid;
+    grid-template-columns: repeat(10, 2fr);
+    grid-template-rows: min-content;
+}
+.contact {
+  grid-column: 2 / 6;
+}
+
+footer li {
+  padding-right: 2rem;
+}
+
+footer a {
+  color: #aaaaaa;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+footer svg {
+  font-size: 1.2em;
+ top: 0.2rem;
+ position: relative;
+ padding-right: 0.3rem;
+}
+footer li:last-child {
+  padding-right:  0;
+}
+footer ul,
+footer h4,
+footer h5 {
+  display: inline-block;
+  padding-right: 2rem;
+}
+
+.clubs {
+  grid-column: 6 / 10;
 }
