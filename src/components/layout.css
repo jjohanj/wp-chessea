@@ -40,7 +40,7 @@ p {
 }
 .grid-container {
   display: grid;
-  grid-template-rows: 6.5rem repeat(8, min-content) 10rem;
+  grid-template-rows: 6.5rem repeat(8, min-content);
   grid-template-columns: repeat(20, 1fr);
 
 }
@@ -728,7 +728,7 @@ textarea {
 }
 .matches-list,
 .article-list {
-    grid-template-rows: 6.5rem repeat(3, min-content) 10rem;
+    grid-template-rows: 6.5rem repeat(3, min-content);
 
 }
 .matches-list h2,
@@ -1013,7 +1013,7 @@ padding: 2rem 0;
     grid-template-rows: min-content;
 }
 .contact {
-  grid-column: 2 / 6;
+  grid-column: 2 / 5;
 }
 
 footer li {
@@ -1042,5 +1042,5 @@ footer h5 {
 }
 
 .clubs {
-  grid-column: 6 / 10;
+  grid-column: 5 / 10;
 }

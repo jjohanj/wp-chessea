@@ -3,6 +3,7 @@ import Image from "../components/image"
 import MainMenu from "../components/mainmenu"
 import {graphql, useStaticQuery } from "gatsby"
 import SEO from '../components/seo';
+import Footer from "../components/footer"
 
 
 const Gallery = ({}) => {
@@ -66,6 +67,7 @@ const Gallery = ({}) => {
       <div className="gallery">
         {post}
       </div>
+      <Footer />
     </>
 )};
 

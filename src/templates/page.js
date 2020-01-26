@@ -2,7 +2,8 @@ import React from "react"
 import Image from "../components/image"
 import MainMenu from "../components/mainmenu"
 import Parser from 'html-react-parser'
-import SEO from '../components/seo';
+import SEO from '../components/seo'
+import Footer from "../components/footer"
 
 function Page({ pageContext }) {
 
@@ -15,6 +16,7 @@ return (
     <h2>{Parser(pageContext.title)}</h2>
     <div>{Parser(pageContext.content)} </div>
   </div>
+  <Footer />
   </>
 )
 }

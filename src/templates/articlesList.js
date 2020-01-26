@@ -2,6 +2,7 @@ import React from "react"
 import Articles from "../components/articles"
 import MainMenu from "../components/mainmenu"
 import SEO from '../components/seo';
+import Footer from "../components/footer"
 
 
 function ArticlesList({ }) {
@@ -17,6 +18,7 @@ return (
       <Articles type="list"/>
     </div>
   </div>
+  <Footer />
     </>
 )
 }

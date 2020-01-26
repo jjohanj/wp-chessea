@@ -5,7 +5,8 @@ import Commentslist from "../components/commentslist"
 import MainMenu from "../components/mainmenu"
 import './page.css';
 import Parser from 'html-react-parser'
-import SEO from '../components/seo';
+import SEO from '../components/seo'
+import Footer from "../components/footer"
 
 
 function Post({ pageContext }) {
@@ -29,6 +30,7 @@ return (
     <Comments wpId={pageContext.wp_id} slug={pageContext.slug}/>
     <Commentslist wpId={pageContext.wp_id} />
   </div>
+  <Footer />
   </>
 )
 }
