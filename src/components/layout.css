@@ -543,17 +543,21 @@ ul.calender {
 }
 .calender li:first-child  {
   grid-column: 1 / -1;
-  background: #fff;
+  background: #fff!important;
 }
 .calender li {
-  background:#fbebef;
+  background:#f9f9f9;
+  border-radius: 0.25rem;
 
+}
+.calender li:nth-child(even) {
+  background: #ececec;
 }
 
 
 /* buttons */
 .calender .calender-date {
-  background: #087F8C;
+  background: #323232;
   height: 60px;
   width: 60px;
   display: inline-flex;
