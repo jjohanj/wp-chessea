@@ -34,6 +34,10 @@ p {
 .article-selected p {
   font-size: 1.2em;
   line-height: 1.5;
+  padding-bottom: 1.4rem;
+}
+.article-selected a {
+  color: #d83860;
 }
 .comment p {
   font-size: 1em;
@@ -693,36 +697,36 @@ textarea {
 }
 .btn-info {
   color: #fff;
-  background-color: #17a2b8;
-  border-color: #17a2b8;
+  background-color: #d83860;
+  border-color: #d83860;
 }
 
 .btn-info:hover {
   color: #fff;
-  background-color: #138496;
-  border-color: #117a8b;
+  background-color: #b92449;
+  border-color: #b92449;
 }
 
 .btn-info:focus, .btn-info.focus {
-  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(185, 36, 73 0.5);
 }
 
 .btn-info.disabled, .btn-info:disabled {
   color: #fff;
-  background-color: #17a2b8;
-  border-color: #17a2b8;
+  background-color: #d83860;
+  border-color: #d83860;
 }
 
 .btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
 .show > .btn-info.dropdown-toggle {
   color: #fff;
-  background-color: #117a8b;
-  border-color: #10707f;
+  background-color: #d83860;
+  border-color: #b92449;
 }
 
 .btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus,
 .show > .btn-info.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(185, 36, 73, 0.5);
 }
 .btn-nav {
   background: transparent;
