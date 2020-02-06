@@ -19,7 +19,6 @@ const IndexPage = () => {
       <Articles liststart ="2"  listend="6" type="secondary"/>
     </div>
     <Footer />
-    <Paardensprong />
     </>
 
 )};
