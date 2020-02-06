@@ -52,6 +52,7 @@ return (
         <ul className={size[0] > 768 ? "big" : "small"}>
           <li><Link to="/">Chessea</Link></li>
           {menu}
+          <li><Link activeStyle={{ color: "#087F8C" }} to="page-2">Competitie</Link></li>
         </ul>
       </nav>
   </>
