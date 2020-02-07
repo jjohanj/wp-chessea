@@ -1090,8 +1090,13 @@ iframe {
   padding: 1rem;
   border-radius: 1rem;
   border: 2px solid rgb(236, 236, 236);
+  width: 300px;
 }
-
+@media (min-width: 600px) {
+  iframe {
+    width: 450px;
+  }
+}
 .koning {
   grid-column: 2 / 4;
   grid-row: 1;

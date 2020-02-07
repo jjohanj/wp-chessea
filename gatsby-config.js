@@ -5,6 +5,7 @@ module.exports = {
     author: `Johan`,
   },
   plugins: [
+
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -123,6 +124,12 @@ module.exports = {
         },
       },
     },
+    {
+  resolve: `gatsby-transformer-remark`,
+  options: {
+    plugins: [`gatsby-remark-responsive-iframe`],
+  },
+},
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
