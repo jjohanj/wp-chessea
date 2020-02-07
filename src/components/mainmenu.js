@@ -41,7 +41,7 @@ function MainMenu() {
   const menu =  data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map((item, i) => {
 
     return (
-            <li className="list-inline-item" key={i}><Link activeStyle={{ color: "#087F8C" }} to={`/${item.object_slug}`}>{item.title}</Link></li>
+            <li className="list-inline-item" key={i}><Link activeStyle={{ color: "#D83860" }} to={`/${item.object_slug}`}>{item.title}</Link></li>
     )});
 
 return (
@@ -52,7 +52,7 @@ return (
         <ul className={size[0] > 768 ? "big list-inline" : "small list-inline"}>
           <li className="list-inline-item"><Link to="/">Chessea</Link></li>
           {menu}
-          <li><Link activeStyle={{ color: "#087F8C" }} to="page-2">Competitie</Link></li>
+          <li><Link activeStyle={{ color: "#D83860" }} to="page-2">Competitie</Link></li>
         </ul>
       </nav>
   </>

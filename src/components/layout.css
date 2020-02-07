@@ -533,7 +533,7 @@ h2,
 .date {
   color: #D83860;
   font-size: .8em;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
   font-weight: 500;
 }
 
@@ -761,7 +761,7 @@ font-size: 3rem;
 
 .article-list .content {
   margin-right: 2rem;
-  top: -4rem;
+  top: -3.25rem;
   position: relative;
   background: transparent;
   padding: 1.5rem;
