@@ -196,6 +196,9 @@ nav.open li:first-of-type {
   white-space: nowrap;
   height: 1rem;
 }
+.secondary-articles .date {
+padding-bottom: 2.5rem!important}
+
 .secondary-articles .date span,
 .article-list .date {
   padding-top: 0.75rem;
@@ -271,7 +274,7 @@ nav.open li:first-of-type {
   display: flex;
   align-self: center;
   flex-direction: column;
-  top: -4rem;
+  top: -3.25rem;
   margin-right: 2rem;
   border-top-right-radius: 0.5em;
   background: transparent;
