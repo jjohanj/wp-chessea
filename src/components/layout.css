@@ -13,6 +13,7 @@ a {
 
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 ul {
   list-style: none;
@@ -1082,11 +1083,11 @@ footer .list-inline-item {
 }
 .igrid {
   display: grid;
-  grid-template-rows:  520px 520px 600px;
-  grid-column: 2 / 20;
-  grid-template-columns: 1fr;
-  grid-gap: 1rem;
+  grid-template-rows:  550px 550px 640px;
+  grid-column: 2 / 19;
+  grid-template-columns: 0.5rem 100% 0.5rem;
   margin-bottom: 6rem;
+  grid-row-gap: 3rem;
 
 
 }
@@ -1094,6 +1095,7 @@ footer .list-inline-item {
   overflow: hidden;
   padding-top: 100%;
   position: relative;
+  grid-column: 2
 }
 
 .iframe-container iframe {
@@ -1103,32 +1105,14 @@ footer .list-inline-item {
   position: absolute;
   top: 0;
   width: 100%;
+  background: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  padding: 2rem;
+  border-radius: 0.5rem;
 }
 
-@media (min-width: 991px) {
+@media (min-width: 540px) {
   .igrid {
-    grid-template-columns: 1fr 1fr;
-      grid-template-rows:  520px 600px;
+    grid-template-columns: 1fr 500px 1fr;
   }
-  .dame {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .toren {
-    grid-column: 1;
-    grid-row: 2;
-  }
-}
-@media (min-width: 1600px) {
-  .igrid {
-          grid-template-rows: 600px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column: 3 / 19;
-    margin-bottom: 7rem;
-  }
-  .toren {
-    grid-column: 3;
-    grid-row: 1;
-  }
-
 }
