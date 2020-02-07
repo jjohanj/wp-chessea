@@ -15,8 +15,8 @@ return (
     <div className="hero header"><Image imgName={pageContext.image}/></div>
     <h2>{Parser(pageContext.title)}</h2>
     <div>{Parser(pageContext.content)} </div>
+    <Footer />
   </div>
-  <Footer />
   </>
 )
 }

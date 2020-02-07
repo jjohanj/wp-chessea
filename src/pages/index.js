@@ -12,13 +12,13 @@ const IndexPage = () => {
   return (
     <>
     <SEO title="chessea"/>
-    <div className="grid-container">
+    <div className="grid-container home">
       <MainMenu />
       <Articles liststart ="0"  listend="2" type="main"/>
       <Calender />
       <Articles liststart ="2"  listend="6" type="secondary"/>
+      <Footer />
     </div>
-    <Footer />
     </>
 
 )};

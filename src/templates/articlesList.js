@@ -17,8 +17,8 @@ return (
     <div className="list">
       <Articles type="list"/>
     </div>
+    <Footer />
   </div>
-  <Footer />
     </>
 )
 }

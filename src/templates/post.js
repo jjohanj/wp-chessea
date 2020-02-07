@@ -29,8 +29,8 @@ return (
     </div>
     <Comments wpId={pageContext.wp_id} slug={pageContext.slug}/>
     <Commentslist wpId={pageContext.wp_id} />
+    <Footer />
   </div>
-  <Footer />
   </>
 )
 }

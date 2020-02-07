@@ -41,7 +41,7 @@ function MainMenu() {
   const menu =  data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map((item, i) => {
 
     return (
-            <li key={i}><Link activeStyle={{ color: "#087F8C" }} to={`/${item.object_slug}`}>{item.title}</Link></li>
+            <li className="list-inline-item" key={i}><Link activeStyle={{ color: "#087F8C" }} to={`/${item.object_slug}`}>{item.title}</Link></li>
     )});
 
 return (
@@ -49,8 +49,8 @@ return (
     <h1><Link to="/"> Chessea</Link></h1>
       <nav className={nav}>
         <button aria-label="navigation" className="btn btn-nav" onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><FaBars /></button>
-        <ul className={size[0] > 768 ? "big" : "small"}>
-          <li><Link to="/">Chessea</Link></li>
+        <ul className={size[0] > 768 ? "big list-inline" : "small list-inline"}>
+          <li className="list-inline-item"><Link to="/">Chessea</Link></li>
           {menu}
           <li><Link activeStyle={{ color: "#087F8C" }} to="page-2">Competitie</Link></li>
         </ul>

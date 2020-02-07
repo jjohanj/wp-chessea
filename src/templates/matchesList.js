@@ -14,8 +14,8 @@ return (
     <div className="list">
       <Matches />
     </div>
+    <Footer />
   </div>
-  <Footer />
     </>
 )
 }

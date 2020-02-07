@@ -11,9 +11,9 @@ const SecondPage = () => {
     <SEO title="chessea"/>
     <div className="grid-container">
       <MainMenu />
+      <Paardensprong />
+      <Footer />
     </div>
-    <Paardensprong />
-    <Footer />
     </>
 
 )};

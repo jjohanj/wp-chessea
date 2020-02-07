@@ -63,11 +63,11 @@ const Gallery = ({}) => {
         <SEO title="Afbeeldingen"/>
         <div className="grid-container  article-list">
       <MainMenu />
-      </div>
       <div className="gallery">
         {post}
       </div>
       <Footer />
+      </div>
     </>
 )};
 
