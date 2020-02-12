@@ -12,11 +12,11 @@ console.log(location);
 return (
   <>
   <SEO title="Artikelen"/>
-  <div className="grid-container article-list test">
+  <div className="grid-container article-list">
     <MainMenu />
 
     <div className="list">
-      <Articles2 type="list" tag={location.state.tag}/>
+      <Articles2 type="list" tag={location.state.tag ? location.state.tag : null }/>
     </div>
     <Footer />
   </div>
