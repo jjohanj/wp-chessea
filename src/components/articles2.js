@@ -35,6 +35,7 @@ function Articles2 (props) {
         }
       }
   `);
+  console.log(props.tag);
   useEffect(() => {
      if (props.tag != undefined) {
     setArticles(data.allWordpressPost.edges.filter(item =>{
