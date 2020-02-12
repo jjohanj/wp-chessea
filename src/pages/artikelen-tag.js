@@ -16,7 +16,7 @@ return (
     <MainMenu />
 
     <div className="list">
-      <Articles2 type="list" tag={location.state.tag ? location.state.tag : null }/>
+      <Articles2 type="list" tag={location.state.tag !== undefined ? location.state.tag : null }/>
     </div>
     <Footer />
   </div>
