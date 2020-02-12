@@ -1,12 +1,12 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import { Link } from "gatsby"
 import Image from "../components/image"
 import {graphql, useStaticQuery } from "gatsby"
 import Parser from 'html-react-parser'
 
 
-const Articles = (props) => {
-  
+function Articles2 (props) {
+  const [articles, setArticles] = useState([]);
   const data = useStaticQuery(graphql`
     query {
         allWordpressPost
@@ -15,7 +15,6 @@ const Articles = (props) => {
           {
             node
             {
-              id,
               title,
               content,
               path,
@@ -36,21 +35,25 @@ const Articles = (props) => {
         }
       }
   `);
+  useEffect(() => {
+     if (props.tag != undefined) {
+    setArticles(data.allWordpressPost.edges.filter(item =>{
+        return item.node.tags.some(obj => obj.name === props.tag)
+    }));
+    }
+    else {
+        setArticles(data.allWordpressPost.edges);
+    }
+    },[]
+  );
 
-    console.log(data)
 
    let handleClick = (type, val) => {
     // document.getElementById(type+'-link-'+val).click();
     document.getElementsByClassName(type+'-article-'+val)[0].getElementsByTagName('a')[0].click();
     };
-    if (props.tag != undefined ) {
-      let test = data.allWordpressPost.edges.filter(item =>{
-          return item.node.tags.some(obj => obj.name === props.tag)
-      })
-      console.log(test)
-}
 
-    const post =  data.allWordpressPost.edges.slice(props.liststart, props.listend).map((item, i) => {
+    const post =  articles.slice(props.liststart, props.listend).map((item, i) => {
       return (
         <article className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
           <Image imgName={item.node.featured_media.localFile.base}/>
@@ -69,4 +72,4 @@ const Articles = (props) => {
     </>
 )};
 
-export default Articles
+export default Articles2

@@ -16,7 +16,7 @@ return (
     <MainMenu />
 
     <div className="list">
-      <Articles type="list" tag={location.state.tag}/>
+      <Articles2 type="list" tag={location.state.tag}/>
     </div>
     <Footer />
   </div>

@@ -11,6 +11,25 @@ a {
 
 }
 
+.article-selected > span {
+  font-size: 0.7em;
+  font-style: italic;
+  color: #646464;
+}
+.article-selected > div {
+  border-bottom: solid 1px #efabbc;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.tag {
+  padding: 0.1rem 1rem;
+  background-color: #f3f3f3;
+  border-radius: .5rem;
+  margin: 1rem 0.3rem;
+  color: #000;
+  font-size: 0.8em;
+}
 * {
   margin: 0;
   box-sizing: border-box;

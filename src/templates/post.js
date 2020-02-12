@@ -1,5 +1,6 @@
 import React from "react"
 import Image from "../components/image"
+import { Link } from "gatsby"
 import Comments from "../components/comments1"
 import Commentslist from "../components/commentslist"
 import MainMenu from "../components/mainmenu"
@@ -11,10 +12,15 @@ import Footer from "../components/footer"
 
 function Post({ pageContext }) {
 
-
 // var matches = pageContext.content.replace(/\[(.*?)\]/g, pageContext.imageurl);
 //
 // console.log(matches);
+let tags = pageContext.tags.map((name, i) => {
+  return (
+    <Link key={i} to={`/artikelen-tag`}
+          state={{ tag: name.name }}><span className="tag">{name.name}</span></Link>
+  )
+})
 
 return (
   <>
@@ -24,6 +30,7 @@ return (
     <article className="article-selected">
       <h2>{Parser(pageContext.title)}</h2>
       <div>{Parser(pageContext.content)} </div>
+      <span>tags:</span> {tags}
     </article>
     <div className="image-selected"> <Image imgName={pageContext.image}/>
     </div>

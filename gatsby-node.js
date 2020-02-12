@@ -20,6 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
+            wordpress_id
             path
             status
             template
@@ -41,7 +42,6 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             wordpress_id
             path
-            status
             template
             title
             content
@@ -53,6 +53,9 @@ exports.createPages = async ({ graphql, actions }) => {
               localFile {
                 base
               }
+            }
+            tags {
+              name
             }
           }
         }
@@ -94,6 +97,7 @@ exports.createPages = async ({ graphql, actions }) => {
                       edge.node.template === 'gallery.php' ? galleryTemplate
                       : pageTemplate),
       context: {
+        wp_id: edge.node.wordpress_id,
         content: edge.node.content,
         title: edge.node.title,
         template: edge.node.template,
@@ -117,7 +121,8 @@ allWordpressPost.edges.forEach(edge => {
       title: edge.node.title,
       image: edge.node.featured_media.localFile.base,
       slug: edge.node.slug,
-      author: edge.node.author.name
+      author: edge.node.author.name,
+      tags: edge.node.tags,
     },
   })
 })

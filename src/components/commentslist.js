@@ -15,7 +15,6 @@ function Commentslist (props) {
     fetchData();
   }, []);
   var data2 = data.reverse();
-  console.log(data2);
   var comments = data2.map((item, i) => {
   if (item.post === props.wpId) {
   return (
