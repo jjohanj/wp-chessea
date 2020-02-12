@@ -7,7 +7,6 @@ import Footer from "../components/footer"
 
 
 const ArticlesList = ({location}) => {
-console.log(location);
 
 return (
   <>
@@ -16,7 +15,7 @@ return (
     <MainMenu />
 
     <div className="list">
-      <Articles type="list" tag={location.state.tag}/>
+      <Articles type="list" />
     </div>
     <Footer />
   </div>
