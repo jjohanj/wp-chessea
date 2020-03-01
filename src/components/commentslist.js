@@ -14,8 +14,7 @@ function Commentslist (props) {
     };
     fetchData();
   }, []);
-  var data2 = data.reverse();
-  var comments = data2.map((item, i) => {
+  var comments = data.reverse().map((item, i) => {
   if (item.post === props.wpId) {
   return (
     <div className="comment" key={i} dangerouslySetInnerHTML={{__html: "<p class='comment-author'>" + item.author_name + ":</p>" + item.content.rendered }}/>

@@ -18,8 +18,7 @@ const Calender = () => {
       }
     }
   `);
-
-    const post =  data.allWordpressWpCalender.edges.map((item, i) => {
+    const post =  data.allWordpressWpCalender.edges.reverse().map((item, i) => {
 
       return (
           <li key={i}><span className="calender-date">{item.node.acf.date}</span><span  className="event"> {item.node.title}</span></li>

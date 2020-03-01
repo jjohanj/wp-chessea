@@ -1059,6 +1059,7 @@ footer a {
   color: #aaaaaa;
   font-size: 0.9em;
   font-weight: 400;
+  padding: .5rem 0;
 }
 footer svg {
   font-size: 1.2em;
