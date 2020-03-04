@@ -33,12 +33,6 @@ h1 {
   /* This will show the gradient as a text color rather than element bg. */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  /* Animate the text when loading the element. */
-  /* This animates it on page load and when hovering out. */
-  animation: rainbow-text-animation-rev 0.5s ease forwards;
-
-  cursor: pointer;
 }
 
 .article-selected > span {
@@ -186,10 +180,9 @@ article:not(.article-selected) {
 nav {
   padding: 0 10px;
   background: #fff;
-  grid-column: 1/ -1;
+  grid-column: 8/ -1;
   grid-row: 1;
   height: 100%;
-  justify-content: center;
   align-items: center;
   display: flex;
 }
@@ -855,7 +848,7 @@ nav button {
   }
   nav.open ul li {
     display: block!important;
-    padding-left: 3rem;
+    text-align: center;
   }
   nav.open ul {
     display: block;
