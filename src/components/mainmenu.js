@@ -46,7 +46,7 @@ function MainMenu() {
 
 return (
   <>
-    <h1><Link to="/"> Chessea</Link></h1>
+    <div className="title"><h1><Link to="/"> Chessea</Link></h1></div>
       <nav className={nav}>
         <button aria-label="navigation" className="btn btn-nav" onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><FaBars /></button>
         <ul className={size[0] > 768 ? "big list-inline" : "small list-inline"}>
