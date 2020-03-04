@@ -16,14 +16,7 @@ h1 {
   /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
   background: #000;
   background-color: #000;
-  background-image: linear-gradient(
-       45deg,
-       #000 26.666%,
-       #D83860 26.666%,
-       #D83860 33.333%,
-       #000 50%,
-       #000 50%,
-       #D83860 83.333%);
+  background-image: linear-gradient(45deg,#000 26.666%,#d83860 0,#d83860 33.333%,#000 50%,#000 0,#d83860 83.333%);
 
  /* Set the background size and repeat properties. */
  background-size: 100%;

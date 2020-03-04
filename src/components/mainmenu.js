@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from "react"
+import React, { useState, useLayoutEffect, useEffect } from "react"
 import {graphql, useStaticQuery, Link } from "gatsby"
 import { FaBars } from 'react-icons/fa';
 
@@ -17,6 +17,16 @@ function MainMenu() {
       }, []);
 
   const [nav, setNav] = useState("closed");
+
+  useEffect(() => {
+  window.addEventListener('keydown', downHandler);
+  }, []);
+
+function downHandler(event){
+  if(event.keyCode === 27) {
+    setNav("closed");
+  }
+}
 
   const data = useStaticQuery(graphql`
     query {

@@ -6,7 +6,7 @@ import Parser from 'html-react-parser'
 
 
 const Articles = (props) => {
-  
+
   const data = useStaticQuery(graphql`
     query {
         allWordpressPost
