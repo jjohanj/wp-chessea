@@ -27,7 +27,33 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.pointer {
+  cursor: pointer;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+  transform: translateZ(0) scale(1.0, 1.0);
+  transition: transform 0.3s; 
+}
+.pointer:hover {
+  transform: scale(1.03, 1.03);
+}
+/* .pointer::before {
+  content: "+";
+  position: absolute;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  z-index: 99;
+  padding: 0 0.5rem;
+  background: #000;
+  color: #fff;
+  opacity: 0.2;
+  transition: opacity 0.1s;
+  border-radius: 0.15rem;
+}
+.pointer:hover::before {
+  opacity: 0.4;
+} */
 .article-selected > span {
   font-size: 0.7em;
   font-style: italic;
