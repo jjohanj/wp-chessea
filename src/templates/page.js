@@ -1,23 +1,17 @@
 import React from "react"
 import Image from "../components/image"
-import MainMenu from "../components/mainmenu"
 import Parser from 'html-react-parser'
-import SEO from '../components/seo'
-import Footer from "../components/footer"
+import Layout from "../components/layout"
 
 function Page({ pageContext }) {
 
 return (
-  <>
-    <SEO title={pageContext.title}/>
-  <div className="grid-container">
-    <MainMenu />
+
+  <Layout aPage="grid-container">
     <div className="hero header"><Image imgName={pageContext.image}/></div>
     <h2>{Parser(pageContext.title)}</h2>
     <div>{Parser(pageContext.content)} </div>
-    <Footer />
-  </div>
-  </>
-)
+  </Layout>
+  )
 }
 export default Page

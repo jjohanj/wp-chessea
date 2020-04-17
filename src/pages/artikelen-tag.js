@@ -28,43 +28,33 @@
 import React, { useState, useEffect } from "react"
 import Articles from "../components/articles"
 import Articles2 from "../components/articles2"
-import MainMenu from "../components/mainmenu"
-import SEO from '../components/seo';
-import Footer from "../components/footer"
-
+import Layout from "../components/layout"
 
 function ArticlesList ({location}) {
 
+  const [tag, setTag] = useState();
 
-const [tag, setTag] = useState();
-
-useEffect(() => {
- if (location.state != null) {
-setTag(location.state.tag);
-}    else {
-        setTag(null);
-    }
-  },[]
+  useEffect(() => {
+   if (location.state != null) {
+     setTag(location.state.tag);
+   }
+   else {
+      setTag(null);
+      }
+    },[]
   );
 
-console.log(tag);
-if (!tag) {
-  return null
-}
-else {
-return (
-<>
-<SEO title="Artikelen"/>
-<div className="grid-container article-list">
-  <MainMenu />
-
-  <div className="list">
-    <Articles2 type="list" tag={tag}/>
-  </div>
-  <Footer />
-</div>
-  </>
-)
-}
+  if (!tag) {
+    return null
+  }
+  else {
+    return (
+      <Layout aPage="grid-container article-list">
+        <div className="list">
+          <Articles2 type="list" tag={tag}/>
+        </div>
+      </Layout>
+    )
+  }
 }
 export default ArticlesList

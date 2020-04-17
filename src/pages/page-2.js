@@ -1,20 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
-import MainMenu from "../components/mainmenu"
 import Paardensprong from "../components/paardensprong"
-import Footer from "../components/footer"
-import SEO from "../components/seo"
+import Layout from "../components/layout"
 
 const SecondPage = () => {
-  return (
-    <>
-    <SEO title="chessea"/>
-    <div className="grid-container">
-      <MainMenu />
-      <Paardensprong />
-      <Footer />
-    </div>
-    </>
 
-)};
+  return (
+    <Layout aPage="grid-container">
+        <Paardensprong />
+    </Layout>
+  )
+}
+
 export default SecondPage

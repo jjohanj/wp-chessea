@@ -10,50 +10,6 @@ a {
   color: #D83860;
 
 }
-/* Style the rainbow text element. */
-h1 {
-  /* Create a conic gradient. */
-  /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
-  background: #000;
-  background-color: #000;
-  background-image: linear-gradient(45deg,#000 26.666%,#d83860 0,#d83860 33.333%,#000 50%,#000 0,#d83860 83.333%);
-
- /* Set the background size and repeat properties. */
- background-size: 100%;
- background-repeat: repeat;
-
-  /* Use the text as a mask for the background. */
-  /* This will show the gradient as a text color rather than element bg. */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.pointer {
-  cursor: pointer;
-  position: relative;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);
-  transform: translateZ(0) scale(1.0, 1.0);
-  transition: transform 0.3s; 
-}
-.pointer:hover {
-  transform: scale(1.03, 1.03);
-}
-/* .pointer::before {
-  content: "+";
-  position: absolute;
-  bottom: 0.25rem;
-  right: 0.25rem;
-  z-index: 99;
-  padding: 0 0.5rem;
-  background: #000;
-  color: #fff;
-  opacity: 0.2;
-  transition: opacity 0.1s;
-  border-radius: 0.15rem;
-}
-.pointer:hover::before {
-  opacity: 0.4;
-} */
 .article-selected > span {
   font-size: 0.7em;
   font-style: italic;
@@ -83,9 +39,7 @@ ul {
 h1, h2, h3, h4, h5 {
   font-family: "raleway";
 }
-h1 a {
-  font-size: 1.2em;
-}
+
 p {
   font-size: 1.05em;
   line-height: 1.2;
@@ -104,7 +58,7 @@ p {
 }
 .grid-container {
   display: grid;
-  grid-template-rows: 6.5rem repeat(8, min-content) min-content;
+  grid-template-rows: repeat(8, min-content);
   grid-template-columns: repeat(20, 1fr);
 
 }
@@ -186,39 +140,6 @@ p {
 }
 article:not(.article-selected) {
   cursor: pointer;
-}
-
-.title {
-  grid-column: 3/8;
-  grid-row: 1;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-self: center;
-}
-nav {
-  padding: 0 10px;
-  background: #fff;
-  grid-column: 8/ -1;
-  grid-row: 1;
-  height: 100%;
-  align-items: center;
-  display: flex;
-}
-
-nav li a {
-  font-weight: 500;
-  font-size: 1.125em;
-}
-nav li {
-  display: inline;
-  padding: 0.8rem;
-}
-nav.closed li:first-of-type {
-  display: none;
-}
-nav.open li:first-of-type {
-  font-size: 1.6em;
 }
 /*
 .main-article {
@@ -376,7 +297,7 @@ padding-bottom: 2.5rem!important}
     margin-top: 6rem;
   }
   .grid-container {
-    grid-template-rows: 6.5rem repeat(8, min-content) min-content;
+    grid-template-rows: repeat(8, min-content);
   }
   .secondary-articles .date span {
     padding-top: 0;
@@ -794,18 +715,10 @@ textarea {
 .show > .btn-info.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(185, 36, 73, 0.5);
 }
-.btn-nav {
-  background: transparent;
-  font-size: 1.7em;
-  padding-bottom: 0;
-  position: fixed;
-  z-index: 999;
-  right: 2rem;
-  top: 2rem;
-}
+
 .matches-list,
 .article-list {
-    grid-template-rows: 6.5rem repeat(3, min-content);
+    grid-template-rows:  repeat(3, min-content);
 }
 .matches-list h2,
 .article-list h2 {
@@ -852,50 +765,6 @@ div.hero .gatsby-image-wrapper {
   top: 0;
   bottom: 0;
 }
-
-nav button {
-  margin-left: auto;
-}
-@media (min-width: 768px) {
-  nav .btn-nav {
-    display: none!important;
-  }
-}
-@media (max-width: 768px) {
-  nav.closed ul {
-    transform: translateX(-200%);
-  }
-  nav.open ul li {
-    display: block!important;
-    text-align: center;
-  }
-  nav.open ul {
-    display: block;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0, 0.9);
-    z-index: 900;
-    padding-top: 6rem;
-    transform: translateX(0);
-    transition: transform 0.5s
-  }
-    nav.open .btn-nav {
-      color: #fff;
-    }
-  nav.open ul li a{
-    display: block;
-    color: #fff;
-    position: relative;
-    z-index: 901;
-  }
-  /* nav.closed  ul{
-    display: none;
-  } */
-}
-
 
 .gallery {
   display: grid;
@@ -1079,70 +948,7 @@ nav button {
 .list-inline-item:not(:last-child) {
   margin-right: 0.5rem;
 }
-footer {
-padding: 2rem 0;
-  background: #1d1d1d;
-  color: #aaaaaa;
-  display: grid;
-    grid-template-columns: repeat(10, 2fr);
-    grid-template-rows: min-content;
-    grid-row: 10;
-    grid-column: 1 / -1;
-}
 
-footer li {
-  padding-right: 2rem;
-}
-
-footer a {
-  color: #aaaaaa;
-  font-size: 0.9em;
-  font-weight: 400;
-  padding: .5rem 0;
-}
-footer svg {
-  font-size: 1.2em;
- top: 0.2rem;
- position: relative;
- padding-right: 0.3rem;
-}
-footer li:last-child {
-  padding-right:  0;
-}
-footer ul,
-footer h5 {
-  padding-right: 2rem;
-  padding-bottom: 0.5rem;
-}
-footer h5 {
-  display: block;
-  padding-top: 1rem;
-}
-.contact {
-  grid-column: 2 / 10;
-  grid-row: 1;
-}
-footer .list-inline-item {
-  display: block;
-}
-.clubs {
-  grid-column: 2 / 10;
-  grid-row: 2;
-}
-@media (min-width: 600px) {
-  .contact {
-    grid-column: 2 / 5;
-    grid-row: 1;
-  }
-  .clubs {
-    grid-row: 1;
-    grid-column: 5 / 10;
-  }
-  footer .list-inline-item {
-    display: inline-block;
-  }
-
-}
 .igrid {
   display: grid;
   grid-template-rows:  550px 550px 640px;
@@ -1176,5 +982,37 @@ footer .list-inline-item {
 @media (min-width: 540px) {
   .igrid {
     grid-template-columns: 1fr 500px 1fr;
+  }
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
   }
 }

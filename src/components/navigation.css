@@ -1,0 +1,113 @@
+
+header {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+
+h1 {
+  flex: 1;
+  /* Create a conic gradient. */
+  /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
+}
+h1 a {
+  background: #000;
+  background-color: #000;
+  background-image: linear-gradient(55deg,
+    #000,
+    #000 15%,
+    #d83860 15%,
+    #d83860 22%,
+    #000 22%,
+    #000 73%,
+    #d83860 73%,
+    #d83860 85%,
+    #000 85%);
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.3em;
+}
+
+/* .title {
+  grid-column: 3/8;
+  grid-row: 1;
+  z-index: 2;
+  display: flex;
+  align-self: center;
+} */
+
+nav {
+  flex: 2;
+  background: #fff;
+}
+nav li a {
+  font-weight: 500;
+  font-size: 1.125em;
+}
+nav li {
+  display: inline;
+  padding: 0.8rem;
+}
+nav.closed li:first-of-type {
+  display: none;
+}
+nav.open li:first-of-type {
+  font-size: 1.6em;
+}
+
+.btn.btn-nav {
+  background: transparent;
+  font-size: 1.7em;
+  padding-bottom: 0;
+  position: fixed;
+  z-index: 999;
+  right: 2rem;
+  top: 2rem;
+}
+nav button {
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  nav .btn-nav {
+    display: none!important;
+  }
+}
+@media (max-width: 768px) {
+  nav.closed ul {
+    transform: translateX(-400%);
+  }
+  nav.open ul li {
+    display: block!important;
+    text-align: center;
+  }
+  nav.open ul {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0, 0.9);
+    z-index: 900;
+    padding-top: 6rem;
+    transform: translateX(0);
+    transition: transform 0.5s
+  }
+    nav.open .btn-nav {
+      color: #fff;
+    }
+  nav.open ul li a{
+    display: block;
+    color: #fff;
+    position: relative;
+    z-index: 901;
+  }
+  /* nav.closed  ul{
+    display: none;
+  } */
+}

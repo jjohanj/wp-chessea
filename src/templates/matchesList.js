@@ -1,22 +1,15 @@
 import React from "react"
 import Matches from "../components/matches"
-import MainMenu from "../components/mainmenu"
-import SEO from '../components/seo';
-import Footer from "../components/footer"
+import Layout from "../components/layout"
 
 function MatchesList({ }) {
 
 return (
-  <>
-    <SEO title="Partijen"/>
-  <div className="grid-container matches-list">
-    <MainMenu />
+  <Layout aPage="grid-container matches-list">
     <div className="list">
       <Matches />
     </div>
-    <Footer />
-  </div>
-    </>
-)
+  </Layout>
+  )
 }
 export default MatchesList

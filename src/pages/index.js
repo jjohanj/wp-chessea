@@ -1,26 +1,20 @@
 import React from "react"
-import MainMenu from "../components/mainmenu"
 import Articles from "../components/articles"
 import Calender from "../components/calender"
+import Layout from "../components/layout"
 import Paardensprong from "../components/paardensprong"
-import Footer from "../components/footer"
-import "../components/layout.css"
-import SEO from "../components/seo"
 
 const IndexPage = () => {
 
   return (
     <>
-    <SEO title="chessea"/>
-    <div className="grid-container home">
-      <MainMenu />
-      <Articles liststart ="0"  listend="2" type="main"/>
-      <Calender />
-      <Articles liststart ="2"  listend="6" type="secondary"/>
-      <Footer />
-    </div>
+    <Layout aPage="grid-container home">
+        <Articles liststart ="0"  listend="2" type="main"/>
+        <Calender />
+        <Articles liststart ="2"  listend="6" type="secondary"/>
+    </Layout>
     </>
-
-)};
+  )
+}
 
 export default IndexPage

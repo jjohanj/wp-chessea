@@ -2,6 +2,7 @@ import React from "react";
 import { FaLinkedin } from 'react-icons/fa';
 import { FaEnvelopeSquare } from 'react-icons/fa';
 import { FaChess } from 'react-icons/fa';
+import "./footer.css"
 
 function Footer() {
   return (

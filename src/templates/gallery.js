@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from "react"
 import Image from "../components/image"
-import MainMenu from "../components/mainmenu"
 import {graphql, useStaticQuery } from "gatsby"
-import SEO from '../components/seo';
-import Footer from "../components/footer"
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import Layout from "../components/layout"
 
 
 const Gallery = ({}) => {
@@ -66,30 +64,27 @@ console.log(images[1].node.localFile.url);
       }
   });
   return (
-    <>
-        <SEO title="Afbeeldingen"/>
-        <div className="grid-container  article-list">
-      <MainMenu />
+
+    <Layout aPage="grid-container article-list">
       <div className="gallery">
         {post}
       </div>
-{isOpen && (
-   <Lightbox
-     mainSrc={images[photoIndex].node.localFile.url}
-     nextSrc={images[(photoIndex + 1) % images.length]}
-     prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-     onCloseRequest={() => setisOpen(false)}
-     onMovePrevRequest={() =>
-       setphotoIndex((photoIndex + images.length - 1) % images.length)
-     }
-     onMoveNextRequest={() =>
-       setphotoIndex ((photoIndex + 1) % images.length)
-     }
-   />
- )}
-      <Footer />
-      </div>
-    </>
+      {isOpen && (
+         <Lightbox
+           mainSrc={images[photoIndex].node.localFile.url}
+           nextSrc={images[(photoIndex + 1) % images.length]}
+           prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+           onCloseRequest={() => setisOpen(false)}
+           onMovePrevRequest={() =>
+             setphotoIndex((photoIndex + images.length - 1) % images.length)
+           }
+           onMoveNextRequest={() =>
+             setphotoIndex ((photoIndex + 1) % images.length)
+           }
+         />
+       )}
+  </Layout>
+
 )};
 
 export default Gallery

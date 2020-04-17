@@ -3,11 +3,9 @@ import Image from "../components/image"
 import { Link } from "gatsby"
 import Comments from "../components/comments1"
 import Commentslist from "../components/commentslist"
-import MainMenu from "../components/mainmenu"
 import './page.css';
 import Parser from 'html-react-parser'
-import SEO from '../components/seo'
-import Footer from "../components/footer"
+import Layout from "../components/layout"
 
 
 function Post({ pageContext }) {
@@ -24,9 +22,8 @@ let tags = pageContext.tags.map((name, i) => {
 
 return (
   <>
-  <SEO title={pageContext.title}/>
-  <div className="grid-container">
-    <MainMenu />
+
+  <Layout aPage="grid-container">
     <article className="article-selected">
       <h2>{Parser(pageContext.title)}</h2>
       <div>{Parser(pageContext.content)} </div>
@@ -36,8 +33,7 @@ return (
     </div>
     <Comments wpId={pageContext.wp_id} slug={pageContext.slug}/>
     <Commentslist wpId={pageContext.wp_id} />
-    <Footer />
-  </div>
+  </Layout>
   </>
 )
 }
