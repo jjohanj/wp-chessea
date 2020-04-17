@@ -966,6 +966,9 @@ div.hero .gatsby-image-wrapper {
   grid-column: 2
 }
 
+.gallery img {
+  cursor: pointer;
+}
 .iframe-container iframe {
   border: 0;
   height: 100%;
