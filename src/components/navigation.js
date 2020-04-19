@@ -58,7 +58,7 @@ function Navigation() {
 
   return (
     <header className="container">
-      <h1><Link to="/"> Chessea</Link></h1>
+      <h1><Link className="glow" to="/"> Chessea</Link></h1>
       <nav className={nav}>
         <button aria-label="navigation" className="btn btn-nav" onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><FaBars /></button>
         <ul className={size[0] > 768 ? "big list-inline" : "small list-inline"}>

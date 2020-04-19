@@ -215,6 +215,13 @@ padding-bottom: 2.5rem!important}
   grid-column: 2 / 20;
   padding: 0;
 }
+.calender li:nth-child(n+2) {
+  box-shadow: 9px 5px 11px rgba(163, 177, 198, 0.4), 2px -9px 8px rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transform: skew(-1deg, -1deg);
+      background: #f3f3f3;
+}
+
 .secondary-article-0  {
   grid-row: 5;
 }
@@ -537,12 +544,8 @@ ul.calender {
   background: #fff!important;
 }
 .calender li {
-  background:#f9f9f9;
   border-radius: 0.25rem;
 
-}
-.calender li:nth-child(even) {
-  background: #ececec;
 }
 
 
@@ -554,8 +557,11 @@ ul.calender {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
-  margin-right: 8px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+  top:1px;
   transition: transform 0.2s;
   transform: scale(1);
   color: #fff;
