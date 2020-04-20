@@ -30,9 +30,9 @@ h1 a::before {
   right: 0;
   top: 0;
   bottom: 0;
-  text-shadow: -4px -5px 1px #ff8ca9;
+  text-shadow: 3px -3px 1px #ff8ca9;
   z-index: -1;
-  font-size: 1em;
+  font-size: 1.1em;
   text-align: right;
 }
 h1 a {
