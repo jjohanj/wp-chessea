@@ -5,9 +5,9 @@ header {
   height: 100px;
 }
 .glow::before {
-  -webkit-animation: glow 4s ease-in-out infinite alternate;
-  -moz-animation: glow 4s ease-in-out infinite alternate;
-  animation: glow 4s ease-in-out infinite alternate;
+  -webkit-animation: glow 6s ease-in-out infinite alternate;
+  -moz-animation: glow 6s ease-in-out infinite alternate;
+  animation: glow 6s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes glow {
@@ -15,7 +15,7 @@ header {
   opacity: 1;
   }
   to {
-opacity: 0.6; }
+opacity: 0.3; }
 }
 h1 {
   flex: 1;
@@ -24,15 +24,16 @@ h1 {
 }
 
 h1 a::before {
-  content: "C";
+  content: "ea";
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-text-shadow: -4px -5px 2px #ff8ca9;
+  text-shadow: -4px -5px 1px #ff8ca9;
   z-index: -1;
-  font-size: 1.2em;
+  font-size: 1em;
+  text-align: right;
 }
 h1 a {
   background: #000;
@@ -57,15 +58,6 @@ h1 a {
   font-size: 1.3em;
   position: relative;
 }
-
-/* .title {
-  grid-column: 3/8;
-  grid-row: 1;
-  z-index: 2;
-  display: flex;
-  align-self: center;
-} */
-
 nav {
   flex: 2;
   background: #fff;

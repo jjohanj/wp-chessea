@@ -218,7 +218,7 @@ padding-bottom: 2.5rem!important}
 .calender li:nth-child(n+2) {
   box-shadow: 9px 5px 11px rgba(163, 177, 198, 0.4), 2px -9px 8px rgba(255, 255, 255, 0.4);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      transform: skew(-1deg, -1deg);
+      transform: skewX(-6deg);
       background: #f3f3f3;
 }
 
