@@ -1,16 +1,19 @@
 footer {
-  margin-top: 3rem;
-  padding: 0 0 2rem;
-  background: #1d1d1d;
   color: #aaaaaa;
   display: grid;
   grid-template-columns: repeat(10, 2fr);
-  grid-template-rows: min-content;
-  grid-row: 10;
-  grid-column: 1 / -1;
+  grid-template-rows: min-content min-content;
   position: relative;
 }
 
+footer .wave {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  position: relative;
+  bottom: -3px;
+}
+
+/*
 footer::before {
   content: "";
   position: absolute;
@@ -22,7 +25,7 @@ footer::before {
   overflow: hidden;
   transform: skewY(-1deg);
   z-index: -1;
-}
+} */
 
 footer li {
   padding-right: 2rem;
@@ -53,38 +56,47 @@ footer h5 {
   padding-top: 1rem;
 }
 .contact {
-  grid-column: 2 / 10;
-  grid-row: 1;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: grid;
+  align-self: end;
+  position: relative;
+  z-index: 99;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  padding-bottom: 3rem;
+  background: #1d1d1d;
 }
 footer .list-inline-item {
   display: block;
 }
+.social {
+  grid-column: 2;
+  grid-row: 1;
+}
 .clubs {
-  grid-column: 2 / 10;
-  grid-row: 2;
+  grid-column: 3;
+  grid-row: 1;
 }
 @media (min-width: 600px) {
-  .contact {
-    grid-column: 2 / 5;
-    grid-row: 1;
+  footer {
+    margin-top: 3rem;
+  }
+  .social {
+    grid-column: 2;
     justify-self: center;
 
   }
   .clubs {
     justify-self: center;
-    grid-row: 1;
-    grid-column: 5 / 10;
+    grid-column: 3;
   }
   footer .list-inline-item {
     display: inline-block;
   }
-  footer {
-    margin-top: 8rem;
-  }
 }
 
-@media (min-width: 992px) {
-  footer {
-  margin-top: 10rem;
-}
+.wave {
+  grid-row: 1;
+  grid-column: 1 / -1;
+  transform: rotate(180deg);
 }

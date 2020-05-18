@@ -218,7 +218,6 @@ padding-bottom: 2.5rem!important}
 .calender li:nth-child(n+2) {
   box-shadow: 9px 5px 11px rgba(163, 177, 198, 0.4), 2px -9px 8px rgba(255, 255, 255, 0.4);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      transform: skewX(-6deg);
       background: #f3f3f3;
 }
 
@@ -274,7 +273,6 @@ padding-bottom: 2.5rem!important}
   grid-row: 3;
 }
 .matches-list .list {
-  margin-bottom: 6rem;
   grid-gap: 2rem;
 }
 
@@ -544,8 +542,7 @@ ul.calender {
   background: #fff!important;
 }
 .calender li {
-  border-radius: 0.25rem;
-  max-width: 315px;
+  border-radius: 0.5rem
 }
 
 
@@ -780,7 +777,6 @@ div.hero .gatsby-image-wrapper {
   position: relative;
   grid-column: 2 / 20;
   grid-row: 2;
-  margin-bottom: 6rem;
 }
 
 .gallery div {
@@ -960,7 +956,6 @@ div.hero .gatsby-image-wrapper {
   grid-template-rows:  550px 550px 640px;
   grid-column: 2 / 19;
   grid-template-columns: 0.5rem 100% 0.5rem;
-  margin-bottom: 6rem;
   grid-row-gap: 3rem;
 
 

@@ -2,7 +2,7 @@
 header {
   display: flex;
   align-items: center;
-  height: 100px;
+  height: 160px;
 }
 .glow::before {
   -webkit-animation: glow 6s ease-in-out infinite alternate;
@@ -23,7 +23,7 @@ h1 {
   /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
 }
 
-h1 a::before {
+/* h1 a::before {
   content: "ea";
   position: absolute;
   left: 0;
@@ -34,7 +34,7 @@ h1 a::before {
   z-index: -1;
   font-size: 1.1em;
   text-align: right;
-}
+} */
 h1 a {
   background: #000;
   background-color: #000;
@@ -55,7 +55,7 @@ h1 a {
   /* This will show the gradient as a text color rather than element bg. */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 1.3em;
+  font-size: 1.6em;
   position: relative;
 }
 nav {
