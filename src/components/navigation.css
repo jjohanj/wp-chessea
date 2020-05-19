@@ -2,7 +2,7 @@
 header {
   display: flex;
   align-items: center;
-  height: 160px;
+  height: 120px;
 }
 .glow::before {
   -webkit-animation: glow 6s ease-in-out infinite alternate;
@@ -55,7 +55,7 @@ h1 a {
   /* This will show the gradient as a text color rather than element bg. */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 1.6em;
+  font-size: 1.3em;
   position: relative;
 }
 nav {
@@ -84,7 +84,7 @@ nav.open li:first-of-type {
   position: fixed;
   z-index: 999;
   right: 2rem;
-  top: 2rem;
+  top: 2.7rem;
 }
 nav button {
   margin-left: auto;

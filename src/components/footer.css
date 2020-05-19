@@ -26,9 +26,11 @@ footer::before {
   transform: skewY(-1deg);
   z-index: -1;
 } */
-
+footer ul {
+  padding: 0;
+}
 footer li {
-  padding-right: 2rem;
+ display: block;
 }
 
 footer a {
@@ -37,7 +39,7 @@ footer a {
   font-weight: 400;
   padding: .5rem 0;
 }
-footer svg {
+footer ul svg {
   font-size: 1.2em;
  top: 0.2rem;
  position: relative;
@@ -46,14 +48,13 @@ footer svg {
 footer li:last-child {
   padding-right:  0;
 }
-footer ul,
 footer h5 {
-  padding-right: 2rem;
   padding-bottom: 0.5rem;
 }
 footer h5 {
   display: block;
   padding-top: 1rem;
+  font-size: 1.1em;
 }
 .contact {
   grid-column: 1 / -1;
@@ -62,7 +63,7 @@ footer h5 {
   align-self: end;
   position: relative;
   z-index: 99;
-  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-columns: 1fr 3fr 3fr 1fr;
   padding-bottom: 3rem;
   background: #1d1d1d;
 }
