@@ -10,9 +10,13 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Navigation from "./navigation"
 import SEO from "./seo"
-import Footer from "./footer"
 import "./layout.css"
 import "./navigation.css"
+import loadable from '@loadable/component'
+
+const Footer = loadable(() =>
+  import(/* webpackPrefetch: true */ './footer'),
+)
 
 const Layout = ({aPage, children }) => {
   const data = useStaticQuery(graphql`

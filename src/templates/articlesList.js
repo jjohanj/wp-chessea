@@ -1,5 +1,5 @@
 import React from "react"
-import Articles from "../components/articles"
+import ArticlesSecond from "../components/articles-second"
 import Layout from "../components/layout"
 
 const ArticlesList = ({location}) => {
@@ -7,7 +7,7 @@ const ArticlesList = ({location}) => {
 return (
   <Layout aPage="grid-container article-list">
     <div className="list">
-      <Articles type="list" />
+      <ArticlesSecond type="list" />
     </div>
   </Layout>
   )
