@@ -39,7 +39,7 @@ const Image = ({ imgName }) => (
           edges {
             node {
               fluid(maxWidth: 650) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 originalName
               }
             }
