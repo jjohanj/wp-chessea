@@ -3,10 +3,11 @@ import { FaLinkedin } from 'react-icons/fa';
 import { FaEnvelopeSquare } from 'react-icons/fa';
 import { FaChess } from 'react-icons/fa';
 import "./footer.css"
+import { InView } from 'react-intersection-observer'
 
 function Footer() {
   return (
-    <footer>
+      <InView as="footer" onChange={(inView, entry) => console.log('Inview:', inView)}>
     <div className="wave"><svg xmlns="http://www.w3.org/2000/svg"  width="1920" height="58" preserveAspectRatio="xMidYMid" viewBox="0 0 1920 58">
 <g transform=""><linearGradient id="lg-0.5382832662166086" x1="0" x2="1" y1="0" y2="0">
   <stop stopColor="#1d1d1d" offset="0"></stop>
@@ -50,7 +51,7 @@ function Footer() {
         </ul>
         </div>
         </div>
-    </footer>
+    </InView>
   )
 
 

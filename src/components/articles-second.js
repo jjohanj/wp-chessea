@@ -5,7 +5,7 @@ import {graphql, useStaticQuery } from "gatsby"
 import Parser from 'html-react-parser'
 
 
-const Articles = (props) => {
+const ArticlesSecond = (props) => {
 
   const data = useStaticQuery(graphql`
     query {
@@ -47,11 +47,14 @@ const Articles = (props) => {
         <article className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
           <Image imgName={item.node.featured_media.localFile.base}/>
           <div className="content">
-                    <h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3>
-                    <p className="date"><span>{item.node.acf.datum}</span></p>
-                    <div>{Parser(item.node.content.substring(0,130) + ' ...' )} </div>
+            <p className="date">
+              <span>{item.node.acf.datum}</span>
+            </p>
+            <h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3>
+            <div>{Parser(item.node.content.substring(0,70) + ' ...' )} </div>
           </div>
         </article>
+
       )});
 
   return (
@@ -60,4 +63,4 @@ const Articles = (props) => {
     </>
 )};
 
-export default Articles
+export default ArticlesSecond

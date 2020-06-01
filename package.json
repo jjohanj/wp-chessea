@@ -26,6 +26,8 @@
     "react-icons": "^3.7.0",
     "react-iframe": "^1.8.0",
     "react-image-lightbox": "^5.1.1",
+    "react-intersection-observer": "^8.26.2",
+    "react-intersection-observer-lazy-load": "^1.0.2",
     "typeface-catamaran": "0.0.72",
     "typeface-open-sans": "0.0.75",
     "typeface-raleway": "0.0.75",
