@@ -1,52 +1,26 @@
 
-header {
-  display: flex;
-  align-items: center;
-  height: 120px;
-}
-.glow::before {
-  -webkit-animation: glow 6s ease-in-out infinite alternate;
-  -moz-animation: glow 6s ease-in-out infinite alternate;
-  animation: glow 6s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes glow {
-  from {
-  opacity: 1;
-  }
-  to {
-opacity: 0.3; }
-}
 h1 {
-  flex: 1;
-  /* Create a conic gradient. */
-  /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
+  text-align: center;
+  padding: 2rem;
 }
-
-/* h1 a::before {
-  content: "ea";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  text-shadow: 3px -3px 1px #ff8ca9;
-  z-index: -1;
-  font-size: 1.1em;
-  text-align: right;
-} */
+.bg-pink {
+  background: #ff2f92;
+}
+.text-white {
+  color: #fff;
+}
 h1 a {
   background: #000;
   background-color: #000;
   background-image: linear-gradient(55deg,
     #000,
     #000 15%,
-    #d83860 15%,
-    #d83860 22%,
+    #ff2f92 15%,
+    #ff2f92 22%,
     #000 22%,
     #000 73%,
-    #d83860 73%,
-    #d83860 85%,
+    #ff2f92 73%,
+    #ff2f92 85%,
     #000 85%);
   /* Set the background size and repeat properties. */
   background-size: 100%;
@@ -55,39 +29,69 @@ h1 a {
   /* This will show the gradient as a text color rather than element bg. */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 1.3em;
+  font-size: 2em;
+  font-weight: 300;
   position: relative;
 }
 nav {
-  flex: 2;
+  height: 60px;
   background: #fff;
+  display: flex;
+}
+nav .container {
+  display: flex;
+  justify-content: left;
 }
 nav li a {
-  font-weight: 500;
-  font-size: 1.125em;
+  font-weight: 400;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  color: #fff;
+}
+nav li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #fff;
+  opacity: 0;
+}
+nav li a:hover::before {
+  opacity: 1;
+  transition: opacity 0.4s;
 }
 nav li {
-  display: inline;
-  padding: 0.8rem;
+  display: flex;
 }
-nav.closed li:first-of-type {
-  display: none;
-}
+
 nav.open li:first-of-type {
   font-size: 1.6em;
 }
-
+nav ul {
+  display: flex;
+}
 .btn.btn-nav {
   background: transparent;
-  font-size: 1.7em;
-  padding-bottom: 0;
-  position: fixed;
+  position: absolute;
+  font-size: 1.8em;
+  padding: 0;
+  line-height: 0;
   z-index: 999;
-  right: 2rem;
-  top: 2.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 172px;
+  color: #fff;
 }
 nav button {
   margin-left: auto;
+}
+.btn.btn-nav .window-close {
+  display: none;
 }
 @media (min-width: 768px) {
   nav .btn-nav {
@@ -115,8 +119,19 @@ nav button {
     transform: translateX(0);
     transition: transform 0.5s
   }
-    nav.open .btn-nav {
-      color: #fff;
+
+  nav li a:hover::before {
+    display: none;
+  }
+  nav.open .btn.btn-nav  {
+    left: 2rem;
+    top: 2rem;
+  }
+    nav.open .btn-nav .window-open {
+      display: none;
+    }
+    nav.open .btn-nav .window-close {
+      display: block;
     }
   nav.open ul li a{
     display: block;

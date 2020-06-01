@@ -47,7 +47,6 @@ const Articles = (props) => {
       let test = data.allWordpressPost.edges.filter(item =>{
           return item.node.tags.some(obj => obj.name === props.tag)
       })
-      console.log(test)
 }
 
     const post =  data.allWordpressPost.edges.slice(props.liststart, props.listend).map((item, i) => {
@@ -56,8 +55,16 @@ const Articles = (props) => {
           <Image imgName={item.node.featured_media.localFile.base}/>
           <div className="content">
           {props.type !== 'main' ?
-                    <><p className="date"><span>{item.node.acf.datum}</span></p><h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3><div>{Parser(item.node.content.substring(0,70) + ' ...' )} </div></> :
-                    <><h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3><p className="date"><span>{item.node.acf.datum}</span></p><div>{Parser(item.node.content.substring(0,130) + ' ...' )} </div></> }
+                    <>
+                    <p className="date">
+                      <span>{item.node.acf.datum}</span>
+                    </p>
+                    <h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3>
+                    <div>{Parser(item.node.content.substring(0,70) + ' ...' )} </div>
+                    </> :
+                    <><h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3>
+                    <p className="date"><span>{item.node.acf.datum}</span></p>
+                    <div>{Parser(item.node.content.substring(0,130) + ' ...' )} </div></> }
           </div>
         </article>
 

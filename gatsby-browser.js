@@ -8,6 +8,8 @@
 
 import "typeface-raleway";
 import "typeface-catamaran";
+import "typeface-satisfy";
+import "typeface-open-sans";
 
 export const onServiceWorkerUpdateReady = () => {
     window.location.reload()

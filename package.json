@@ -27,7 +27,9 @@
     "react-iframe": "^1.8.0",
     "react-image-lightbox": "^5.1.1",
     "typeface-catamaran": "0.0.72",
-    "typeface-raleway": "0.0.75"
+    "typeface-open-sans": "0.0.75",
+    "typeface-raleway": "0.0.75",
+    "typeface-satisfy": "0.0.72"
   },
   "devDependencies": {
     "prettier": "^1.18.2",
