@@ -8,7 +8,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import LazyLoadComponent from 'react-intersection-observer-lazy-load'
 import Navigation from "./navigation"
 import SEO from "./seo"
 import Footer from "./footer"
@@ -31,9 +30,7 @@ const Layout = ({aPage, children }) => {
       <SEO title={data.site.siteMetadata.title} />
       <Navigation />
         <main  className={aPage}>{children}</main>
-        <LazyLoadComponent>
       <Footer />
-      </LazyLoadComponent>
     </>
   )
 }
