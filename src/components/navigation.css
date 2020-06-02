@@ -1,4 +1,10 @@
+.title {
+  height: 152px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 
+}
 h1 {
   text-align: center;
   padding: 2rem;
@@ -84,7 +90,7 @@ nav ul {
   z-index: 999;
   left: 50%;
   transform: translateX(-50%);
-  top: 172px;
+  top: 168px;
   color: #fff;
 }
 nav button {

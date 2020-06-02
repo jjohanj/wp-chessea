@@ -59,7 +59,8 @@ function Navigation() {
 
   return (
     <header>
-      <h1><Link className="glow" to="/"> Chessea</Link></h1>
+    <div className="title">
+      <h1><Link className="glow" to="/"> Chessea</Link></h1></div>
       <nav className={`bg-pink ${nav}`}>
         <div className="container">
         <button aria-label="navigation" className="btn btn-nav" onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><FaBars className="window-open"/><FaWindowClose className="window-close" /></button>
