@@ -161,22 +161,6 @@ article:not(.article-selected) {
   position: relative;
   border-top-right-radius: 1rem;
 }
-
-.main-articles  .content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #fff;
-  opacity: 0.3;
-  z-index: -1;
-}
-.main-articles  .content:hover::before {
-  opacity: 0.7;
-  transition: opacity 0.5s;
-}
 .secondary-articles .content,
 .main-articles .content {
   background: #fff;
