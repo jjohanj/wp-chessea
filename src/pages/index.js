@@ -1,11 +1,7 @@
 import React from "react"
 import Articles from "../components/articles"
 import Layout from "../components/layout"
-import loadable from '@loadable/component'
-
-const ArticlesSecond = loadable(() =>
-  import(/* webpackPrefetch: true */ '../components/articles-second'),
-)
+import ArticlesSecond from "../components/articles-second"
 
 const IndexPage = () => {
 
