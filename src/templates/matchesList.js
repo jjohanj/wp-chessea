@@ -1,6 +1,7 @@
 import React from "react"
 import Matches from "../components/matches"
 import Layout from "../components/layout"
+import "../components/matches.css"
 
 function MatchesList({ }) {
 

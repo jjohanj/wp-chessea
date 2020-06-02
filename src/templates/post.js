@@ -6,6 +6,7 @@ import Commentslist from "../components/commentslist"
 import './page.css';
 import Parser from 'html-react-parser'
 import Layout from "../components/layout"
+import '../components/article-detail.css'
 
 
 function Post({ pageContext }) {
