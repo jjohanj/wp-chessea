@@ -6,9 +6,7 @@
 
 // You can delete this file if you're not using it
 
-import "typeface-raleway";
 import "typeface-catamaran";
-import "typeface-satisfy";
 
 export const onServiceWorkerUpdateReady = () => {
     window.location.reload()
