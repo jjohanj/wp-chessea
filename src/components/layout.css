@@ -153,6 +153,7 @@ article:not(.article-selected) {
   display: grid;
   grid-template-columns: 9fr 1fr;
   grid-template-rows: 1fr 1fr;
+  margin-bottom: 4rem;
 }
 .main-articles  .content {
   grid-row: 2;
@@ -177,11 +178,14 @@ article:not(.article-selected) {
   transition: opacity 0.5s;
 }
 .secondary-articles .content,
-.main-articles  .content {
+.main-articles .content {
   background: #fff;
   position: relative;
   z-index: 2;
   padding: 1.75rem;
+}
+.main-articles .content {
+  top: 3rem;
 }
 .main-articles  .content a,
 .main-articles  .content p,
