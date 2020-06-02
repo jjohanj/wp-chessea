@@ -1,4 +1,4 @@
-html {
+p, a {
   font-family: 'catamaran';
   font-weight: 300;
 }
@@ -7,13 +7,32 @@ html {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  font-family: "parisienne";
+  font-family: "Parisienne";
   src: url("../../static/fonts/parisienne-v7-latin-regular.woff")   format("woff");
 }
-
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  font-family: "Catamaran";
+  src: url("../../static/fonts/catamaran-v6-latin-regular.woff")   format("woff");
+}
+@font-face {
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  font-family: "Catamaran";
+  src: url("../../static/fonts/catamaran-v6-latin-300.woff")   format("woff");
+}
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  font-family: "Catamaran";
+  src: url("../../static/fonts/catamaran-v6-latin-700.woff")   format("woff");
+}
 body {
   overflow-x: hidden;
-
 }
 a {
   color: #D83860;
@@ -46,9 +65,8 @@ ul {
   list-style: none;
 }
 
-h1 {
+h1 a{
   font-family: "Parisienne";
-  letter-spacing: 0.1em;
 }
 h2, h3, h4, h5 {
   font-family: "catamaran";
