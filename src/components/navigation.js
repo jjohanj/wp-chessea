@@ -5,7 +5,7 @@ import { FaWindowClose } from 'react-icons/fa'
 import "./navigation.css"
 
 
-function Navigation() {
+function Navigation(props) {
 
   const [size, setSize] = useState([0, 0]);
   const [nav, setNav] = useState("closed");
@@ -58,7 +58,7 @@ function Navigation() {
   });
 
   return (
-    <header>
+    <header className={props.font}>
     <div className="title">
       <h1><Link className="glow" to="/"> Chessea</Link></h1></div>
       <nav className={`bg-pink ${nav}`}>

@@ -48,8 +48,13 @@ a {
 ul {
   list-style: none;
 }
-
-h1 a{
+header:not(.parisienne) h1 a {
+  font-family: "arial";
+  font-size: 1.5em;
+    font-weight: 400;
+    line-height: 2;
+}
+.parisienne h1 a {
   font-family: "Parisienne";
 }
 h2, h3, h4, h5 {

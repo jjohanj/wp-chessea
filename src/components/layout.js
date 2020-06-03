@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useEffect, useState } from 'react'
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Navigation from "./navigation"
@@ -26,10 +26,23 @@ const Layout = ({aPage, children }) => {
     }
   `)
 
+  const [font, setFont] = useState("");
+
+  useEffect(() => {
+  // code to run on component mount
+  var FontFaceObserver = require('fontfaceobserver');
+
+  var font = new FontFaceObserver('parisienne');
+
+  font.load().then(function () {
+    setFont("parisienne");
+  });
+}, [])
+
   return (
     <>
       <SEO title={data.site.siteMetadata.title} />
-      <Navigation />
+      <Navigation font={font}/>
         <main  className={aPage}>{children}</main>
       <Footer />
     </>

@@ -4,7 +4,10 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-
+import FontUrl1 from "../../static/fonts/catamaran-v6-latin-300.woff"
+import FontUrl3 from "../../static/fonts/catamaran-v6-latin-700.woff"
+import FontUrl4 from "../../static/fonts/catamaran-v6-latin-regular.woff"
+import FontUrl2 from "../../static/fonts/parisienne-v7-latin-regular.woff"
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
@@ -68,7 +71,28 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+    <link rel="preload"
+      as="font"
+      href={FontUrl1}
+      type="font/woff2"
+      crossOrigin="anonymous" />
+    <link rel="preload"
+      as="font"
+      href={FontUrl2}
+      type="font/woff2"
+      crossOrigin="anonymous" />
+      <link rel="preload"
+        as="font"
+        href={FontUrl3}
+        type="font/woff2"
+        crossOrigin="anonymous" />
+        <link rel="preload"
+          as="font"
+          href={FontUrl4}
+          type="font/woff2"
+          crossOrigin="anonymous" />
+      </Helmet>
   )
 }
 
