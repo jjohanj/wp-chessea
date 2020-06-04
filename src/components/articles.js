@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import Image from "../components/image"
 import {graphql, useStaticQuery } from "gatsby"
 import Parser from 'html-react-parser'
+import taralego from "../../static/images/taralego.jpg"
 
 
 const Articles = (props) => {
@@ -44,14 +45,17 @@ const Articles = (props) => {
 
     const post =  data.allWordpressPost.edges.slice(props.liststart, props.listend).map((item, i) => {
       return (
+        <>
+         <img  src={taralego} alt=""/>
         <article className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
-          <Image imgName={item.node.featured_media.localFile.base}/>
+             <img  src={taralego} alt=""/>
           <div className="content">
                     <h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3>
                     <p className="date"><span>{item.node.acf.datum}</span></p>
                     <div>{Parser(item.node.content.substring(0,130) + ' ...' )} </div>
           </div>
         </article>
+        </>
       )});
 
   return (
