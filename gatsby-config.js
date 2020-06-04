@@ -5,6 +5,7 @@ module.exports = {
     author: `Johan`,
   },
   plugins: [
+    'gatsby-plugin-loadable-components-ssr',
     'gatsby-plugin-preload-link-crossorigin',
     `gatsby-plugin-react-helmet`,
     {
