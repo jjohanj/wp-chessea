@@ -30,7 +30,7 @@ return (
       <div>{Parser(pageContext.content)} </div>
       <span>tags:</span> {tags}
     </article>
-    <div className="image-selected">
+    <div className="image-selected"> <Image imgName={pageContext.image}/>
     </div>
     <Comments wpId={pageContext.wp_id} slug={pageContext.slug}/>
     <Commentslist wpId={pageContext.wp_id} />
