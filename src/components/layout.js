@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Navigation from "./navigation"
 import Footer from "./footer"
 import SEO from "./seo"
-
+import "./layout.css"
 import "./navigation.css"
 
 

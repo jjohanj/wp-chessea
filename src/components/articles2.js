@@ -37,7 +37,7 @@ function Articles2 (props) {
   `);
 
   useEffect(() => {
-     if (props.tag != undefined) {
+     if (props.tag !== undefined) {
     setArticles(data.allWordpressPost.edges.filter(item =>{
         return item.node.tags.some(obj => obj.name === props.tag)
     }));
@@ -45,7 +45,7 @@ function Articles2 (props) {
     else {
         setArticles(data.allWordpressPost.edges);
     }
-    },[]
+  },[props.tag, data.allWordpressPost.edges]
   );
 
 
