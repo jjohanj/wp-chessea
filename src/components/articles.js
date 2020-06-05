@@ -4,8 +4,6 @@ import Image from "../components/image"
 import {graphql, useStaticQuery } from "gatsby"
 import Parser from 'html-react-parser'
 import {Palette} from 'react-palette';
-import test from '../../static/images/test.jpg'
-
 
 const Articles = (props) => {
 
@@ -26,12 +24,14 @@ const Articles = (props) => {
                 datum
               }
               featured_media {
-                localFile {
-                  absolutePath
-                  base
-                  url
-                  relativePath
-                  publicURL
+                localFile {base
+                              publicURL
+                              childImageSharp {
+              fluid {
+                srcWebp
+              }
+            }
+
                 }
               }
               tags {
@@ -51,7 +51,7 @@ const Articles = (props) => {
     const post =  data.allWordpressPost.edges.slice(props.liststart, props.listend).map((item, i) => {
        console.log(item.node.featured_media.localFile.base)
       return (
-        <Palette src={item.node.featured_media.localFile.publicURL}>
+        <Palette src={item.node.featured_media.localFile.childImageSharp.fluid.srcWebp}>
         {({ data, loading, error }) => (
         <article style={{background: data.lightVibrant}}  className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
           <Image imgName={item.node.featured_media.localFile.base}/>
