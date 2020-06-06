@@ -24,9 +24,9 @@ const Articles = (props) => {
                 datum
               }
               featured_media {
-                localFile {base
-                              publicURL
-                              childImageSharp {
+                localFile {
+                  base
+                    childImageSharp {
               fluid {
                 srcWebp
               }
@@ -54,7 +54,7 @@ const Articles = (props) => {
         <Palette src={item.node.featured_media.localFile.childImageSharp.fluid.srcWebp}>
         {({ data, loading, error }) => (
         <article style={{background: data.lightVibrant}}  className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
-          <Image imgName={item.node.featured_media.localFile.base}/>
+
           <div className="content">
                     <h3 ><Link  to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3>
                     <p className="date"><span>{item.node.acf.datum}</span></p>
