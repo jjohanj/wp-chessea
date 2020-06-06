@@ -51,9 +51,7 @@ const Articles = (props) => {
     const post =  data.allWordpressPost.edges.slice(props.liststart, props.listend).map((item, i) => {
        console.log(item.node.featured_media.localFile.base)
       return (
-        <Palette src={item.node.featured_media.localFile.childImageSharp.fluid.srcWebp}>
-        {({ data, loading, error }) => (
-        <article style={{background: data.lightVibrant}}  className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
+        <article className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
 
           <div className="content">
                     <h3 ><Link  to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3>
@@ -61,8 +59,6 @@ const Articles = (props) => {
                     {Parser(item.node.content.substring(0,130) + ' ...' )}
                       </div>
         </article>
-      )}
-      </Palette>
       )});
 
   return (
