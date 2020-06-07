@@ -36,7 +36,7 @@ h1 a {
   /* This will show the gradient as a text color rather than element bg. */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: 300;
   position: relative;
 }

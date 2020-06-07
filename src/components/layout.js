@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Navigation from "./navigation"
 import Footer from "./footer"
 import SEO from "./seo"
-
+import "./layout.css"
 import "./navigation.css"
 
 
@@ -32,10 +32,10 @@ const Layout = ({aPage, children }) => {
   // code to run on component mount
   var FontFaceObserver = require('fontfaceobserver');
 
-  var font = new FontFaceObserver('parisienne');
+  var font = new FontFaceObserver('Marck Script');
 
   font.load().then(function () {
-    setFont("parisienne");
+    setFont("font-loaded");
   });
 }, [])
 
@@ -43,7 +43,7 @@ const Layout = ({aPage, children }) => {
     <>
       <SEO title={data.site.siteMetadata.title} />
       <Navigation font={font}/>
-        <main  className={aPage}>{children}</main>
+        <main   className={aPage + " " + font}>{children}</main>
       <Footer />
     </>
   )

@@ -4,13 +4,15 @@ p, a {
 p {
   font-weight: 300;
 }
-
+.font-loaded h1 a {
+  font-family: "Marck Script";
+}
 @font-face {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  font-family: "Parisienne";
-  src: url("../../static/fonts/parisienne-v7-latin-regular.woff")   format("woff");
+  font-family: "Marck Script";
+  src: url("../../static/fonts/marck-script-v10-latin-regular.woff")   format("woff");
 }
 @font-face {
   font-style: normal;
@@ -48,14 +50,15 @@ a {
 ul {
   list-style: none;
 }
-header:not(.parisienne) h1 a {
+header:not(.font-loaded) h1 a {
   font-family: "arial";
-  font-size: 1.5em;
+  font-size: 1.8em;
     font-weight: 400;
     line-height: 2;
+    font-style: italic;
 }
 .parisienne h1 a {
-  font-family: "Parisienne";
+  font-family: "Marck Script";
 }
 h2, h3, h4, h5 {
   font-family: "catamaran";
