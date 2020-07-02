@@ -1,0 +1,29 @@
+
+.filter-menu {
+  grid-row: 1 / -1;
+  padding-left: 0;
+}
+
+.filter-menu li {
+  display: inline;
+  float: left;
+  margin: 0.15rem;
+}
+.filter-menu li:first-of-type {
+  width: 100%;
+}
+
+.filter-menu .btn-xs {
+  padding: 0.25rem 0.35rem;
+  font-size: 0.7rem;
+}
+.btn-black {
+  background-color: #CC2675;
+  color: #fff;
+  width: 100%;
+  font-size: 0.8em;
+}
+.filter-menu .btn-pink {
+  background-color: #ff2f92;
+  color: #fff;
+}

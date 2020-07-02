@@ -359,6 +359,10 @@ padding-bottom: 2.5rem!important}
   .article-list .list {
     grid-template-columns: repeat(3, 1fr);
   }
+  .article-list .list {
+    grid-template-columns: 160px repeat(2, 1fr);
+    grid-template-rows: repeat(12, min-content);
+  }
 
 
 }
@@ -405,6 +409,9 @@ padding-bottom: 2.5rem!important}
   .article-list .list {
     grid-template-columns: repeat(4, minmax(180px, 1fr));
     grid-column: 3 / 19;
+  }
+  .article-list .list {
+      grid-template-columns: 160px repeat(3, minmax(180px, 1fr));
   }
 }
 

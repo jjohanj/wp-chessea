@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Image from "../components/image"
 import { Link } from "gatsby"
 import Comments from "../components/comments1"
@@ -16,7 +16,7 @@ function Post({ pageContext }) {
 // console.log(matches);
 let tags = pageContext.tags.map((name, i) => {
   return (
-    <Link key={i} to={`/artikelen-tag`}
+    <Link key={i} to={`/artikelen`}
           state={{ tag: name.name }}><span className="tag">{name.name}</span></Link>
   )
 })
