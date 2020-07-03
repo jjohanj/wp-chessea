@@ -361,7 +361,7 @@ padding-bottom: 2.5rem!important}
   }
   .article-list .list {
     grid-template-columns: 160px repeat(2, 1fr);
-    grid-template-rows: repeat(12, min-content);
+    grid-template-rows: repeat(2, minmax(442px, min-content)) repeat(12, min-content);
   }
 
 

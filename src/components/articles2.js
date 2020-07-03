@@ -13,7 +13,7 @@ function Articles2 (props) {
   const [articles, setArticles] = useState([]);
   const data = useStaticQuery(graphql`
     query {
-        allWordpressTag {
+        allWordpressTag(sort: {fields: name}) {
           edges {
             node {
               name
@@ -21,12 +21,13 @@ function Articles2 (props) {
           }
         }
 
-        allWordpressPost
+        allWordpressPost(sort: {fields: date, order: DESC})
         {
           edges
           {
             node
             {
+              date
               title,
               content,
               path,
@@ -121,11 +122,16 @@ function Articles2 (props) {
 
   return (
     <>
-    <select className="filter-select" onChange={(e) => handleChange(e)}><option value="all">Toon alles</option>{options}
+    <div className="filter-select">
+    <select className="filter-select" onChange={(e) => handleChange(e)}>
+    <option disabled selected>Tags</option>
+    <option value="all">Toon alles</option>
+    {options}
     </select>
+</div>
     <ul className="filter-menu">
-      <li><button className="btn btn-black btn-xs"onClick={() => setTag("all")}>Toon alles</button></li>
       {menu}
+      <li><button className="btn btn-pink btn-block btn-xs"onClick={() => setTag("all")}>Toon alles</button></li>
     </ul>
     {post}
     </>
