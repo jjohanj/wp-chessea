@@ -73,7 +73,30 @@ function Articles2 (props) {
     document.getElementsByClassName(type+'-article-'+val)[0].getElementsByTagName('a')[0].click();
     };
 
+
     var menu = null;
+    var options = null;
+
+    if (filterMenu) {
+     options = filterMenu.map((item, i) => {
+      return (
+         <React.Fragment key={item.id}><option value={item.node.name}>{item.node.name}</option>
+        </React.Fragment>
+      )
+    });
+  }
+  let handleChange = (event) => {
+      let value = event.target.value;
+      setTag(value);
+  }
+    if (filterMenu) {
+     menu = filterMenu.map((item, i) => {
+      return (
+         <React.Fragment key={item.id}><li><button className="btn btn-pink btn-xs" onClick={() => setTag(item.node.name)}>{item.node.name}</button></li>
+        </React.Fragment>
+      )
+    });
+  }
 
     if (filterMenu) {
      menu = filterMenu.map((item, i) => {
@@ -98,6 +121,8 @@ function Articles2 (props) {
 
   return (
     <>
+    <select className="filter-select" onChange={(e) => handleChange(e)}><option value="all">Toon alles</option>{options}
+    </select>
     <ul className="filter-menu">
       <li><button className="btn btn-black btn-xs"onClick={() => setTag("all")}>Toon alles</button></li>
       {menu}

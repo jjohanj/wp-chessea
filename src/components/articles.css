@@ -1,7 +1,12 @@
-
+.filter-select {
+  height: 50px;
+  grid-column: 1 / -1;
+  margin-bottom: 2rem;
+  }
 .filter-menu {
   grid-row: 1 / -1;
   padding-left: 0;
+  display: none;
 }
 
 .filter-menu li {
@@ -26,4 +31,12 @@
 .filter-menu .btn-pink {
   background-color: #ff2f92;
   color: #fff;
+}
+@media(min-width: 768px) {
+  .filter-select {
+    display: none;
+  }
+  .filter-menu {
+    display: block;
+  }
 }
