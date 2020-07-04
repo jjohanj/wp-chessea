@@ -62,7 +62,7 @@ return (
         <ul className={size[0] > 768 ? "big list-inline" : "small list-inline"}>
           <li className="list-inline-item"><Link to="/">Chessea</Link></li>
           {menu}
-          <li><Link activeStyle={{ color: "#D83860" }} to="page-2">Competitie</Link></li>
+          <li><Link activeStyle={{ color: "#D83860" }} to="https://www.chessea.nl/page-">Competitie</Link></li>
         </ul>
       </nav>
   </>

@@ -67,7 +67,7 @@ function Navigation(props) {
         <ul className={size[0] > 768 ? "big list-inline" : "small list-inline"}>
           <li><Link activeStyle={{ background: "#cc2675" }} to="/">Home</Link></li>
           {menu}
-          <li><Link activeStyle={{ background: "#cc2675" }} to="page-2">Competitie</Link></li>
+          <li><Link activeStyle={{ background: "#cc2675" }} to="/page-2">Competitie</Link></li>
         </ul>
         </div>
       </nav>

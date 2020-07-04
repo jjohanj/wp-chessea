@@ -535,9 +535,9 @@ div.hero .gatsby-image-wrapper {
   border-radius: 0.5rem;
 }
 
-@media (min-width: 540px) {
+@media (min-width: 768px) {
   .igrid {
-    grid-template-columns: 1fr 500px 1fr;
+    grid-template-columns: 1fr 730px 1fr;
   }
 }
 
