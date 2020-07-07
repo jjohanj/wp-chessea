@@ -46,6 +46,9 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             content
             slug
+            acf {
+              datum
+            }
             author {
               name
             }
@@ -86,14 +89,30 @@ exports.createPages = async ({ graphql, actions }) => {
     // Gatsby uses Redux to manage its internal state.
     // Plugins and sites can use functions like "createPage"
     // to interact with Gatsby.
+    if (edge.node.template === 'articles-list.php' ) {
+      const posts = result.data.allWordpressPost.edges
+      const postsPerPage = 6
+      const numPages = Math.ceil(posts.length / postsPerPage)
+        Array.from({ length: numPages }).forEach((page, i) => {
+        createPage({
+          path: i === 0 ? `/artikelen` : `/artikelen/${i + 1}`,
+          component: slash(articlesListTemplate),
+          context: {
+            posts: posts.slice(i * postsPerPage, (i * postsPerPage) + postsPerPage),
+            numPages,
+            currentPage: i + 1
+          },
+        })
+      })
+    }
+    else {
     createPage({
       // Each page is required to have a `path` as well
       // as a template component. The `context` is
       // optional but is often necessary so the template
       // can query data specific to each page.
       path: `/${edge.node.slug}`,
-      component: slash(edge.node.template === 'articles-list.php' ? articlesListTemplate :
-                      edge.node.template === 'matches-list.php' ? matchesListTemplate :
+      component: slash(edge.node.template === 'matches-list.php' ? matchesListTemplate :
                       edge.node.template === 'gallery.php' ? galleryTemplate
                       : pageTemplate),
       context: {
@@ -104,7 +123,8 @@ exports.createPages = async ({ graphql, actions }) => {
         image: edge.node.featured_media.localFile.base
       },
     })
-  })
+}
+})
 
   const postTemplate = path.resolve(`./src/templates/post.js`)
 // We want to create a detailed page for each post node.
@@ -126,5 +146,6 @@ allWordpressPost.edges.forEach(edge => {
     },
   })
 })
+
 
 }

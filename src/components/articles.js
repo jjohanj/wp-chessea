@@ -9,7 +9,7 @@ const Articles = (props) => {
 
   const data = useStaticQuery(graphql`
     query {
-        allWordpressPost
+        allWordpressPost(limit: 8)
         {
           edges
           {
@@ -42,9 +42,9 @@ const Articles = (props) => {
     document.getElementsByClassName(type+'-article-'+val)[0].getElementsByTagName('a')[0].click();
     };
 
-    const post =  data.allWordpressPost.edges.slice(props.liststart, props.listend).map((item, i) => {
+    const post =  data.allWordpressPost.edges.slice(0, 4).map((item, i) => {
       return (
-        <article className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
+        <article className={`main-articles main-article-${i}`} key={i}  onClick={() => handleClick("main", i)} >
           <Image imgName={item.node.featured_media.localFile.base}/>
           <div className="content">
                     <h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3>
@@ -54,9 +54,25 @@ const Articles = (props) => {
         </article>
       )});
 
+      const post2 =  data.allWordpressPost.edges.slice(4, 8).map((item, i) => {
+        return (
+          <article className={`secondary-articles secondary-article-${i}`} key={i}  onClick={() => handleClick("secondary", i)} >
+            <Image imgName={item.node.featured_media.localFile.base}/>
+            <div className="content">
+              <p className="date">
+                <span>{item.node.acf.datum}</span>
+              </p>
+              <h3><Link to={`/articles/${item.node.slug}`}>{Parser(item.node.title)}</Link></h3>
+              <div>{Parser(item.node.content.substring(0,70) + ' ...' )} </div>
+            </div>
+          </article>
+
+        )});
+        console.log(data);
   return (
     <>
       {post}
+      {post2}
     </>
 )};
 

@@ -4,7 +4,6 @@ import { FaBars } from 'react-icons/fa'
 import { FaWindowClose } from 'react-icons/fa'
 import "./navigation.css"
 
-
 function Navigation(props) {
 
   const [size, setSize] = useState([0, 0]);

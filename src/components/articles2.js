@@ -20,7 +20,6 @@ function Articles2 (props) {
             }
           }
         }
-
         allWordpressPost(sort: {fields: date, order: DESC})
         {
           edges
@@ -52,14 +51,14 @@ function Articles2 (props) {
   useEffect(() => {
     console.log(props.tag);
     setFilterMenu(data.allWordpressTag.edges);
-    setArticles(data.allWordpressPost.edges);
+    setArticles(props.list);
     if (tag && tag != "all" ) {
        setArticles(data.allWordpressPost.edges.filter(item =>{
          return item.node.tags.some(obj => obj.name === tag)
      }));
     }
     else if (tag === "all" ) {
-      setArticles(data.allWordpressPost.edges);
+      setArticles(props.list);
     }
     else if ( props.tag ) {
        setArticles(data.allWordpressPost.edges.filter(item =>{
@@ -107,7 +106,7 @@ function Articles2 (props) {
       )
     });
   }
-    const post =  articles.slice(props.liststart, props.listend).map((item, i) => {
+    const post =  articles.map((item, i) => {
       return (
         <article className={`${props.type}-articles ${props.type}-article-${i}`} key={i}  onClick={() => handleClick(props.type, i)} >
           <Image imgName={item.node.featured_media.localFile.base}/>

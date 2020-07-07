@@ -60,6 +60,17 @@ header:not(.font-loaded) h1 a {
 .parisienne h1 a {
   font-family: "Marck Script";
 }
+
+.pagination {
+display: flex;
+grid-column:  1 / -1;
+align-items: center;
+justify-content: center;
+grid-row: -1;}
+.pagination li {
+  padding: 1rem;
+}
+
 h2, h3, h4, h5 {
   font-family: "catamaran";
 }
