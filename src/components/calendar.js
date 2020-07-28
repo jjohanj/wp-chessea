@@ -1,7 +1,10 @@
 import React from "react"
+import "./calendar.css"
 import {graphql, useStaticQuery } from "gatsby"
+import Image from "../components/image"
+import vw from "../../static/images/vw.jpg"
 
-const Calender = () => {
+const Calendar = () => {
   const data = useStaticQuery(graphql`
     query {
       allWordpressWpCalender {
@@ -21,16 +24,20 @@ const Calender = () => {
     const post =  data.allWordpressWpCalender.edges.reverse().map((item, i) => {
 
       return (
-          <li key={i}><div><span className="calender-date">{item.node.acf.date}</span><span  className="event"> {item.node.title}</span></div></li>
+          <li key={i} className="poster">
+            <div className="content">
+              <div className="c-date">{item.node.acf.date}</div>
+              <div  className="event"> {item.node.title}</div>
+            </div>
+            <img  src={vw} alt=""/>
+          </li>
       )});
   return (
     <>
-
-    <ul className="calender">
-    <li><h2>Kalender</h2></li>
+    <ul className="calendar">
       {post}
     </ul>
     </>
 )};
 
-export default Calender
+export default Calendar

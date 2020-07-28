@@ -8,10 +8,8 @@ const IndexPage = () => {
 
   return (
     <>
-    <Layout aPage="grid-container home">
-      <Articles  type="main"/>
-    </Layout>
-    <Gallery2 />
+            <button className="btn btn-sm btn-info" onClick={() => { window.history.go(-1)}}>Sluiten</button>
+        <Calendar />
     </>
   )
 }

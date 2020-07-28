@@ -10,3 +10,7 @@ require("./src/components/layout.css")
 export const onServiceWorkerUpdateReady = () => {
     window.location.reload()
   }
+export const onRouteUpdate = ({ location, prevLocation }) => {
+  if (location && location.state)
+    location.state.referrer = prevLocation ? prevLocation.pathname : null
+}

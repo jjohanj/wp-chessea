@@ -47,7 +47,6 @@ let images = data.allWordpressWpMedia.edges;
           case 6:
           case 7:
           case 8:
-              counter++;
               return <div key={counter} className={`img-sm-${counter}`}>
                   <div className="hero pointer"><Image imgName={item.node.localFile.base}/></div>
               </div>;
