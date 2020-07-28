@@ -12,6 +12,7 @@
     "gatsby-plugin-advanced-sitemap": "^1.4.5",
     "gatsby-plugin-loadable-components-ssr": "^2.1.0",
     "gatsby-plugin-manifest": "^2.2.37",
+    "gatsby-plugin-modal-routing": "^1.2.0",
     "gatsby-plugin-netlify": "^2.1.5",
     "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-preload-link-crossorigin": "^1.0.2",
