@@ -15,7 +15,11 @@ const Calendar = () => {
             }
             slug
             title
-            content
+            featured_media {
+              localFile {
+                base
+              }
+            }
           }
         }
       }
