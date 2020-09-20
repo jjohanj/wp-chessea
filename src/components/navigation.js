@@ -67,8 +67,6 @@ function Navigation(props) {
           <li><Link activeStyle={{ background: "#cc2675" }} to="/">Home</Link></li>
           {menu}
           <li><Link activeStyle={{ background: "#cc2675" }} to="/page-2">Competitie</Link></li>
-          <li><Link activeStyle={{ background: "#cc2675" }} to="/kalender"   state={{
-          modal: true}}>Kalender</Link></li>
         </ul>
         </div>
       </nav>

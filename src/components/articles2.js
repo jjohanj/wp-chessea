@@ -17,6 +17,7 @@ function Articles2 (props) {
           edges {
             node {
               name
+              id
             }
           }
         }

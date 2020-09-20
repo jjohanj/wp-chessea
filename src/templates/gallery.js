@@ -2,7 +2,9 @@ import React, {useState, useEffect} from "react"
 import Image from "../components/image"
 import {graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
+import Gallery2 from "../components/gallery2"
 import '../components/gallery.css'
+
 
 
 const Gallery = ({}) => {
@@ -62,6 +64,7 @@ let images = data.allWordpressWpMedia.edges;
     <Layout aPage="grid-container article-list">
       <div className="gallery">
         {post}
+        <Gallery2 />
       </div>
   </Layout>
 

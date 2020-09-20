@@ -16,10 +16,9 @@ function Footer() {
         </ul>
       </div>
       <div className="clubs">
-        <h5>Clubs:</h5>
+        <h5>Club:</h5>
         <ul>
           <li><a  href="https://www.scdepaardensprong.nl" target="_blank" rel="noopener noreferrer"><FaChess />SC de Paardensprong</a></li>
-          <li><a  href="https://www.groningercombinatie.nl/" target="_blank" rel="noopener noreferrer"><FaChess />Groninger Combinatie</a></li>
         </ul>
         </div>
         </div>

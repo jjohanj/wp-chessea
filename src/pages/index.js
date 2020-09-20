@@ -11,7 +11,6 @@ const IndexPage = () => {
     <Layout aPage="grid-container home">
       <Articles  type="main"/>
     </Layout>
-    <Gallery2 />
     </>
   )
 }
