@@ -1,13 +1,14 @@
 import React, { useState, useLayoutEffect, useEffect } from "react"
 import {graphql, useStaticQuery, Link } from "gatsby"
 import { FaBars } from 'react-icons/fa'
-import { FaWindowClose } from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa'
 import "./navigation.css"
 
 function Navigation(props) {
 
   const [size, setSize] = useState([0, 0]);
   const [nav, setNav] = useState("closed");
+  const [scroll, setScroll] = useState("");
 
   useLayoutEffect(() => {
     function updateSize() {
@@ -20,6 +21,7 @@ function Navigation(props) {
 
 
   useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
     window.addEventListener('keydown', downHandler);
   }, []);
 
@@ -28,7 +30,14 @@ function Navigation(props) {
       setNav("closed");
     }
   }
-
+  function handleScroll(event) {
+    let scrollTop = event.srcElement.body.scrollTop;
+    console.log(scrollTop);
+    if (scrollTop > "152") {
+      setScroll("scrolled");
+    }
+  }
+console.log(scroll);
   const data = useStaticQuery(graphql`
     query {
         allWordpressWpApiMenusMenusItems(filter: {
@@ -58,11 +67,11 @@ function Navigation(props) {
 
   return (
     <header className={props.font}>
-    <div className="title">
+    <div className={`title ${nav}`}>
       <h1><Link className="glow" to="/"> Chessea</Link></h1></div>
       <nav className={`bg-pink ${nav}`}>
         <div className="container">
-        <button aria-label="navigation" className="btn btn-nav" onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><FaBars className="window-open"/><FaWindowClose className="window-close" /></button>
+        <button aria-label="navigation" className="btn btn-nav" onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><FaBars className="window-open"/><FaTimes className="window-close" /></button>
         <ul className={size[0] > 768 ? "big list-inline" : "small list-inline"}>
           <li><Link activeStyle={{ background: "#cc2675" }} to="/">Home</Link></li>
           {menu}

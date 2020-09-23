@@ -76,9 +76,6 @@ nav li {
   display: flex;
 }
 
-nav.open li:first-of-type {
-  font-size: 1.6em;
-}
 nav ul {
   display: flex;
 }
@@ -99,6 +96,8 @@ nav button {
 }
 .btn.btn-nav .window-close {
   display: none;
+  opacity: 0;
+    transition: opacity 2s;
 }
 @media (min-width: 768px) {
   nav .btn-nav {
@@ -116,7 +115,7 @@ nav button {
   nav.open ul {
     display: block;
     position: fixed;
-    top: 0;
+    top: 152px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -126,27 +125,55 @@ nav button {
     transform: translateX(0);
     transition: transform 0.5s
   }
+  .title {
+    background: #fff;
+
+  }
+  .title.open {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-bottom:152px;
+  }
 
   nav li a:hover::before {
     display: none;
   }
-  nav.open .btn.btn-nav  {
-    left: 2rem;
-    top: 2rem;
+  nav.open {
+    position: absolute;
+    top: 152px;
+    left: 0;
+    right: 0;
+    z-index: -1;
   }
-    nav.open .btn-nav .window-open {
-      display: none;
-    }
-    nav.open .btn-nav .window-close {
-      display: block;
-    }
+  nav.open .btn.btn-nav  {
+    left: 50%;
+    top: 165px;
+    position: fixed;
+  }
+  nav.open .btn-nav .window-open {
+    display: none;
+  }
+  nav.open .btn-nav .window-close {
+    display: block;
+    opacity: 1;
+
+  }
   nav.open ul li a{
     display: block;
     color: #fff;
     position: relative;
     z-index: 901;
   }
-  /* nav.closed  ul{
-    display: none;
-  } */
+  header {
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    background: #ff2f92;
+    z-index: 900;
+  }
+  main {
+    padding-top: 212px;
+  }
 }

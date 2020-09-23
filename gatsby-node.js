@@ -36,7 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
 
-      allWordpressPost(sort: {fields: date, order: DESC}) {
+      allWordpressPost( sort: {fields: date, order: DESC} ){
         edges {
           node {
             id
@@ -46,6 +46,9 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             content
             slug
+            categories {
+              name
+            }
             acf {
               datum
             }
