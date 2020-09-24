@@ -11,7 +11,7 @@ const Gallery = ({}) => {
 
   const data = useStaticQuery(graphql`
     query {
-      allWordpressWpMedia {
+      allWordpressWpMedia(filter: {title: {eq: "gallery"}}) {
         edges {
           node {
             title
@@ -61,10 +61,9 @@ let images = data.allWordpressWpMedia.edges;
   });
   return (
 
-    <Layout aPage="grid-container article-list">
+    <Layout aPage="grid-container">
       <div className="gallery">
         {post}
-        <Gallery2 />
       </div>
   </Layout>
 

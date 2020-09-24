@@ -14,7 +14,6 @@ const Gallery2 = () => {
       allWordpressWpMedia {
         edges {
           node {
-
             localFile {
               base
               url
