@@ -68,11 +68,12 @@ const Articles = (props) => {
           </article>
 
         )});
-        console.log(data);
+
   return (
     <>
       {post}
       {post2}
+      <Link className="btn btn-pink" to="/artikelen">Alle artikelen</Link>
     </>
 )};
 
