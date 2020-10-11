@@ -5,6 +5,12 @@ module.exports = {
     author: `Johan`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-zopfli',
+      options: {
+        path: 'zopfli'
+      },
+    },
     `gatsby-plugin-modal-routing`,
     {
       resolve: `gatsby-plugin-modal-routing`,
