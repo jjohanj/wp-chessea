@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-zopfli',
       options: {
-        path: 'zopfli'
+        extensions: ['css', 'html', 'js', 'svg']
       },
     },
     `gatsby-plugin-modal-routing`,
