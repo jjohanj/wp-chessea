@@ -9,10 +9,12 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Navigation from "./navigation"
+import { FaMoon } from 'react-icons/fa';
 import Footer from "./footer"
 import SEO from "./seo"
 import "./layout.css"
 import "./navigation.css"
+import "./darkmode.css"
 
 
 const Layout = ({aPage, children }) => {
@@ -27,6 +29,7 @@ const Layout = ({aPage, children }) => {
   `)
 
   const [font, setFont] = useState("");
+  const [darkmode, setDarkmode] = useState("");
 
   useEffect(() => {
   // code to run on component mount
@@ -39,13 +42,18 @@ const Layout = ({aPage, children }) => {
   });
 }, [])
 
+  let toggleDarkmode = () => {
+    darkmode === "darkmode" ? setDarkmode("") : setDarkmode("darkmode");
+  }
+
   return (
-    <>
+    <div className={darkmode}>
+      <button className="toggle bg-pink" onClick={toggleDarkmode}><FaMoon /></button>
       <SEO title={data.site.siteMetadata.title} />
-      <Navigation font={font}/>
-        <main   className={aPage + " " + font}>{children}</main>
+      <Navigation class="darkmode" font={font}/>
+        <main  className={aPage + " " + font}>{children}</main>
       <Footer />
-    </>
+    </div>
   )
 }
 

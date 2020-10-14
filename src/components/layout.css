@@ -606,3 +606,14 @@ div.hero .gatsby-image-wrapper {
     grid-row: 4;
   }
 }
+
+.toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  border: none;
+  color: #fff;
+}

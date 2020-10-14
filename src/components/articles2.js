@@ -50,7 +50,7 @@ function Articles2 (props) {
   `);
 
   useEffect(() => {
-    console.log(props.tag);
+
     setFilterMenu(data.allWordpressTag.edges);
     setArticles(props.list);
     if (tag && tag != "all" ) {
@@ -81,7 +81,7 @@ function Articles2 (props) {
     if (filterMenu) {
      options = filterMenu.map((item, i) => {
       return (
-         <React.Fragment key={item.id}><option value={item.node.name}>{item.node.name}</option>
+         <React.Fragment key={i}><option value={item.node.name}>{item.node.name}</option>
         </React.Fragment>
       )
     });
@@ -102,7 +102,7 @@ function Articles2 (props) {
     if (filterMenu) {
      menu = filterMenu.map((item, i) => {
       return (
-         <React.Fragment key={item.id}><li><button className="btn btn-pink btn-xs" onClick={() => setTag(item.node.name)}>{item.node.name}</button></li>
+         <React.Fragment key={i}><li><button className="btn btn-pink btn-xs" onClick={() => setTag(item.node.name)}>{item.node.name}</button></li>
         </React.Fragment>
       )
     });

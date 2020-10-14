@@ -23,7 +23,7 @@ return (
     <div className="list">
     <Articles2 list={pageContext.posts} pagination={pageContext.numPages} tag={tag} />
     </div>
-    <ul class="pagination list-unstyled list-inline">
+    <ul className="pagination list-unstyled list-inline">
     {Array.from({length: pageContext.numPages}).map((page, i)=> (
         <li key={i}><Link activeStyle={{ background: "#cc2675" }} to={i === 0 ? `/artikelen` : `/artikelen/${i + 1}`}>{i + 1}</Link></li>
       ))}
