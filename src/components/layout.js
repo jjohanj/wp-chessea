@@ -9,7 +9,6 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Navigation from "./navigation"
-import { FaMoon } from 'react-icons/fa';
 import Footer from "./footer"
 import SEO from "./seo"
 import "./layout.css"
@@ -50,11 +49,10 @@ const Layout = ({aPage, children }) => {
 
   return (
     <div className={darkmode}>
-      <button className="toggle bg-pink" onClick={toggleDarkmode}><FaMoon /></button>
       <SEO title={data.site.siteMetadata.title} />
       <Navigation class="darkmode" font={font}/>
         <main  className={aPage + " " + font}>{children}</main>
-      <Footer />
+      <Footer dark={toggleDarkmode} />
     </div>
   )
 }
