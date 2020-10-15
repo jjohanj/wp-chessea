@@ -29,7 +29,7 @@ const Layout = ({aPage, children }) => {
   `)
 
   const [font, setFont] = useState("");
-  const [darkmode, setDarkmode] = useState("");
+  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem("darkmode")) || []);
 
   useEffect(() => {
   // code to run on component mount
@@ -40,7 +40,9 @@ const Layout = ({aPage, children }) => {
   font.load().then(function () {
     setFont("font-loaded");
   });
-}, [])
+  typeof window !== 'undefined' &&  localStorage.setItem('darkmode', JSON.stringify(darkmode))
+
+}, [darkmode])
 
   let toggleDarkmode = () => {
     darkmode === "darkmode" ? setDarkmode("") : setDarkmode("darkmode");
