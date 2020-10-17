@@ -39,20 +39,16 @@ const Layout = ({aPage, children }) => {
   font.load().then(function () {
     setFont("font-loaded");
   });
-
-  console.log(darkmode.length)
-  if (darkmode.length === 0  && window.matchMedia('(prefers-color-scheme: dark)').matches ) {
+  if darkmode.length === 0 && window.matchMedia('(prefers-color-scheme: dark)').matches ) {
     setDarkmode("darkmode");
   }
 
-  else {
-    typeof window !== 'undefined' &&  localStorage.setItem('darkmode', JSON.stringify(darkmode))
-  }
+  typeof window !== 'undefined' &&  localStorage.setItem('darkmode', JSON.stringify(darkmode))
 
 }, [darkmode])
 
   let toggleDarkmode = () => {
-    darkmode === "darkmode" ? setDarkmode("light") : setDarkmode("darkmode");
+    darkmode !== "darkmode" ? setDarkmode("darkmode") : setDarkmode("light");
   }
 
   return (
