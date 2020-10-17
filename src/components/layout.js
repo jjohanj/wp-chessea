@@ -28,7 +28,7 @@ const Layout = ({aPage, children }) => {
   `)
 
   const [font, setFont] = useState("");
-  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem("darkmode")) || []);
+  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem("darkmode")) || ["light"]);
 
   useEffect(() => {
   // code to run on component mount
@@ -39,7 +39,7 @@ const Layout = ({aPage, children }) => {
   font.load().then(function () {
     setFont("font-loaded");
   });
-  if (localStorage.getItem("darkmode") === null && window.matchMedia('(prefers-color-scheme: dark)').matches ) {
+  if (localStorage.getItem("darkmode") === [] && window.matchMedia('(prefers-color-scheme: dark)').matches ) {
     setDarkmode("darkmode");
   }
   else {
@@ -49,7 +49,7 @@ const Layout = ({aPage, children }) => {
 }, [darkmode])
 
   let toggleDarkmode = () => {
-    darkmode === "darkmode" ? setDarkmode("") : setDarkmode("darkmode");
+    darkmode === "darkmode" ? setDarkmode("light") : setDarkmode("darkmode");
   }
 
   return (
