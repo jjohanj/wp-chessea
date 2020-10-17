@@ -29,7 +29,7 @@ const Layout = ({aPage, children }) => {
 
   const [font, setFont] = useState("");
   const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem("darkmode")));
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && darkmode === null) {
+  if (typeof window !== 'undefined' && window.matchMedia && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches && darkmode === null) {
     setDarkmode("darkmode");
   }
   console.log(darkmode);
