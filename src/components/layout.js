@@ -39,7 +39,7 @@ const Layout = ({aPage, children }) => {
   font.load().then(function () {
     setFont("font-loaded");
   });
-  if (localStorage.getItem("darkmode").length === 0  && window.matchMedia('(prefers-color-scheme: dark)').matches ) {
+  if darkmode.length === 0  && window.matchMedia('(prefers-color-scheme: dark)').matches ) {
     setDarkmode("darkmode");
   }
 
