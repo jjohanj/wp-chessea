@@ -28,7 +28,12 @@ const Layout = ({aPage, children }) => {
   `)
 
   const [font, setFont] = useState("");
-  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem("darkmode")));
+  const [darkmode, setDarkmode] = useState("");
+
+  if (JSON.parse(typeof window !== 'undefined' && localStorage.getItem("darkmode"))) {
+    setDarkmode(JSON.parse(typeof window !== 'undefined' && localStorage.getItem("darkmode")));
+  }
+
   if (typeof window !== 'undefined' && window.matchMedia && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches && darkmode === null) {
     setDarkmode("darkmode");
   }
@@ -47,7 +52,7 @@ const Layout = ({aPage, children }) => {
 }, [darkmode])
 
   let toggleDarkmode = () => {
-    darkmode === "darkmode" ? setDarkmode("") : setDarkmode("darkmode");
+    darkmode !== "darkmode" ? setDarkmode("darkmode") : setDarkmode("");
   }
 
   return (
