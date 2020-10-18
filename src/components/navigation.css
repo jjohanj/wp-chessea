@@ -58,6 +58,7 @@ nav li a {
   position: relative;
   color: #fff;
 }
+.toggle::before,
 nav li a::before {
   content: "";
   position: absolute;
@@ -68,6 +69,7 @@ nav li a::before {
   background-color: #fff;
   opacity: 0;
 }
+  .toggle:hover::before,
 nav li a:hover::before {
   opacity: 1;
   transition: opacity 0.4s;
@@ -90,9 +92,6 @@ nav ul {
   transform: translateX(-50%);
   top: 168px;
   color: #fff;
-}
-nav button {
-  margin-left: auto;
 }
 .btn.btn-nav .window-close {
   display: none;
@@ -135,7 +134,7 @@ nav button {
     right: 0;
     margin-bottom:152px;
   }
-
+  .toggle:hover::before,
   nav li a:hover::before {
     display: none;
   }

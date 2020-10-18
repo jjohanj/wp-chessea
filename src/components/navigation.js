@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect, useEffect } from "react"
 import {graphql, useStaticQuery, Link } from "gatsby"
 import { FaBars } from 'react-icons/fa'
 import { FaTimes } from 'react-icons/fa'
+import { FaMoon } from 'react-icons/fa'
 import "./navigation.css"
 
 function Navigation(props) {
@@ -71,6 +72,7 @@ console.log(scroll);
       <h1><Link className="glow" to="/"> Chessea</Link></h1></div>
       <nav className={`bg-pink ${nav}`}>
         <div className="container">
+        <button className="toggle btn-pink" onClick={props.dark}><span className="sr-only">Lichte / donkere modus</span><FaMoon /></button>
         <button aria-label="navigation" className="btn btn-nav" onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><FaBars className="window-open"/><FaTimes className="window-close" /></button>
         <ul className={size[0] > 768 ? "big list-inline" : "small list-inline"}>
           <li><Link activeStyle={{ background: "#cc2675" }} to="/">Home</Link></li>

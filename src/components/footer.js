@@ -2,7 +2,7 @@ import React from "react";
 import { FaLinkedin } from 'react-icons/fa';
 import { FaEnvelopeSquare } from 'react-icons/fa';
 import { FaChess } from 'react-icons/fa';
-import { FaMoon } from 'react-icons/fa';
+
 import "./footer.css"
 
 function Footer(props) {
@@ -22,7 +22,6 @@ function Footer(props) {
           <li><a  href="https://www.scdepaardensprong.nl" target="_blank" rel="noopener noreferrer"><FaChess />SC de Paardensprong</a></li>
         </ul>
         </div>
-        <button className="toggle bg-pink" onClick={props.dark}><FaMoon /></button>
       </div>
     </footer>
   )

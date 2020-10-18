@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react'
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
@@ -22,20 +20,13 @@ const Layout = ({aPage, children }) => {
     }
   `)
 
-  let getIntial = () => {
-    return (
-      JSON.parse(typeof window !== 'undefined' && localStorage.getItem('colorscheme'))
-    )
-  }
-
   const [font, setFont] = useState("");
-  const [darkmode, setDarkmode] = useState(getIntial);
+  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && sessionStorage.getItem('colorscheme')));
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.matchMedia && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches && darkmode === null) {
       setDarkmode("darkmode");
     }
-
 
     var FontFaceObserver = require('fontfaceobserver');
 
@@ -45,7 +36,7 @@ const Layout = ({aPage, children }) => {
       setFont("font-loaded");
     });
 
-    typeof window !== 'undefined' && localStorage.setItem('colorscheme', JSON.stringify(darkmode))
+    typeof window !== 'undefined' && sessionStorage.setItem('colorscheme', JSON.stringify(darkmode))
 
     }, [darkmode]
 )
@@ -57,9 +48,9 @@ const Layout = ({aPage, children }) => {
   return (
     <div className={darkmode}>
       <SEO title={data.site.siteMetadata.title} />
-      <Navigation class="darkmode" font={font}/>
+      <Navigation dark={toggleDarkmode} class="darkmode" font={font}/>
         <main  className={aPage + " " + font}>{children}</main>
-      <Footer dark={toggleDarkmode} />
+        <Footer  />
     </div>
   )
 }
