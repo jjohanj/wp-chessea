@@ -32,7 +32,6 @@ const Layout = ({aPage, children }) => {
 
 
   useEffect(() => {
-
     if (typeof window !== 'undefined' && window.matchMedia && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches && darkmode === null) {
       setDarkmode("darkmode");
     }
@@ -45,13 +44,13 @@ const Layout = ({aPage, children }) => {
       setFont("font-loaded");
     });
 
-    typeof window !== 'undefined' && sessionStorage.setItem('colorscheme', JSON.stringify(darkmode))
 
     }, [darkmode]
 )
 
   let toggleDarkmode = () => {
     darkmode === "darkmode" ? setDarkmode("") : setDarkmode("darkmode");
+    typeof window !== 'undefined' && sessionStorage.setItem('colorscheme', JSON.stringify(darkmode))
   }
 
   return (
