@@ -29,9 +29,12 @@ const Layout = ({aPage, children }) => {
 
   const [font, setFont] = useState("");
   const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem('colorscheme')) || null);
+  const [hasMounted, setHasMounted] = React.useState(false);
 
 
   useEffect(() => {
+
+    setHasMounted(true);
 
     if (typeof window !== 'undefined' && window.matchMedia && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches && darkmode === null) {
       setDarkmode("darkmode");
@@ -47,7 +50,10 @@ const Layout = ({aPage, children }) => {
 
     typeof window !== 'undefined' &&  localStorage.setItem('colorscheme', JSON.stringify(darkmode))
     }, [darkmode, setDarkmode]
-  )
+)
+  if (!hasMounted) {
+    return null;
+  }
 
   let toggleDarkmode = () => {
     darkmode === "darkmode" ? setDarkmode("") : setDarkmode("darkmode");
