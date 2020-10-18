@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useLayoutEffect } from 'react'
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Navigation from "./navigation"
@@ -21,12 +21,14 @@ const Layout = ({aPage, children }) => {
   `)
 
   const [font, setFont] = useState("");
-  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && sessionStorage.getItem('colorscheme')));
+  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem('colorscheme')));
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.matchMedia && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches && darkmode === null) {
       setDarkmode("darkmode");
     }
+    typeof window !== 'undefined' && localStorage.setItem('colorscheme', JSON.stringify(darkmode))
+    setDarkmode(JSON.parse(typeof window !== 'undefined' && localStorage.getItem('colorscheme')));
 
     var FontFaceObserver = require('fontfaceobserver');
 
@@ -35,8 +37,6 @@ const Layout = ({aPage, children }) => {
     font.load().then(function () {
       setFont("font-loaded");
     });
-
-    typeof window !== 'undefined' && sessionStorage.setItem('colorscheme', JSON.stringify(darkmode))
 
     }, [darkmode]
 )
