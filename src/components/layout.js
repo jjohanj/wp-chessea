@@ -28,7 +28,7 @@ const Layout = ({aPage, children }) => {
   `)
 
   const [font, setFont] = useState("");
-  const [darkmode, setDarkmode] = null;
+  const [darkmode, setDarkmode] = useState(null);
 
 
   useEffect(() => {
