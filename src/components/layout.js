@@ -28,28 +28,26 @@ const Layout = ({aPage, children }) => {
   `)
 
   const [font, setFont] = useState("");
-  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem("darkmode")));
+  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem('colorscheme')) || null);
+
 
   useEffect(() => {
 
     if (typeof window !== 'undefined' && window.matchMedia && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches && darkmode === null) {
       setDarkmode("darkmode");
     }
-    
-    typeof window !== 'undefined' &&  localStorage.setItem('darkmode', JSON.stringify(darkmode))
 
-    if (JSON.parse(typeof window !== 'undefined' && localStorage.getItem("darkmode")) !== null) {
-      setDarkmode(JSON.parse(typeof window !== 'undefined' && localStorage.getItem("darkmode")));
-    }
-  // code to run on component mount
-  var FontFaceObserver = require('fontfaceobserver');
+    var FontFaceObserver = require('fontfaceobserver');
 
-  var font = new FontFaceObserver('Marck Script');
+    var font = new FontFaceObserver('Marck Script');
 
-  font.load().then(function () {
-    setFont("font-loaded");
-  });
-}, [darkmode, setDarkmode])
+    font.load().then(function () {
+      setFont("font-loaded");
+    });
+
+    typeof window !== 'undefined' &&  localStorage.setItem('colorscheme', JSON.stringify(darkmode))
+    }, [darkmode, setDarkmode]
+  )
 
   let toggleDarkmode = () => {
     darkmode === "darkmode" ? setDarkmode("") : setDarkmode("darkmode");
