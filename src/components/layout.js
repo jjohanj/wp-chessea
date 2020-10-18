@@ -26,9 +26,10 @@ const Layout = ({aPage, children }) => {
       }
     }
   `)
+  let mode = JSON.parse(typeof window !== 'undefined' && localStorage.getItem("darkmode"));
 
   const [font, setFont] = useState("");
-  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem("darkmode")));
+  const [darkmode, setDarkmode] = useState(mode);
 
   console.log(darkmode);
 
