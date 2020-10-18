@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useLayoutEffect } from 'react'
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Navigation from "./navigation"
@@ -30,6 +30,15 @@ const Layout = ({aPage, children }) => {
   const [font, setFont] = useState("");
   const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem('colorscheme')));
 
+  useLayoutEffect(() => {
+    let storedTheme = typeof window !== 'undefined' && localStorage.getItem("colorscheme");
+
+    if (storedTheme === "" || storedTheme === "darkmode") {
+
+    // Redux action. Other components subscribe to the theme.
+      setDarkmode(storedTheme);
+    }
+  }, [setDarkmode]);
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.matchMedia && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches && darkmode === null) {
