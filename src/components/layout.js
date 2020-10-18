@@ -49,7 +49,7 @@ const Layout = ({aPage, children }) => {
 )
 
   let toggleDarkmode = () => {
-    darkmode === "darkmode" ? setDarkmode("") : setDarkmode("darkmode");
+    darkmode !== "darkmode" ? setDarkmode("darkmode") : setDarkmode("");
     typeof window !== 'undefined' && sessionStorage.setItem('colorscheme', JSON.stringify(darkmode))
   }
 
