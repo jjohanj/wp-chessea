@@ -28,17 +28,7 @@ const Layout = ({aPage, children }) => {
   `)
 
   const [font, setFont] = useState("");
-  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem('colorscheme')));
-
-  useLayoutEffect(() => {
-    let storedTheme = typeof window !== 'undefined' && localStorage.getItem("colorscheme");
-
-    if (storedTheme === "" || storedTheme === "darkmode") {
-
-    // Redux action. Other components subscribe to the theme.
-      setDarkmode(storedTheme);
-    }
-  }, [setDarkmode]);
+  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && sessionStorage.getItem('colorscheme')));
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.matchMedia && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches && darkmode === null) {
@@ -53,7 +43,7 @@ const Layout = ({aPage, children }) => {
       setFont("font-loaded");
     });
 
-    typeof window !== 'undefined' && localStorage.setItem('colorscheme', JSON.stringify(darkmode))
+    typeof window !== 'undefined' && sessionStorage.setItem('colorscheme', JSON.stringify(darkmode))
 
     }, [darkmode]
 )
