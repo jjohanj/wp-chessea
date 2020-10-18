@@ -28,7 +28,7 @@ const Layout = ({aPage, children }) => {
   `)
 
   const [font, setFont] = useState("");
-  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && sessionStorage.getItem('colorscheme')) || null);
+  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem('colorscheme')));
 
 
   useEffect(() => {
@@ -44,13 +44,13 @@ const Layout = ({aPage, children }) => {
       setFont("font-loaded");
     });
 
+    typeof window !== 'undefined' && localStorage.setItem('colorscheme', JSON.stringify(darkmode))
 
     }, [darkmode]
 )
 
   let toggleDarkmode = () => {
     darkmode !== "darkmode" ? setDarkmode("darkmode") : setDarkmode("");
-    typeof window !== 'undefined' && sessionStorage.setItem('colorscheme', JSON.stringify(darkmode))
   }
 
   return (
