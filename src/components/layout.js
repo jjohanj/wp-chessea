@@ -28,7 +28,7 @@ const Layout = ({aPage, children }) => {
   `)
 
   const [font, setFont] = useState("");
-  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && localStorage.getItem('colorscheme')) || null);
+  const [darkmode, setDarkmode] = null;
 
 
   useEffect(() => {
@@ -46,6 +46,7 @@ const Layout = ({aPage, children }) => {
     });
 
     typeof window !== 'undefined' &&  localStorage.setItem('colorscheme', JSON.stringify(darkmode))
+    setDarkmode(typeof window !== 'undefined' && localStorage.getItem('colorscheme'));
     }, [darkmode, setDarkmode]
 )
 
