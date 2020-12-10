@@ -1,12 +1,15 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+// custom typefaces
+import "typeface-montserrat"
+import "typeface-merriweather"
 
-// You can delete this file if you're not using it
+import "fontsource-marck-script"
+import "fontsource-catamaran"
+// normalize CSS across browsers
+import "./src/normalize.css"
+// custom CSS styles
+import "./src/style.css"
+import "./src/halfmoon-variables.css"
 
-require("./src/components/layout.css")
 export const onServiceWorkerUpdateReady = () => {
     window.location.reload()
   }

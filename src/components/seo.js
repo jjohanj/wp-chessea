@@ -2,33 +2,35 @@
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook
  *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
+ * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
+
 import React from "react"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import FontUrl1 from "../../static/fonts/catamaran-v6-latin-300.woff"
-import FontUrl3 from "../../static/fonts/catamaran-v6-latin-700.woff"
-import FontUrl4 from "../../static/fonts/catamaran-v6-latin-regular.woff"
-import FontUrl2 from "../../static/fonts/parisienne-v7-latin-regular.woff"
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+const SEO = ({ description, lang, meta, title }) => {
+  const { wp, wpUser } = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
+        wp {
+          generalSettings {
             title
             description
-            author
           }
+        }
+
+        # if there's more than one user this would need to be filtered to the main user
+        wpUser {
+          twitter: name
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || wp.generalSettings?.description
+  const defaultTitle = wp.generalSettings?.title
 
   return (
     <Helmet
@@ -36,7 +38,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
           name: `description`,
@@ -60,7 +62,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: wpUser?.twitter || ``,
         },
         {
           name: `twitter:title`,
@@ -71,34 +73,12 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    >
-    <link rel="preload"
-    as="font"
-    href={FontUrl1}
-    type="font/woff2"
-    crossOrigin="anonymous" />
-  <link rel="preload"
-    as="font"
-    href={FontUrl2}
-    type="font/woff2"
-    crossOrigin="anonymous" />
-    <link rel="preload"
-      as="font"
-      href={FontUrl3}
-      type="font/woff2"
-      crossOrigin="anonymous" />
-      <link rel="preload"
-        as="font"
-        href={FontUrl4}
-        type="font/woff2"
-        crossOrigin="anonymous" />
-
-      </Helmet>
+    />
   )
 }
 
 SEO.defaultProps = {
-  lang: `nl`,
+  lang: `en`,
   meta: [],
   description: ``,
 }

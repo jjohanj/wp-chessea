@@ -1,3 +1,5 @@
+.wordpress-cache
+
 # Logs
 logs
 *.log
@@ -51,8 +53,8 @@ typings/
 # Output of 'npm pack'
 *.tgz
 
-# dotenv environment variables file
-.env
+# dotenv environment variable files
+.env*
 
 # gatsby files
 .cache/

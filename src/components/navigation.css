@@ -1,21 +1,4 @@
-.title {
-  height: 152px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
 
-}
-h1 {
-  text-align: center;
-  padding: 2rem;
-  width: 100%
-}
-.bg-pink {
-  background: #ff2f92;
-}
-.text-white {
-  color: #fff;
-}
 h1 a {
   background: #000;
   background-color: #000;
@@ -36,143 +19,114 @@ h1 a {
   /* This will show the gradient as a text color rather than element bg. */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2.5em;
-  font-weight: 300;
   position: relative;
+  font-size: 1.5em;
 }
-nav {
-  height: 60px;
-  background: #fff;
-  display: flex;
-}
-nav .container {
-  display: flex;
-  justify-content: left;
-}
-nav li a {
-  font-weight: 400;
-  font-size: 1em;
-  display: flex;
-  align-items: center;
-  padding: 1rem;
+
+.btn-nav {
   position: relative;
-  color: #fff;
+  z-index: 999;
 }
-.toggle::before,
-nav li a::before {
-  content: "";
-  position: absolute;
+
+.closed ul {
+  display: none;
+}
+
+.open ul {
+  display: block;
+  position: fixed;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background-color: #fff;
-  opacity: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.9);
 }
-  .toggle:hover::before,
-nav li a:hover::before {
-  opacity: 1;
-  transition: opacity 0.4s;
+.open ul a {
+  color: #000;
 }
-nav li {
-  display: flex;
-}
-
-nav ul {
-  display: flex;
-}
-.btn.btn-nav {
-  background: transparent;
-  position: absolute;
-  font-size: 1.8em;
-  padding: 0;
-  line-height: 0;
-  z-index: 999;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 168px;
-  color: #fff;
-}
-.btn.btn-nav .window-close {
-  display: none;
-  opacity: 0;
-    transition: opacity 2s;
+.navbar {
+  margin-left: auto;
 }
 @media (min-width: 768px) {
-  nav .btn-nav {
-    display: none!important;
+  .open button,
+  .closed button {
+    display: none;
   }
+  header nav ul {
+    display: block!important;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  nav ul li {
+    display: inline;
+    padding-right: 2rem;
+  }
+    nav ul li a {
+      color: #000;
+    }
 }
 @media (max-width: 768px) {
-  nav.closed ul {
+  .closed ul {
     transform: translateX(-400%);
+    transition: transform 2s;
   }
-  nav.open ul li {
+  .open ul li {
     display: block!important;
     text-align: center;
   }
-  nav.open ul {
+  .open ul {
     display: block;
     position: fixed;
-    top: 152px;
     bottom: 0;
     left: 0;
     right: 0;
     background: rgba(0,0,0, 0.9);
+    font-size: 2rem;
     z-index: 900;
-    padding-top: 6rem;
+    padding-top: 12rem;
     transform: translateX(0);
-    transition: transform 0.5s
+    transition: transform 2s;
   }
-  .title {
-    background: #fff;
-
-  }
-  .title.open {
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin-bottom:152px;
-  }
-  .toggle:hover::before,
-  nav li a:hover::before {
-    display: none;
-  }
-  nav.open {
+  .open .btn-nav::after {
+    content: "<";
     position: absolute;
-    top: 152px;
     left: 0;
     right: 0;
-    z-index: -1;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+    color: #fff;
+    font-size: 5rem;
   }
-  nav.open .btn.btn-nav  {
-    left: 50%;
-    top: 165px;
+  .open .btn-nav span {
+    visibility: hidden;
+  }
+
+  .open .btn.btn-nav  {
+    top:50%;
+    right: 0;
     position: fixed;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
   }
-  nav.open .btn-nav .window-open {
+  .open .btn-nav .window-open {
     display: none;
   }
-  nav.open .btn-nav .window-close {
+  .open .btn-nav .window-close {
     display: block;
     opacity: 1;
-
   }
-  nav.open ul li a{
+  .open ul li a{
     display: block;
     color: #fff;
     position: relative;
     z-index: 901;
-  }
-  header {
-    position: absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    background: #ff2f92;
-    z-index: 900;
-  }
-  main {
-    padding-top: 212px;
   }
 }

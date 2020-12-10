@@ -1,154 +1,166 @@
 const path = require(`path`)
-const slash = require(`slash`)
+const chunk = require(`lodash/chunk`)
 
-// Implement the Gatsby API “createPages”. This is
-// called after the Gatsby bootstrap is finished so you have
-// access to any information necessary to programmatically
-// create pages.
-// Will create pages for WordPress pages (route : /{slug})
-// Will create pages for WordPress posts (route : /post/{slug})
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage, createRedirect } = actions
-  // createRedirect({ fromPath: '/', toPath: '/wp-chessea/home', redirectInBrowser: true, isPermanent: true })
-  // The “graphql” function allows us to run arbitrary
-  // queries against the local Gatsby GraphQL schema. Think of
-  // it like the site has a built-in database constructed
-  // from the fetched data that you can run queries against.
-  const result = await graphql(`
+// This is a simple debugging tool
+// dd() will prettily dump to the terminal and kill the process
+// const { dd } = require(`dumper.js`)
+
+/**
+ * exports.createPages is a built-in Gatsby Node API.
+ * It's purpose is to allow you to create pages for your site! 💡
+ *
+ * See https://www.gatsbyjs.com/docs/node-apis/#createPages for more info.
+ */
+exports.createPages = async gatsbyUtilities => {
+  // Query our posts from the GraphQL server
+  const posts = await getPosts(gatsbyUtilities)
+
+  // If there are no posts in WordPress, don't do anything
+  if (!posts.length) {
+    return
+  }
+
+  // If there are posts, create pages for them
+  await createIndividualBlogPostPages({ posts, gatsbyUtilities })
+
+  // And a paginated archive
+  await createBlogPostArchive({ posts, gatsbyUtilities })
+}
+
+/**
+ * This function creates all the individual blog pages in this site
+ */
+const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
+  Promise.all(
+    posts.map(({ previous, post, next }) =>
+      // createPage is an action passed to createPages
+      // See https://www.gatsbyjs.com/docs/actions#createPage for more info
+      gatsbyUtilities.actions.createPage({
+        // Use the WordPress uri as the Gatsby page path
+        // This is a good idea so that internal links and menus work 👍
+        path: post.uri,
+
+        // use the blog post template as the page component
+        component: path.resolve(`./src/templates/blog-post.js`),
+
+        // `context` is available in the template as a prop and
+        // as a variable in GraphQL.
+        context: {
+          // we need to add the post id here
+          // so our blog post template knows which blog post
+          // the current page is (when you open it in a browser)
+          id: post.id,
+
+          // We also use the next and previous id's to query them and add links!
+          previousPostId: previous ? previous.id : null,
+          nextPostId: next ? next.id : null,
+        },
+      })
+    )
+  )
+
+/**
+ * This function creates all the individual blog pages in this site
+ */
+async function createBlogPostArchive({ posts, gatsbyUtilities }) {
+  const graphqlResult = await gatsbyUtilities.graphql(/* GraphQL */ `
     {
-      allWordpressPage {
-        edges {
-          node {
-            id
-            wordpress_id
-            path
-            status
-            template
-            title
-            content
-            slug
-            featured_media {
-              localFile {
-                base
-              }
-            }
-          }
+      wp {
+        readingSettings {
+          postsPerPage
         }
       }
-
-      allWordpressPost( sort: {fields: date, order: DESC} ){
-        edges {
-          node {
-            id
-            wordpress_id
-            path
-            template
-            title
-            content
-            slug
-            categories {
-              name
-            }
-            acf {
-              datum
-            }
-            author {
-              name
-            }
-            featured_media {
-              localFile {
-                base
-              }
-            }
-            tags {
-              name
-            }
-          }
-        }
-      }
-
     }
   `)
 
-  // Check for any errors
-  if (result.errors) {
-    throw new Error(result.errors)
+  const { postsPerPage } = graphqlResult.data.wp.readingSettings
+
+  const postsChunkedIntoArchivePages = chunk(posts, postsPerPage)
+  const totalPages = postsChunkedIntoArchivePages.length
+
+  return Promise.all(
+    postsChunkedIntoArchivePages.map(async (_posts, index) => {
+      const pageNumber = index + 1
+
+      const getPagePath = page => {
+        if (page > 0 && page <= totalPages) {
+          // Since our homepage is our blog page
+          // we want the first page to be "/" and any additional pages
+          // to be numbered.
+          // "/blog/2" for example
+          return page === 1 ? `/` : `/blog/${page}`
+        }
+
+        return null
+      }
+
+      // createPage is an action passed to createPages
+      // See https://www.gatsbyjs.com/docs/actions#createPage for more info
+      await gatsbyUtilities.actions.createPage({
+        path: getPagePath(pageNumber),
+
+        // use the blog post archive template as the page component
+        component: path.resolve(`./src/templates/blog-post-archive.js`),
+
+        // `context` is available in the template as a prop and
+        // as a variable in GraphQL.
+        context: {
+          // the index of our loop is the offset of which posts we want to display
+          // so for page 1, 0 * 10 = 0 offset, for page 2, 1 * 10 = 10 posts offset,
+          // etc
+          offset: index * postsPerPage,
+
+          // We need to tell the template how many posts to display too
+          postsPerPage,
+
+          nextPagePath: getPagePath(pageNumber + 1),
+          previousPagePath: getPagePath(pageNumber - 1),
+        },
+      })
+    })
+  )
+}
+
+/**
+ * This function queries Gatsby's GraphQL server and asks for
+ * All WordPress blog posts. If there are any GraphQL error it throws an error
+ * Otherwise it will return the posts 🙌
+ *
+ * We're passing in the utilities we got from createPages.
+ * So see https://www.gatsbyjs.com/docs/node-apis/#createPages for more info!
+ */
+async function getPosts({ graphql, reporter }) {
+  const graphqlResult = await graphql(/* GraphQL */ `
+    query WpPosts {
+      # Query all WordPress blog posts sorted by date
+      allWpPost(sort: { fields: [date], order: DESC }) {
+        edges {
+          previous {
+            id
+          }
+
+          # note: this is a GraphQL alias. It renames "node" to "post" for this query
+          # We're doing this because this "node" is a post! It makes our code more readable further down the line.
+          post: node {
+            id
+            uri
+          }
+
+          next {
+            id
+          }
+        }
+      }
+    }
+  `)
+
+  if (graphqlResult.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your blog posts`,
+      graphqlResult.errors
+    )
+    return
   }
 
-  // Access query results via object destructuring
-  const { allWordpressPage, allWordpressPost } = result.data
-
-  // Create Page pages.
-  const pageTemplate = path.resolve(`./src/templates/page.js`)
-  const articlesListTemplate = path.resolve(`./src/templates/articlesList.js`)
-  const matchesListTemplate = path.resolve(`./src/templates/matchesList.js`)
-  const galleryTemplate = path.resolve(`./src/templates/gallery.js`)
-  // We want to create a detailed page for each page node.
-  // The path field contains the relative original WordPress link
-  // and we use it for the slug to preserve url structure.
-  // The Page ID is prefixed with 'PAGE_'
-  allWordpressPage.edges.forEach(edge => {
-
-    // Gatsby uses Redux to manage its internal state.
-    // Plugins and sites can use functions like "createPage"
-    // to interact with Gatsby.
-    if (edge.node.template === 'articles-list.php' ) {
-      const posts = result.data.allWordpressPost.edges
-      const postsPerPage = 6
-      const numPages = Math.ceil(posts.length / postsPerPage)
-        Array.from({ length: numPages }).forEach((page, i) => {
-        createPage({
-          path: i === 0 ? `/artikelen` : `/artikelen/${i + 1}`,
-          component: slash(articlesListTemplate),
-          context: {
-            posts: posts.slice(i * postsPerPage, (i * postsPerPage) + postsPerPage),
-            numPages,
-            currentPage: i + 1
-          },
-        })
-      })
-    }
-    else {
-    createPage({
-      // Each page is required to have a `path` as well
-      // as a template component. The `context` is
-      // optional but is often necessary so the template
-      // can query data specific to each page.
-      path: `/${edge.node.slug}`,
-      component: slash(edge.node.template === 'matches-list.php' ? matchesListTemplate :
-                      edge.node.template === 'gallery.php' ? galleryTemplate
-                      : pageTemplate),
-      context: {
-        wp_id: edge.node.wordpress_id,
-        content: edge.node.content,
-        title: edge.node.title,
-        template: edge.node.template,
-        image: edge.node.featured_media.localFile.base
-      },
-    })
-}
-})
-
-  const postTemplate = path.resolve(`./src/templates/post.js`)
-// We want to create a detailed page for each post node.
-// The path field stems from the original WordPress link
-// and we use it for the slug to preserve url structure.
-// The Post ID is prefixed with 'POST_'
-allWordpressPost.edges.forEach(edge => {
-  createPage({
-    path: `/articles/${edge.node.slug}`,
-    component: slash(postTemplate),
-    context: {
-      wp_id: edge.node.wordpress_id,
-      content: edge.node.content,
-      title: edge.node.title,
-      image: edge.node.featured_media.localFile.base,
-      slug: edge.node.slug,
-      author: edge.node.author.name,
-      tags: edge.node.tags,
-    },
-  })
-})
-
-
+  return graphqlResult.data.allWpPost.edges
 }

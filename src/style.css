@@ -1,0 +1,82 @@
+.headline .gatsby-image-wrapper {
+  height: 40rem;
+}
+
+.second-headline .gatsby-image-wrapper {
+  width: 100%;
+  height: 35rem;
+}
+.gatsby-image-wrapper {
+  height: 100%;
+}
+
+.content {
+  position: absolute;
+  top: -7.5rem;
+  left: -1rem;
+  right: -1rem;
+
+}
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "Marck Script"!important;
+}
+
+.date {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.page-content-wrapper {
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+  padding-bottom: 8rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.igrid {
+  display: grid;
+  grid-template-rows:  550px 550px 640px;
+  grid-column: 2 / 19;
+  grid-template-columns: 0.5rem 100% 0.5rem;
+  grid-row-gap: 3rem;
+
+
+}
+.iframe-container {
+  overflow: hidden;
+  padding-top: 100%;
+  position: relative;
+  grid-column: 2
+}
+
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .igrid {
+    grid-template-columns: 1fr 730px 1fr;
+  }
+}

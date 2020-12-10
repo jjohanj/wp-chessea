@@ -1,62 +1,40 @@
-import React, { useEffect, useState } from 'react'
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import Navigation from "./navigation"
-import Footer from "./footer"
-import SEO from "./seo"
-import "./layout.css"
-import "./navigation.css"
-import "./darkmode.css"
+import React from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import parse from "html-react-parser"
+import Navigation from "./Navigation"
 
-
-const Layout = ({aPage, children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
+const Layout = ({ isHomePage, children }) => {
+  const {
+    wp: {
+      generalSettings: { title },
+    },
+  } = useStaticQuery(graphql`
+    query LayoutQuery {
+      wp {
+        generalSettings {
           title
+          description
         }
       }
     }
   `)
 
-  const [font, setFont] = useState("");
-  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && sessionStorage.getItem('colorscheme')));
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && window.matchMedia && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches && darkmode === null) {
-      setDarkmode("darkmode");
-    }
-
-    var FontFaceObserver = require('fontfaceobserver');
-
-    var font = new FontFaceObserver('Marck Script');
-
-    font.load().then(function () {
-      setFont("font-loaded");
-    });
-
-    
-    typeof window !== 'undefined' && sessionStorage.setItem('colorscheme', JSON.stringify(darkmode))
-    }, [darkmode]
-)
-
-  let toggleDarkmode = () => {
-    darkmode !== "darkmode" ? setDarkmode("darkmode") : setDarkmode("");
-  }
-
   return (
-    <div className={darkmode}>
-      <SEO title={data.site.siteMetadata.title} />
-      <Navigation dark={toggleDarkmode} class="darkmode" font={font}/>
-        <main  className={aPage + " " + font}>{children}</main>
-        <Footer  />
+    <div className="page-content-wrapper" data-is-root-path={isHomePage}>
+            <Navigation />
+      <main className="container">
+        {children}
+      </main>
+
+      <footer>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        {` `}
+        And <a href="https://wordpress.org/">WordPress</a>
+      </footer>
     </div>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
