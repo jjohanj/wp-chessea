@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import parse from "html-react-parser"
-import Navigation from "./Navigation"
+import Navigation from "./navigation"
 
 const Layout = ({ isHomePage, children }) => {
   const {
