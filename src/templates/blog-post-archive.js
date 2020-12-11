@@ -54,8 +54,8 @@ const BlogIndex = ({
               <div className="col-md-6">
                 <Image imgName={post.featuredImage.node.localFile.base} />
               </div>
-              <div className="col-md-6">
-                <div className="d-flex justify-content-center p-20 flex-column text-center h-full">
+              <div className="col-md-6 text">
+                <div className="d-flex justify-content-end p-20 flex-column text-center h-full">
                   <div><span className="text-primary-lm date">{post.date}</span></div>
                   <h1 className="text-center h2">
                   <Link className="text-dark font-weight-bold" to={post.uri} itemProp="url">

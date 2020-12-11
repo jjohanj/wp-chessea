@@ -22,31 +22,32 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
       <SEO title={post.title} description={post.excerpt} />
 
       <article
-        className="blog-post p-10"
+        className="blog-post p-10 row"
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
+        <div className="col-12 col-md-7 bg-white p-20">
           <h1 itemProp="headline">{parse(post.title)}</h1>
 
           <p>{post.date}</p>
-
-          {/* if we have a featured image for this post let's display it */}
-          {featuredImage?.fluid && (
-            <Image
-              fluid={featuredImage.fluid}
-              alt={featuredImage.alt}
-              style={{ marginBottom: 50 }}
-            />
+          {!!post.content && (
+            <section itemProp="articleBody">{parse(post.content)}</section>
           )}
-        </header>
 
-        {!!post.content && (
-          <section itemProp="articleBody">{parse(post.content)}</section>
+        </div>
+        <div className="col-12 col-md-5">
+        {/* if we have a featured image for this post let's display it */}
+        {featuredImage?.fluid && (
+          <Image
+          fluid={featuredImage.fluid}
+          alt={featuredImage.alt}
+          style={{ marginBottom: 50 }}
+          />
         )}
+        </div>
       </article>
 
-      <nav className="blog-post-nav">
+      <nav className="blog-post-nav p-10">
         <ul
           style={{
             display: `flex`,
@@ -64,7 +65,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
             )}
           </li>
 
-          <li>
+          <li className="pr-0">
             {next && (
               <Link className="btn btn-light" to={next.uri} rel="next">
                 {parse(next.title)} →

@@ -30,13 +30,41 @@ header .h1 {
 
 .date {
   font-style: italic;
-  text-decoration: underline;
 }
 
 .pointer {
   cursor: pointer;
 }
+h1 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -1px;
+  right: -1px;
+  margin: 0!important;
+  padding-top: 41rem;
+}
 
+.headline .text {
+  position: static;
+  padding-top: 10rem;
+}
+
+@media (min-width: 768px) {
+  .headline .text {
+    position: relative;
+    padding-top: 0;
+  }
+  h1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1px;
+    right: -1px;
+    margin: 0!important;
+    padding-top: 6rem;
+  }
+}
 .mb-80 {
   margin-bottom: 5rem;
 }

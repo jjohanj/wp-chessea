@@ -10,8 +10,6 @@ function Artikelen({location}) {
   const [filterMenu, setFilterMenu] = useState();
   const [articles, setArticles] = useState([]);
 
-  const { state = {} } = location;
-  const { articleTag } = state;
 
   const data = useStaticQuery(graphql`
     query {
@@ -67,12 +65,12 @@ function Artikelen({location}) {
     else if (tag === "all") {
       setArticles(data.allWpPost.edges);
     }
-    else if ( articleTag ) {
+    else if ( location.state ) {
        setArticles(data.allWpPost.edges.filter(item =>{
-         return item.node.tags.nodes.some(obj => obj.name === articleTag)
+         return item.node.tags.nodes.some(obj => obj.name === location.state.articleTag)
      }));
    }
- },[tag, articleTag]
+ },[tag, location.state]
   );
 
   var clickLink = (i) => {
