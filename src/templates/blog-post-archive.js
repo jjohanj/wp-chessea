@@ -125,13 +125,14 @@ const BlogIndex = ({
           {archives}
             </ul>
           </li>
-          <li className="col-12 col-lg-3 pl-lg-20">
+          <li className="col-12 col-lg-3 pl-lg-20 d-none d-lg-block">
                 <h3 className="h5 bg-secondary text-center mt-0 shadow-sm">Tags</h3>
 
           <div>{taglist}</div>
           </li>
       </ul>
-      <div className="text-center">
+      <Link to="/artikelen" className="btn btn-secondary d-lg-none">Alle artikelen</Link>
+      <div className="text-center d-none d-lg-block">
       {previousPagePath && (
         <>
           <Link className="btn btn-secondary d-inline mr-20" to={previousPagePath}>Vorige pagina</Link>
