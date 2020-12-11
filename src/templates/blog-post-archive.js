@@ -31,7 +31,13 @@ const BlogIndex = ({
     }
  },[tag]
 );
-
+ if (posts.length === 0) {
+   return (
+     <>
+     <div className="h-100"></div>
+     </>
+   )
+ }
   var clickLink = (i) => {
     navigate(i);
   }
