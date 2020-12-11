@@ -46,7 +46,7 @@ function Navigation() {
         </div>
         <nav className="navbar p-0">
           <div className="title navbar-content">
-            <button aria-label="navigation" className="btn btn-light btn-lg btn-nav mr-15 mr-md-0 d-flex d-md-none align-items-center" onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><AiOutlineMenu className="font-size-20 mr-10"/>Menu</button>
+            <button aria-label="navigation" className="btn btn-link btn-lg btn-nav d-flex d-md-none align-items-center" onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><span className="text-dark mr-10">Menu</span><AiOutlineMenu className="font-size-24"/></button>
             <ul className={nav}>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/competitie">Competitie</Link></li>

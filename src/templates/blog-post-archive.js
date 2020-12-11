@@ -52,10 +52,7 @@ const BlogIndex = ({
         <li className="col-lg-12 mb-80 shadow" key={post.uri}>
           <article onClick = {() => clickLink(post.uri)} className="row bg-white-lm headline pointer">
               <div className="col-md-6">
-                <Image imgName={post.featuredImage.node.localFile.base} />
-              </div>
-              <div className="col-md-6 text">
-                <div className="d-flex justify-content-end p-20 flex-column text-center h-full">
+                <div className="d-flex justify-content-center p-20 flex-column text-center h-full">
                   <div><span className="text-primary-lm date">{post.date}</span></div>
                   <h1 className="text-center h2">
                   <Link className="text-dark font-weight-bold" to={post.uri} itemProp="url">
@@ -64,6 +61,9 @@ const BlogIndex = ({
                   </h1>
                   <section itemProp="description">{parse(post.excerpt.substr(0, 100))} <span className="btn btn btn-primary">Lees meer</span></section>
                 </div>
+            </div>
+            <div className="col-md-6 order-md-first">
+            <Image imgName={post.featuredImage.node.localFile.base} />
             </div>
           </article>
         </li>

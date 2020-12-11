@@ -20,7 +20,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .btn-nav {
@@ -52,6 +52,9 @@
   .open button,
   .closed button {
     display: none;
+  }
+  header .h1 a {
+    font-size: 1.5em;
   }
   header nav ul {
     display: block!important;
