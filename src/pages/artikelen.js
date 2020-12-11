@@ -92,7 +92,7 @@ function Artikelen({location}) {
     });
      menu = filterMenu.map((item, i) => {
       return (
-         <React.Fragment key={i}><li className="d-inline mr-5"><button className="btn btn-light mb-5" onClick={() => setTag(item.node.name)}>{item.node.name}</button></li>
+         <React.Fragment key={i}><li className="d-inline"><button className="btn btn-light btn-sm m-2" onClick={() => setTag(item.node.name)}>{item.node.name}</button></li>
         </React.Fragment>
       )
     });
@@ -114,7 +114,7 @@ function Artikelen({location}) {
             <span itemProp="headline">{item.node.title}</span>
           </Link>
         </h2>
-        <small className="date text-secondary-lm">{item.node.date}</small>
+        <small className="date text-primary-lm">{item.node.date}</small>
         </div>
       </div>
       </article>
@@ -127,12 +127,13 @@ function Artikelen({location}) {
   return (
     <>
       <Layout >
-        <div className="row">
-        <ul className="list-unstyled col-md-9 row order-md-1">
+        <div className="row mt-20">
+        <ul className="list-unstyled col-md-9 row order-md-1 list">
         {blog}
         </ul>
-          <ul className="tags col-md-3 list-unstyled order-first p-5">
-                <li className="d-inline mr-5 mb-5"><button className="btn btn-light"onClick={() => setTag("all")}>Toon alles</button></li>{menu}</ul>
+          <ul className="tags col-md-3 list-unstyled order-first p-10 p-md-0 pr-md-20">
+                <li><div className="h5 bg-secondary text-center mt-0 shadow-sm">Tags</div></li>
+                <li className="d-inline"><button className="btn btn-light btn-sm"onClick={() => setTag("all")}>Toon alles</button></li>{menu}</ul>
           </div>
       </Layout>
     </>

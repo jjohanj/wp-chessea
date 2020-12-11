@@ -17,11 +17,14 @@
   right: -1rem;
 
 }
+.list-unstyled {
+  list-style: none;
+}
 body {
   overflow-x: hidden;
 }
 
-h1 {
+header .h1 {
   font-family: "Marck Script"!important;
 }
 
@@ -32,6 +35,15 @@ h1 {
 
 .pointer {
   cursor: pointer;
+}
+
+.mb-80 {
+  margin-bottom: 5rem;
+}
+
+.list .gatsby-image-wrapper,
+.bottom-headline .gatsby-image-wrapper {
+  max-height: 30rem;
 }
 
 .page-content-wrapper {

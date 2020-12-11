@@ -37,7 +37,7 @@ const BlogIndex = ({
   }
   var taglist  = tags.map((tag, i) => {
     return (
-      <Link className="btn btn-light" key={i} to={`/artikelen`}
+      <Link className="btn btn-light btn-sm m-2" key={i} to={`/artikelen`}
             state={{ articleTag: tag.name }}>{tag.name}</Link>
     )
   })
@@ -50,13 +50,13 @@ const BlogIndex = ({
               </div>
               <div className="col-md-6">
                 <div className="d-flex justify-content-center p-20 flex-column text-center h-full">
-                  <div><span className="text-secondary-lm date">{post.date}</span></div>
-                  <h2 className="text-center h3">
+                  <div><span className="text-primary-lm date">{post.date}</span></div>
+                  <h1 className="text-center h2">
                   <Link className="text-dark font-weight-bold" to={post.uri} itemProp="url">
                     <span itemProp="headline">{parse(post.title)}</span>
                   </Link>
-                  </h2>
-                  <section itemProp="description">{parse(post.excerpt.substr(0, 100))} <span className="btn btn-sm btn-secondary">Lees meer</span></section>
+                  </h1>
+                  <section itemProp="description">{parse(post.excerpt.substr(0, 100))} <span className="btn btn btn-primary">Lees meer</span></section>
                 </div>
             </div>
           </article>
@@ -69,8 +69,8 @@ const BlogIndex = ({
         <li className="col-lg-4 shadow mb-80 second-headline" key={post.uri}>
           <article onClick = {() => clickLink(post.uri)} className="pointer">
               <div className="content p-20 text-center z-10 bg-white-lm">
-                  <div><span className="text-secondary-lm date">{post.date}</span></div>
-                <h2 className="text-center h5">
+                  <div><span className="text-primary-lm date">{post.date}</span></div>
+                <h2 className="text-center h4">
                   <Link className="text-dark font-weight-bold" to={post.uri} itemProp="url">
                   <span itemProp="headline">{parse(post.title)}</span>
                   </Link>
@@ -85,7 +85,7 @@ const BlogIndex = ({
   var archives = posts.slice(4).map((post, i) => {
       return (
         <li className="col-md-12 shadow" key={post.uri}>
-          <article onClick = {() => clickLink(post.uri)} className="row bg-white-lm pointer">
+          <article onClick = {() => clickLink(post.uri)} className="row bg-white-lm pointer bottom-headline">
             <div className="col-12 col-md-6">
               <Image imgName={post.featuredImage.node.localFile.base} />
             </div>
@@ -96,8 +96,8 @@ const BlogIndex = ({
                   <span itemProp="headline">{parse(post.title)}</span>
                 </Link>
               </h2>
-              <small className="date text-secondary-lm">{post.date}</small>
-              <section itemProp="description">{parse(post.excerpt.substr(0, 100))} <span className="btn btn-sm btn-secondary">Lees meer</span></section>
+              <small className="date text-primary-lm">{post.date}</small>
+              <section itemProp="description">{parse(post.excerpt.substr(0, 100))} <span className="btn btn-sm btn-primary">Lees meer</span></section>
               </div>
             </div>
           </article>
@@ -126,7 +126,7 @@ const BlogIndex = ({
             </ul>
           </li>
           <li className="col-12 col-lg-3 pl-lg-20">
-                <h3 className="h5 bg-secondary text-center">Tags</h3>
+                <h3 className="h5 bg-secondary text-center mt-0 shadow-sm">Tags</h3>
 
           <div>{taglist}</div>
           </li>
@@ -134,10 +134,10 @@ const BlogIndex = ({
       <div className="text-center">
       {previousPagePath && (
         <>
-          <Link className="btn btn-light d-inline mr-20" to={previousPagePath}>Vorige pagina</Link>
+          <Link className="btn btn-secondary d-inline mr-20" to={previousPagePath}>Vorige pagina</Link>
         </>
       )}
-      {nextPagePath && <Link  className="btn btn-light d-inline" to={nextPagePath}>Volgende pagina</Link>}
+      {nextPagePath && <Link  className="btn btn-secondary d-inline" to={nextPagePath}>Volgende pagina</Link>}
       </div>
     </Layout>
   )

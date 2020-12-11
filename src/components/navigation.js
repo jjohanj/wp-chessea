@@ -39,11 +39,11 @@ function Navigation() {
 
 
   return (
-     <header className={`mb-15 bg-white-lm ${nav}`}>
+     <header className={`bg-white-lm ${nav}`}>
       <div className="container text-center d-flex align-items-center ">
-        <h1 className="main-heading py-10 m-0 pl-15 pl-md-0">
+        <div className="h1 main-heading py-10 m-0 pl-15 pl-md-0">
           <Link to="/">Chessea</Link>
-        </h1>
+        </div>
         <nav className="navbar p-0">
           <div className="title navbar-content">
             <button aria-label="navigation" className="btn-nav btn btn-secondary mr-15 mr-md-0 " onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><span>Menu</span></button>

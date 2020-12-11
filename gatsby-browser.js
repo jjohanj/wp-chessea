@@ -8,7 +8,7 @@ import "fontsource-catamaran"
 import "./src/normalize.css"
 // custom CSS styles
 import "./src/style.css"
-import "./src/halfmoon-variables.css"
+import "./src/halfmoon.css"
 
 export const onServiceWorkerUpdateReady = () => {
     window.location.reload()
