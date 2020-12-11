@@ -1,7 +1,9 @@
 .headline .gatsby-image-wrapper {
   height: 40rem;
 }
-
+.headline {
+  margin-top: -2rem;
+}
 .second-headline .gatsby-image-wrapper {
   width: 100%;
   height: 35rem;
@@ -9,7 +11,9 @@
 .gatsby-image-wrapper {
   height: 100%;
 }
-
+.mn-60 {
+  bottom: -6rem;
+}
 .content {
   position: absolute;
   top: -7.5rem;

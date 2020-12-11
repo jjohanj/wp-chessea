@@ -39,7 +39,7 @@ function Navigation() {
 
 
   return (
-     <header className={`mb-md-20 bg-white-lm ${nav}`}>
+     <header className={`mb-md-20 shadow-lg bg-white-lm ${nav}`}>
       <div className="container text-center d-flex align-items-center ">
         <div className="h1 main-heading py-10 m-0 pl-15 pl-md-0">
           <Link to="/">Chessea</Link>
