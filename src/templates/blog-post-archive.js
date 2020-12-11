@@ -32,19 +32,6 @@ const BlogIndex = ({
  },[tag]
 );
 
-
-  if (!posts.length) {
-    return (
-      <Layout isHomePage>
-        <SEO title="All posts" />
-        <Bio />
-        <p>
-          No blog postdds found. Add posts to your WordPress site and they'll
-          appear here!
-        </p>
-      </Layout>
-    )
-  }
   var clickLink = (i) => {
     navigate(i);
   }
