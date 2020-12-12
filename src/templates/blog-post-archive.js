@@ -49,9 +49,9 @@ const BlogIndex = ({
   })
   var headline = posts.slice(0,1).map((post, i) => {
       return (
-        <li className="col-lg-12 mb-80 shadow" key={post.uri}>
+        <li className="col-12 mb-80" key={post.uri}>
           <article onClick = {() => clickLink(post.uri)} className="row headline pointer">
-              <div className="col-md-6 bg-white mx-10 mx-md-0 mn-60 mn-md-0 z-50">
+              <div className="col-lg-6 bg-white mx-10 mx-md-0 mn-60 mn-md-0 z-50 shadow">
                 <div className="d-flex justify-content-center p-20 flex-column text-center h-full">
                   <div><span className="text-primary-lm date">{post.date}</span></div>
                   <h1 className="text-center h2">
@@ -62,7 +62,7 @@ const BlogIndex = ({
                   <section itemProp="description">{parse(post.excerpt.substr(0, 100))} <span className="btn btn btn-primary">Lees meer</span></section>
                 </div>
             </div>
-            <div className="col-md-6 order-md-first">
+            <div className="col-lg-6 order-lg-first">
             <Image imgName={post.featuredImage.node.localFile.base} />
             </div>
           </article>
@@ -115,7 +115,7 @@ const BlogIndex = ({
     <Layout isHomePage>
       <SEO title="All posts" />
 
-      <ul className="list-unstyled row mt-lg-20">
+      <ul className="list-unstyled row pt-lg-10">
         <li className="col-12">
         <ul className="row list-unstyled">
           {headline}
