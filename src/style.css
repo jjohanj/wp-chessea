@@ -14,6 +14,10 @@
 .mn-60 {
   bottom: -6rem;
 }
+
+.mn-md-0 {
+  bottom: 0;
+}
 .content {
   position: absolute;
   top: -7.5rem;

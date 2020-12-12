@@ -51,7 +51,7 @@ const BlogIndex = ({
       return (
         <li className="col-lg-12 mb-80 shadow" key={post.uri}>
           <article onClick = {() => clickLink(post.uri)} className="row headline pointer">
-              <div className="col-md-6 bg-white mx-10 mn-60 z-50">
+              <div className="col-md-6 bg-white mx-10 mx-md-0 mn-60 mn-md-0 z-50">
                 <div className="d-flex justify-content-center p-20 flex-column text-center h-full">
                   <div><span className="text-primary-lm date">{post.date}</span></div>
                   <h1 className="text-center h2">
