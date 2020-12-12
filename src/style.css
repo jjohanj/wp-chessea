@@ -14,9 +14,10 @@
 .mn-60 {
   bottom: -6rem;
 }
-
-.mn-md-0 {
-  bottom: 0;
+@media (min-width: 992px) {
+  .mn-md-0 {
+    bottom: 0;
+  }
 }
 .content {
   position: absolute;

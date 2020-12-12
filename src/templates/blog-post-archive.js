@@ -115,7 +115,7 @@ const BlogIndex = ({
     <Layout isHomePage>
       <SEO title="All posts" />
 
-      <ul className="list-unstyled row">
+      <ul className="list-unstyled row mt-lg-20">
         <li className="col-12">
         <ul className="row list-unstyled">
           {headline}
