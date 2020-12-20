@@ -65,7 +65,7 @@ function Artikelen({location}) {
     else if (tag === "all") {
       setArticles(data.allWpPost.edges);
     }
-    else if ( location.state ) {
+    else if ( location.state && location.state.articleTag !== "all") {
        setArticles(data.allWpPost.edges.filter(item =>{
          return item.node.tags.nodes.some(obj => obj.name === location.state.articleTag)
      }));
@@ -126,10 +126,10 @@ function Artikelen({location}) {
     <>
       <Layout >
         <div className="row mt-20">
-        <ul className="list-unstyled col-md-9 row order-md-1 list">
+        <ul className="list-unstyled col-md-9 row list">
         {blog}
         </ul>
-          <ul className="tags col-md-3 list-unstyled order-first p-10 p-md-0 pr-md-20">
+          <ul className="tags col-md-3 list-unstyled order-first order-md-1 p-10 p-md-0 pr-md-20">
                 <li><div className="h5 bg-secondary text-center mt-0 shadow-sm">Tags</div></li>
                 <li className="d-inline"><button className="btn btn-light btn-sm"onClick={() => setTag("all")}>Toon alles</button></li>{menu}</ul>
           </div>

@@ -20,7 +20,7 @@ const Layout = ({ isHomePage, children }) => {
   `)
 
   return (
-    <div className="page-content-wrapper" data-is-root-path={isHomePage}>
+    <div className={`page-content-wrapper ${isHomePage}`}data-is-root-path={isHomePage}>
             <Navigation />
       <main className="container">
         {children}

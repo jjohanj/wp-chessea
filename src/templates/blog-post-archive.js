@@ -137,7 +137,7 @@ const BlogIndex = ({
           <div>{taglist}</div>
           </li>
       </ul>
-      <Link to="/artikelen" className="btn btn-secondary d-lg-none">Alle artikelen</Link>
+      <Link to="/artikelen" state={{ articleTag: "all" }} className="btn btn-secondary d-lg-none">Alle artikelen</Link>
       <div className="text-center d-none d-lg-block">
       {previousPagePath && (
         <>
