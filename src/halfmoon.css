@@ -2812,9 +2812,9 @@ Notes:
     background-image: none;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 0.4rem;
-    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
-    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
-    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 0.4rem 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 0.4rem 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.4rem 0 rgba(0, 0, 0, 0.05);
 }
 .btn:hover {
     text-decoration: none;
@@ -3343,18 +3343,18 @@ Notes:
     background-color: #ff2f92;
     background-image: none;
     border-color: #ff2f92;
-    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
-    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
-    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 0.4rem 0 rgba(250, 1, 113, 1);
+    -webkit-box-shadow:0 0.4rem 0 rgba(250, 1, 113, 1);
+    box-shadow: 0 0.4rem 0 rgba(250, 1, 113, 1);
 }
 .btn.btn-primary:hover {
     color: #ffffff;
     background-color: #ea4493;
     background-image: none;
     border-color: #ea4493;
-    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
-    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
-    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 0.4rem 0 rgba(250, 1, 113, 1);
+    -webkit-box-shadow:0 0.4rem 0 rgba(250, 1, 113, 1);
+    box-shadow: 0 0.4rem 0 rgba(250, 1, 113, 1);
 }
 .btn.btn-primary:focus {
     color: #ffffff;
@@ -3540,9 +3540,9 @@ Notes:
     background-color: #f9ff2f;
     background-image: none;
     border-color: #f9ff2f;
-    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
-    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
-    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow:0 0.4rem 0 rgba(235, 242, 0, 1);
+    -webkit-box-shadow:0 0.4rem 0 rgba(235, 242, 0, 1);
+    box-shadow: 0 0.4rem 0 rgba(235, 242, 0, 1);
 }
 .btn.btn-secondary:hover {
     color: rgba(0, 0, 0, 0.85);
@@ -7847,7 +7847,7 @@ body:not(.dark-mode) a.text-dark-lm:focus {
 .shadow {
     -moz-box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.15) !important;
     -webkit-box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.15) !important;
-    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.15) !important;
 }
 .dark-mode .shadow {
     -moz-box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.4) !important;

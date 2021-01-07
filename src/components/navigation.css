@@ -85,10 +85,10 @@
   .open ul {
     display: block;
     position: fixed;
-    bottom: 0;
+    bottom: -40px;
     left: 0;
     right: 0;
-    background: rgba(0,0,0, 0.9);
+    background: rgba(255,255,255, 0.99);
     font-size: 2rem;
     z-index: 900;
     padding-top: 12rem;
@@ -103,7 +103,7 @@
     top: 0;
     bottom: 0;
     z-index: 99;
-    color: #fff;
+    color: #000;
     font-size: 5rem;
   }
   .open .btn-nav span {
@@ -128,8 +128,9 @@
   }
   .open ul li a{
     display: block;
-    color: #fff;
+    color: #000;
     position: relative;
     z-index: 901;
+    font-weight: 600;
   }
 }

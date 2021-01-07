@@ -7,8 +7,14 @@
 
 @media (min-width: 578px) {
 .border-pink {
-  border-right: 1px solid #ff2f92;
+  border-right: 2px solid #ffb8da;
 }
+}
+
+.shadow-yellow {
+  -moz-box-shadow:0 0.4rem 0 rgba(235, 242, 0, 1);
+  -webkit-box-shadow:0 0.4rem 0 rgba(235, 242, 0, 1);
+  box-shadow: 0 0.4rem 0 rgba(235, 242, 0, 1);
 }
 .second-headline .gatsby-image-wrapper {
   width: 100%;

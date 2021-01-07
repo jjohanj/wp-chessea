@@ -51,7 +51,7 @@ const BlogIndex = ({
       return (
         <li className="col-12 mb-80" key={post.uri}>
           <article onClick = {() => clickLink(post.uri)} className="row headline pointer">
-              <div className="col-md-6 bg-white mx-10 mx-sm-0 mn-60 mn-sm-0 z-50 shadow">
+              <div className="col-md-6 bg-white mx-10 mx-sm-0 mn-60 mn-sm-0 z-50 shadow border-pink">
                 <div className="d-flex justify-content-center p-20 flex-column text-center h-full">
                   <div><span className="text-primary-lm date">{post.date}</span></div>
                   <h1 className="text-center h2">
@@ -126,19 +126,24 @@ const BlogIndex = ({
           {secondHeadline}
             </ul>
           </li>
-          <li className="col-12 col-lg-7 offset-lg-1">
+          <li className="col-12 col-lg-7 offset-lg-1 px-10">
                 <ul className="row list-unstyled">
           {archives}
             </ul>
           </li>
           <li className="col-12 col-lg-3 pl-lg-20 d-none d-lg-block">
-                <h3 className="h5 bg-secondary text-center mt-0 shadow-sm">Tags</h3>
+                <h3 className="h5 bg-secondary text-center mt-0 shadow-yellow py-5">Tags</h3>
 
           <div>{taglist}</div>
           </li>
       </ul>
-      <div className="p-20">
-        <Link to="/artikelen" state={{ articleTag: "all" }} className="btn btn-secondary d-lg-none">Alle artikelen</Link>
+      <div className="text-center d-block">
+      {previousPagePath && (
+        <>
+          <Link className="btn btn-secondary d-inline mr-20" to={previousPagePath}>Vorige pagina</Link>
+        </>
+      )}
+      {nextPagePath && <Link  className="btn btn-secondary d-inline" to={nextPagePath}>Volgende pagina</Link>}
       </div>
     </Layout>
   )

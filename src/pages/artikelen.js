@@ -100,7 +100,7 @@ function Artikelen({location}) {
 ).map((item, i) => {
     return (
       <li className="col-lg-6" key={i}>
-      <article className="row bg-white-lm pointer mr-10 h-full shadow border-pink" onClick = {() => clickLink(item.node.uri)}>
+      <article className="row bg-white-lm pointer mr-10 h-full shadow border-pink p-20" onClick = {() => clickLink(item.node.uri)}>
 
       <div className="col-lg-6">
         <Image imgName={item.node.featuredImage.node.localFile.base} />
@@ -130,7 +130,7 @@ function Artikelen({location}) {
         {blog}
         </ul>
           <ul className="tags col-md-3 list-unstyled order-first order-md-1 p-10 p-md-0 pr-md-20">
-                <li><div className="h5 bg-secondary text-center mt-0 shadow-sm">Tags</div></li>
+                <li><div className="h5 bg-secondary shadow-yellow text-center mt-0 p-5">Tags</div></li>
                 <li className="d-inline"><button className="btn btn-light btn-sm"onClick={() => setTag("all")}>Toon alles</button></li>{menu}</ul>
           </div>
       </Layout>
