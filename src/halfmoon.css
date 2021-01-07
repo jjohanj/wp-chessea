@@ -3537,9 +3537,9 @@ Notes:
 
 .btn.btn-secondary {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
     -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
     box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
@@ -3555,9 +3555,9 @@ Notes:
 }
 .btn.btn-secondary:focus {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
     -webkit-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
     box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
@@ -3565,9 +3565,9 @@ Notes:
 }
 .btn.btn-secondary.active {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
     -webkit-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
     box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
@@ -3593,9 +3593,9 @@ Notes:
 }
 .dark-mode .btn.btn-secondary {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
@@ -3613,9 +3613,9 @@ Notes:
 }
 .dark-mode .btn.btn-secondary:focus {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
     -webkit-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
     box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
@@ -3623,9 +3623,9 @@ Notes:
 }
 .dark-mode .btn.btn-secondary.active {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
     -webkit-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
     box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
@@ -3651,9 +3651,9 @@ Notes:
 }
 .btn.btn-secondary.disabled {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -3661,9 +3661,9 @@ Notes:
 }
 .btn.btn-secondary:disabled {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -3671,9 +3671,9 @@ Notes:
 }
 .btn.btn-secondary.disabled:hover {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -3681,9 +3681,9 @@ Notes:
 }
 .btn.btn-secondary.disabled:focus {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -3691,9 +3691,9 @@ Notes:
 }
 .dark-mode .btn.btn-secondary.disabled {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -3701,9 +3701,9 @@ Notes:
 }
 .dark-mode .btn.btn-secondary:disabled {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -3711,9 +3711,9 @@ Notes:
 }
 .dark-mode .btn.btn-secondary.disabled:hover {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -3721,9 +3721,9 @@ Notes:
 }
 .dark-mode .btn.btn-secondary.disabled:focus {
     color: rgba(0, 0, 0, 0.85);
-    background-color: #ffcf00;
+    background-color: #f9ff2f;
     background-image: none;
-    border-color: #ffcf00;
+    border-color: #f9ff2f;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -7513,13 +7513,13 @@ body:not(.dark-mode) .bg-primary-lm {
     background-color: #ff2f92 !important;
 }
 .bg-secondary {
-    background-color: #ffcf00 !important;
+    background-color: #f9ff2f !important;
 }
 body:not(.dark-mode) .bg-secondary-lm {
-    background-color: #ffcf00 !important;
+    background-color: #f9ff2f !important;
 }
 .dark-mode .bg-secondary-dm {
-    background-color: #ffcf00 !important;
+    background-color: #f9ff2f !important;
 }
 .bg-dark-light {
     background-color: #25282c !important;
@@ -7595,15 +7595,15 @@ body:not(.dark-mode) a.text-primary-lm:focus {
 /* Text secondary */
 
 .text-secondary {
-    color: #ffcf00 !important;
+    color: #f9ff2f !important;
 }
 
 body:not(.dark-mode) .text-secondary-lm {
-    color: #ffcf00 !important;
+    color: #f9ff2f !important;
 }
 
 .dark-mode .text-secondary-dm {
-    color: #ffcf00 !important;
+    color: #f9ff2f !important;
 }
 a.text-secondary:hover {
     color: #ffe04d !important;

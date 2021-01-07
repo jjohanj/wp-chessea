@@ -51,7 +51,7 @@ const BlogIndex = ({
       return (
         <li className="col-12 mb-80" key={post.uri}>
           <article onClick = {() => clickLink(post.uri)} className="row headline pointer">
-              <div className="col-lg-6 bg-white mx-10 mx-md-0 mn-60 mn-md-0 z-50 shadow">
+              <div className="col-md-6 bg-white mx-10 mx-sm-0 mn-60 mn-sm-0 z-50 shadow">
                 <div className="d-flex justify-content-center p-20 flex-column text-center h-full">
                   <div><span className="text-primary-lm date">{post.date}</span></div>
                   <h1 className="text-center h2">
@@ -62,7 +62,7 @@ const BlogIndex = ({
                   <section itemProp="description">{parse(post.excerpt.substr(0, 100))} <span className="btn btn btn-primary">Lees meer</span></section>
                 </div>
             </div>
-            <div className="col-lg-6 order-lg-first">
+            <div className="col-md-6 order-md-first">
             <Image imgName={post.featuredImage.node.localFile.base} />
             </div>
           </article>
@@ -91,7 +91,7 @@ const BlogIndex = ({
   var archives = posts.slice(4).map((post, i) => {
       return (
         <li className="col-md-12 shadow" key={post.uri}>
-          <article onClick = {() => clickLink(post.uri)} className="row bg-white-lm pointer bottom-headline">
+          <article onClick = {() => clickLink(post.uri)} className="row bg-white-lm pointer bottom-headline border-pink">
             <div className="col-12 col-md-6">
               <Image imgName={post.featuredImage.node.localFile.base} />
             </div>
@@ -137,14 +137,8 @@ const BlogIndex = ({
           <div>{taglist}</div>
           </li>
       </ul>
-      <Link to="/artikelen" state={{ articleTag: "all" }} className="btn btn-secondary d-lg-none">Alle artikelen</Link>
-      <div className="text-center d-none d-lg-block">
-      {previousPagePath && (
-        <>
-          <Link className="btn btn-secondary d-inline mr-20" to={previousPagePath}>Vorige pagina</Link>
-        </>
-      )}
-      {nextPagePath && <Link  className="btn btn-secondary d-inline" to={nextPagePath}>Volgende pagina</Link>}
+      <div className="p-20">
+        <Link to="/artikelen" state={{ articleTag: "all" }} className="btn btn-secondary d-lg-none">Alle artikelen</Link>
       </div>
     </Layout>
   )

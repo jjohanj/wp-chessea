@@ -100,7 +100,7 @@ function Artikelen({location}) {
 ).map((item, i) => {
     return (
       <li className="col-lg-6" key={i}>
-      <article className="row bg-white-lm pointer mr-10 h-full shadow" onClick = {() => clickLink(item.node.uri)}>
+      <article className="row bg-white-lm pointer mr-10 h-full shadow border-pink" onClick = {() => clickLink(item.node.uri)}>
 
       <div className="col-lg-6">
         <Image imgName={item.node.featuredImage.node.localFile.base} />
