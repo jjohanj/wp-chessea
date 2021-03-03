@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@wordpress/block-library": "^2.26.4",
+    "fontfaceobserver": "^2.1.0",
     "fontsource-catamaran": "^3.0.5",
     "fontsource-covered-by-your-grace": "^3.0.9",
     "fontsource-la-belle-aurore": "^3.0.5",

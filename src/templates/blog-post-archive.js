@@ -43,28 +43,24 @@ const BlogIndex = ({
   }
   var taglist  = tags.map((tag, i) => {
     return (
-      <Link className="btn btn-light btn-sm m-2" key={i} to={`/artikelen`}
-            state={{ articleTag: tag.name }}>{tag.name}</Link>
+      <li key={i}><Link  to={`/artikelen`}
+            state={{ articleTag: tag.name }}>{tag.name}</Link></li>
     )
   })
   var headline = posts.slice(0,1).map((post, i) => {
       return (
-        <li className="col-12 mb-80" key={post.uri}>
-          <article onClick = {() => clickLink(post.uri)} className="row headline pointer">
-              <div className="col-md-6 bg-white mx-10 mx-sm-0 mn-60 mn-sm-0 z-50 shadow border-pink">
-                <div className="d-flex justify-content-center p-20 flex-column text-center h-full">
-                  <div><span className="text-primary-lm date">{post.date}</span></div>
-                  <h1 className="text-center h2">
-                  <Link className="text-dark font-weight-bold" to={post.uri} itemProp="url">
-                    <span itemProp="headline">{parse(post.title)}</span>
+        <li className="headline" key={post.uri}>
+          <article onClick = {() => clickLink(post.uri)} className="pointer">
+            <div className="content">
+              <span className="text-primary-lm date">{post.date}</span>
+                <h1 className="text-center h2">
+                  <Link className="text-dark font-weight-bold" to={post.uri}>
+                  {parse(post.title)}
                   </Link>
                   </h1>
-                  <section itemProp="description">{parse(post.excerpt.substr(0, 100))} <span className="btn btn btn-primary">Lees meer</span></section>
-                </div>
-            </div>
-            <div className="col-md-6 order-md-first">
+                  <div>{parse(post.excerpt.substr(0, 200))} <span className="btn btn btn-primary">Lees meer</span></div>
+                  </div>
             <Image imgName={post.featuredImage.node.localFile.base} />
-            </div>
           </article>
         </li>
       )
@@ -72,13 +68,13 @@ const BlogIndex = ({
 
   var secondHeadline = posts.slice(1,4).map((post, i) => {
       return (
-        <li className="col-lg-4 shadow mb-80 second-headline" key={post.uri}>
+        <li className="second" key={post.uri}>
           <article onClick = {() => clickLink(post.uri)} className="pointer">
-              <div className="content p-20 text-center z-10 bg-white-lm">
-                  <div><span className="text-primary-lm date">{post.date}</span></div>
-                <h2 className="text-center h4">
-                  <Link className="text-dark font-weight-bold" to={post.uri} itemProp="url">
-                  <span itemProp="headline">{parse(post.title)}</span>
+              <div className="content">
+                <span className="text-primary-lm date">{post.date}</span>
+                <h2>
+                  <Link to={post.uri} itemProp="url">
+                    {parse(post.title)}
                   </Link>
                 </h2>
               </div>
@@ -90,20 +86,17 @@ const BlogIndex = ({
 
   var archives = posts.slice(4).map((post, i) => {
       return (
-        <li className="col-md-12 shadow" key={post.uri}>
-          <article onClick = {() => clickLink(post.uri)} className="row bg-white-lm pointer bottom-headline border-pink">
-            <div className="col-12 col-md-6">
+        <li className="third" key={post.uri}>
+          <article onClick = {() => clickLink(post.uri)} className="pointer">
               <Image imgName={post.featuredImage.node.localFile.base} />
-            </div>
-            <div className="col-12 col-md-6">
-             <div className="d-flex justify-content-center p-20 flex-column h-full">
-              <h2 className="h4">
+            <div className="content border-right shadow">
+              <h2>
                 <Link className="text-dark font-weight-bold" to={post.uri} itemProp="url">
                   <span itemProp="headline">{parse(post.title)}</span>
                 </Link>
               </h2>
-              <small className="date text-primary-lm">{post.date}</small>
-              <section itemProp="description">{parse(post.excerpt.substr(0, 100))} <span className="btn btn-sm btn-primary">Lees meer</span></section>
+              <small className="date">{post.date}</small>
+              <div>{parse(post.excerpt.substr(0, 200))} <span className="btn btn-sm btn-xs-xsm btn-primary">Lees meer</span>
               </div>
             </div>
           </article>
@@ -115,28 +108,16 @@ const BlogIndex = ({
     <Layout isHomePage>
       <SEO title="All posts" />
 
-      <ul className="list-unstyled row pt-lg-10">
-        <li className="col-12">
-        <ul className="row list-unstyled">
+      <ul className="grid-container">
           {headline}
-            </ul>
-          </li>
-          <li className="col-12">
-                <ul className="row list-unstyled">
           {secondHeadline}
-            </ul>
-          </li>
-          <li className="col-12 col-lg-7 offset-lg-1 px-10">
-                <ul className="row list-unstyled">
           {archives}
-            </ul>
-          </li>
-          <li className="col-12 col-lg-3 pl-lg-20 d-none d-lg-block">
-                <h3 className="h5 bg-secondary text-center mt-0 shadow-yellow py-5">Tags</h3>
 
-          <div>{taglist}</div>
-          </li>
-      </ul>
+
+
+          <li  className="tags-list"><ul>
+            <li><h3>Tags</h3></li>{taglist}</ul>
+            </li></ul>
       <div className="text-center d-block">
       {previousPagePath && (
         <>

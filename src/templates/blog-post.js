@@ -1,79 +1,76 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
+import Image from '../components/image'
 import parse from "html-react-parser"
+import Comments from "../components/comments1"
+import CommentsList from "../components/commentslist"
 
-// We're using Gutenberg so we need the block styles
-import "@wordpress/block-library/build-style/style.css"
-import "@wordpress/block-library/build-style/theme.css"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
-  const featuredImage = {
-    fluid: post.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: post.featuredImage?.node?.alt || ``,
-  }
 
+  console.log(previous);
   return (
     <Layout>
       <SEO title={post.title} description={post.excerpt} />
+      <div className="grid-container-article">
+      <section className="column-1">
+        <article className="blog-post">
+          <div className="content">
+            <h1 className="font-weight-bold" itemProp="headline">{parse(post.title)}</h1>
 
-      <article
-        className="blog-post p-10 row"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <div className="col-12 col-md-7 bg-white p-20">
-          <h1 itemProp="headline">{parse(post.title)}</h1>
+            <p>{post.date}</p>
+            {!!post.content && (
+              <section itemProp="articleBody">{parse(post.content)}</section>
+            )}
 
-          <p>{post.date}</p>
-          {!!post.content && (
-            <section itemProp="articleBody">{parse(post.content)}</section>
-          )}
+          </div>
 
+        </article>
+        <div>
+          <div className="comments-wrapper">
+            <Comments wpId={post.databaseId} />
+          </div>
+          <div className="comments-wrapper">
+            <CommentsList wpId={post.databaseId} />
+          </div>
         </div>
-        <div className="col-12 col-md-5">
-        {/* if we have a featured image for this post let's display it */}
-        {featuredImage?.fluid && (
-          <Image
-          fluid={featuredImage.fluid}
-          alt={featuredImage.alt}
-          style={{ marginBottom: 50 }}
-          />
-        )}
-        </div>
-      </article>
-
-      <nav className="blog-post-nav p-10">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
+      </section>
+      <section className="column-2">
+                <div className="hero"><Image imgName={post.featuredImage.node.localFile.base} /></div>
+      <nav>
+        <ul className="blog-nav">
+        <li className="column-full"><h3 className="display">Meer artikelen</h3></li>
+          <li className="column-1">
             {previous && (
-              <Link className="btn btn-light" to={previous.uri} rel="prev">
+              <div>
+              <p>Volgend artikel</p>
+              <div><Image imgName={previous.featuredImage.node.localFile.base} /></div>
+              <Link className="btn btn-primary" to={previous.uri} rel="prev">
                 ← {parse(previous.title)}
               </Link>
+              </div>
             )}
           </li>
 
-          <li className="pr-0">
-            {next && (
-              <Link className="btn btn-light" to={next.uri} rel="next">
-                {parse(next.title)} →
-              </Link>
-            )}
+          <li className="column-2">
+
+          {next && (
+            <div><p>Vorig artikel</p>
+            <div><Image imgName={next.featuredImage.node.localFile.base} /></div>
+            <Link className="btn btn-primary" to={next.uri} rel="next">
+            {parse(next.title)} →
+            </Link>
+            </div>
+          )}
           </li>
         </ul>
-      </nav>
+        </nav>
+        </section>
+        </div>
     </Layout>
   )
 }
@@ -93,32 +90,42 @@ export const pageQuery = graphql`
       excerpt
       content
       title
+      databaseId
       date(formatString: "MMMM DD, YYYY")
 
       featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid_tracedSVG
-              }
+          node {
+            localFile {
+              base
             }
           }
         }
-      }
     }
 
     # this gets us the previous post by id (if it exists)
     previous: wpPost(id: { eq: $previousPostId }) {
       uri
       title
+      featuredImage {
+          node {
+            localFile {
+              base
+            }
+          }
+        }
     }
 
     # this gets us the next post by id (if it exists)
     next: wpPost(id: { eq: $nextPostId }) {
       uri
       title
+      featuredImage {
+          node {
+            localFile {
+              base
+            }
+          }
+        }
     }
   }
 `

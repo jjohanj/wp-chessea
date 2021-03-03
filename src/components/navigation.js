@@ -39,23 +39,19 @@ function Navigation() {
 
 
   return (
-     <header className={`mb-md-20 bg-white-lm ${nav}`}>
-      <div className="container text-center d-flex align-items-center ">
-        <div className="h1 main-heading py-10 m-0 pl-15 pl-md-0">
+      <header className={`container ${nav}`}>
+        <div className="logo">
           <Link to="/">Chessea</Link>
         </div>
-        <nav className="navbar p-0">
-          <div className="title navbar-content">
-            <button aria-label="navigation" className="btn btn-link btn-lg btn-nav d-flex d-md-none align-items-center" onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><span className="text-dark mr-10">Menu</span><AiOutlineMenu className="font-size-24"/></button>
+        <nav>
+            <button aria-label="navigation" className="btn btn-nav " onClick={() => nav === "open" ? setNav("closed") : setNav("open")}><span>Menu</span><AiOutlineMenu /></button>
             <ul className={nav}>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/artikelen" state={{ articleTag: "all" }}>Artikelen</Link></li>
               <li><Link to="/competitie">Competitie</Link></li>
             </ul>
-          </div>
         </nav>
-      </div>
-    </header>
+      </header>
 
 
   );

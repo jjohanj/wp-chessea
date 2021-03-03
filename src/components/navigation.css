@@ -1,16 +1,24 @@
 
-.h1 a {
+header {
+  display: flex;
+  height: 6rem;
+  align-items: center;}
+.logo {
+  margin-right: auto;
+}
+.logo a {
+  font-size: 3rem;
   background: #000;
   background-color: #000;
   background-image: linear-gradient(55deg,
     #000,
     #000 15%,
-    #ff2f92 15%,
-    #ff2f92 22%,
+    #e3016a 15%,
+    #e3016a 22%,
     #000 22%,
     #000 73%,
-    #ff2f92 73%,
-    #ff2f92 85%,
+    #e3016a 73%,
+    #e3016a 85%,
     #000 85%);
   /* Set the background size and repeat properties. */
   background-size: 100%;
@@ -20,12 +28,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
-  font-size: 1em;
-}
-
-.btn-nav {
-  position: relative;
-  z-index: 999;
 }
 
 .closed ul {
@@ -53,31 +55,50 @@
   .closed button {
     display: none;
   }
-  header .h1 a {
-    font-size: 1.5em;
-  }
+
   header nav ul {
     display: block!important;
   }
-  nav ul {
+  header nav ul {
     list-style: none;
     margin: 0;
     text-transform: uppercase;
   }
 
-  nav ul li {
+  header nav ul li {
     display: inline;
     padding-right: 2rem;
   }
-    nav ul li a {
-      color: #000;
-    }
+
 }
 @media (max-width: 768px) {
+  header .logo {
+    font-size: 1.75em;
+  }
   .closed ul {
     transform: translateX(-400%);
     transition: transform 2s;
   }
+  .closed svg {
+    font-size: 1.75em;
+  }
+   .btn-nav {
+    margin-top: 1.5rem;
+    text-transform: lowercase;
+    color: #000;
+    border: none;
+    position: relative;
+    padding: 0.25rem 2.25rem 0.25rem 0;
+  }
+  .closed .btn-nav svg {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+    .closed .btn-nav span {
+      line-height: 2;
+    }
   .open ul li {
     display: block!important;
     text-align: center;
@@ -100,9 +121,9 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 0;
+    top: -1.5rem;
     bottom: 0;
-    z-index: 99;
+    z-index: 999;
     color: #000;
     font-size: 5rem;
   }
@@ -112,12 +133,14 @@
 
   .open .btn.btn-nav  {
     top:50%;
+    z-index: 999;
     right: 0;
     position: fixed;
     width: 40px;
     height: 40px;
     border: none;
     background: transparent;
+    color: #fff;
   }
   .open .btn-nav .window-open {
     display: none;
@@ -132,5 +155,6 @@
     position: relative;
     z-index: 901;
     font-weight: 600;
+    font-size: 0.9em;
   }
 }
