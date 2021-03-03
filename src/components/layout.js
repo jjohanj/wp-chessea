@@ -2,6 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Link, useStaticQuery, graphql } from "gatsby"
 import parse from "html-react-parser"
 import Navigation from "./navigation"
+import "../normalize.css"
+// custom CSS styles
+import "../style.css"
+// import "./src/halfmoon.css"
+import "../grid.css"
+import "../home.css"
+import "../buttons.css"
 
 const Layout = ({ isHomePage, children }) => {
   const {
