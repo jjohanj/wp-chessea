@@ -68,7 +68,7 @@ const BlogIndex = ({
 
   var secondHeadline = posts.slice(1,4).map((post, i) => {
       return (
-        <li className="second" key={post.uri}>
+        <li className="second cv-sm" key={post.uri}>
           <article onClick = {() => clickLink(post.uri)} className="pointer">
               <div className="content">
                 <span className="text-primary-lm date">{post.date}</span>
@@ -86,7 +86,7 @@ const BlogIndex = ({
 
   var archives = posts.slice(4).map((post, i) => {
       return (
-        <li className="third" key={post.uri}>
+        <li className="third cv" key={post.uri}>
           <article onClick = {() => clickLink(post.uri)} className="pointer">
               <Image imgName={post.featuredImage.node.localFile.base} />
             <div className="content border-right shadow">

@@ -28,6 +28,18 @@
   url('/fonts/marck-script-v11-latin-regular.woff2') format('woff2');
 }
 
+@media (max-width: 544px) {
+  .cv-sm {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+  }
+
+}
+
+.cv {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
 body .font-loaded {
   font-family: 'CatamaranC';
 }
