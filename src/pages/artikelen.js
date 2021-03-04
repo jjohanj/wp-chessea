@@ -42,7 +42,7 @@ function Artikelen({location}) {
             featuredImage {
                 node {
                   localFile {
-                    base
+                    publicURL
                   }
                 }
               }
@@ -115,7 +115,7 @@ function Artikelen({location}) {
       <article onClick = {() => clickLink(item.node.uri)}>
 
       <div>
-        <Image imgName={item.node.featuredImage.node.localFile.base} />
+        <Image imgName={item.node.featuredImage.node.localFile.publicURL} />
       </div>
       <div className="content border-right shadow">
        <div>

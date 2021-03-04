@@ -47,7 +47,7 @@ function IndexPage({location}) {
             featuredImage {
                 node {
                   localFile {
-                    base
+                    publicURL
                   }
                 }
               }
@@ -87,7 +87,7 @@ function IndexPage({location}) {
                   </h1>
                   <div>{parse(post.node.excerpt.substr(0, 200))} <span className="btn btn btn-primary">Lees meer</span></div>
                   </div>
-            <Image imgName={post.node.featuredImage.node.localFile.base} />
+            <Image imgName={post.node.featuredImage.node.localFile.publicURL} />
           </article>
         </li>
       )
@@ -105,7 +105,7 @@ function IndexPage({location}) {
                   </Link>
                 </h2>
               </div>
-            <Image imgName={post.node.featuredImage.node.localFile.base} />
+            <Image imgName={post.node.featuredImage.node.localFile.publicURL} />
           </article>
         </li>
       )
@@ -115,7 +115,7 @@ function IndexPage({location}) {
       return (
         <li className="third" key={post.node.uri}>
           <article onClick = {() => clickLink(post.node.uri)} className="pointer">
-              <Image imgName={post.node.featuredImage.node.localFile.base} />
+              <Image imgName={post.node.featuredImage.node.localFile.publicURL} />
             <div className="content border-right shadow">
               <h2>
                 <Link className="text-dark font-weight-bold" to={post.node.uri} itemProp="url">

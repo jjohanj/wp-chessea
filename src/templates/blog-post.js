@@ -40,7 +40,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         </div>
       </section>
       <section className="column-2">
-                <div className="hero"><Image imgName={post.featuredImage.node.localFile.base} /></div>
+                <div className="hero"><Image imgName={post.featuredImage.node.localFile.publicURL} /></div>
       <nav>
         <ul className="blog-nav">
         <li className="column-full"><h3 className="display">Meer artikelen</h3></li>
@@ -48,7 +48,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
             {previous && (
               <div>
               <p>Volgend artikel</p>
-              <div><Image imgName={previous.featuredImage.node.localFile.base} /></div>
+              <div><Image imgName={previous.featuredImage.node.localFile.publicURL} /></div>
               <Link className="btn btn-primary" to={previous.uri} rel="prev">
                 ← {parse(previous.title)}
               </Link>
@@ -60,7 +60,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
           {next && (
             <div><p>Vorig artikel</p>
-            <div><Image imgName={next.featuredImage.node.localFile.base} /></div>
+            <div><Image imgName={next.featuredImage.node.localFile.publicURL} /></div>
             <Link className="btn btn-primary" to={next.uri} rel="next">
             {parse(next.title)} →
             </Link>
@@ -96,7 +96,7 @@ export const pageQuery = graphql`
       featuredImage {
           node {
             localFile {
-              base
+              publicURL
             }
           }
         }
@@ -109,7 +109,7 @@ export const pageQuery = graphql`
       featuredImage {
           node {
             localFile {
-              base
+              publicURL
             }
           }
         }
@@ -122,7 +122,7 @@ export const pageQuery = graphql`
       featuredImage {
           node {
             localFile {
-              base
+              publicURL
             }
           }
         }
