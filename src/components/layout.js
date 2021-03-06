@@ -9,6 +9,8 @@ import "../style.css"
 import "../grid.css"
 import "../home.css"
 import "../buttons.css"
+import "./darkmode.css"
+import { FaMoon } from 'react-icons/fa'
 
 const Layout = ({ isHomePage, children }) => {
   const {
@@ -26,6 +28,7 @@ const Layout = ({ isHomePage, children }) => {
     }
   `)
   const [font, setFont] = useState("");
+  const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && sessionStorage.getItem('colorscheme')));
 
   useEffect(() => {
     if (font === 'all-fonts-loaded') {
@@ -46,12 +49,17 @@ else {
   // sessionStorage.fontsLoaded = true;
 });
 }
-  }, []
+  typeof window !== 'undefined' && sessionStorage.setItem('colorscheme', JSON.stringify(darkmode))
+  }, [darkmode]
 )
+let toggleDarkmode = () => {
+  darkmode !== "darkmode" ? setDarkmode("darkmode") : setDarkmode("");
+}
   return (
-    <div className={`${font} page-content-wrapper ${isHomePage}`}data-is-root-path={isHomePage}>
+    <div className={`${font} ${darkmode} page-content-wrapper ${isHomePage}`}data-is-root-path={isHomePage}>
             <Navigation />
       <main className="container">
+      <button className="toggle btn-pink" onClick={toggleDarkmode}><span className="visually-hidden">Lichte / donkere modus</span><FaMoon /></button>
         {children}
       </main>
     </div>

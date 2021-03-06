@@ -42,11 +42,11 @@
 } */
 body {
   margin: 0;
-  margin-bottom: 8rem;
   min-height: 100vh;
   color: #727272;
   background: linear-gradient(180deg, rgba(255,255,255,1) 40vh, rgba(108,108,108,0.2) 120vh, rgba(255,255,255,1) 200vh);
 }
+.all-fonts-loaded {padding-bottom: 8rem;}
 .vh-100 {
   min-height: 100vh;
 }

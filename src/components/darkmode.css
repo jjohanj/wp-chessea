@@ -1,0 +1,73 @@
+.darkmode,
+.darkmode .title,
+.darkmode .content,
+.darkmode .article-list .date,
+.darkmode .secondary-articles .content,
+.darkmode .main-articles .content,
+.darkmode .secondary-articles .date {
+  border-color: #1c1c1c;
+  background: #1c1c1c;
+  color: #eee;
+  z-index: 10;
+}
+.darkmode .filter-select .filter-select {
+  border-bottom: 1px solid #bebebe;
+}
+.darkmode .filter-select::after {
+  border-top: 7px solid #bebebe;
+}
+.darkmode .filter-select {
+  background-color: #1c1c1c;
+  color: #eee;
+}
+.darkmode h1,
+.darkmode .matches svg,
+.darkmode a {
+  color: #eee;
+  font-weight: 400;
+}
+.darkmode footer .contact a,
+.darkmode .date,
+.darkmode p {
+  color: #bebebe;
+}
+.darkmode .article-selected a {
+  color: #D0A3B2;
+}
+
+.darkmode .secondary-articles {
+  box-shadow: 0 -2px 10px rgba(10, 10, 10, 0.3);
+}
+.darkmode .article-selected > div {
+  border-bottom: solid 1px #a24766;
+}
+ .darkmode .btn-primary,
+ .darkmode .btn-info {
+  background: #873b55!important;
+}
+
+.darkmode .logo a{
+  ackground: #eee;
+    background-color: #eee;
+    background-image: linear-gradient(55deg, #eee, #eee 15%, #b65879 15%, #b65879 22%, #eee 22%, #eee 73%, #b65879 73%, #b65879 85%, #eee 85%);
+}
+.darkmode .bg-pink {
+  background: #873b55;
+}
+
+.darkmode .gatsby-image-wrapper::before {
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0,0,0,0.2);
+  z-index: 3;
+  position: absolute;
+}
+.darkmode .btn-light,
+.darkmode .tags-list a,
+.darkmode .contact {
+  background-color: #222;
+  box-shadow: none;
+}
