@@ -31,8 +31,8 @@ const Layout = ({ isHomePage, children }) => {
   const [darkmode, setDarkmode] = useState(JSON.parse(typeof window !== 'undefined' && sessionStorage.getItem('colorscheme')));
 
   useEffect(() => {
-    if (font === 'all-fonts-loaded') {
-  return null;
+    if (sessionStorage.fontsLoaded)  {
+  setFont("all-fonts-loaded");
 }
 else {
     var FontFaceObserver = require('fontfaceobserver');
@@ -46,7 +46,7 @@ else {
     });
     Promise.all([fontA.load(), fontB.load()]).then(function () {
   setFont("all-fonts-loaded");
-  // sessionStorage.fontsLoaded = true;
+  sessionStorage.fontsLoaded = true;
 });
 }
   typeof window !== 'undefined' && sessionStorage.setItem('colorscheme', JSON.stringify(darkmode))
@@ -56,7 +56,7 @@ let toggleDarkmode = () => {
   darkmode !== "darkmode" ? setDarkmode("darkmode") : setDarkmode("");
 }
   return (
-    <div className={`${font} ${darkmode} page-content-wrapper ${isHomePage}`}data-is-root-path={isHomePage}>
+    <div className={`${font} ${darkmode} page-content-wrapper`}data-is-root-path={isHomePage}>
             <Navigation />
       <main className="container">
       <button className="toggle btn-pink" onClick={toggleDarkmode}><span className="visually-hidden">Lichte / donkere modus</span><FaMoon /></button>
