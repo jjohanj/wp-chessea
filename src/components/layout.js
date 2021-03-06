@@ -28,7 +28,10 @@ const Layout = ({ isHomePage, children }) => {
   const [font, setFont] = useState("");
 
   useEffect(() => {
-
+    if (sessionStorage.fontsLoaded) {
+  setFont("all-fonts-loaded");
+}
+else {
     var FontFaceObserver = require('fontfaceobserver');
 
     var font = new FontFaceObserver('CatamaranC');
@@ -40,7 +43,9 @@ const Layout = ({ isHomePage, children }) => {
     });
     Promise.all([fontA.load(), fontB.load()]).then(function () {
   setFont("all-fonts-loaded");
+  sessionStorage.fontsLoaded = true;
 });
+}
   }, []
 )
   return (
@@ -49,16 +54,17 @@ const Layout = ({ isHomePage, children }) => {
       <main className="container">
         {children}
       </main>
-
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-        {` `}
-        And <a href="https://wordpress.org/">WordPress</a>
-      </footer>
     </div>
   )
 }
 
 export default Layout
+
+//
+// <footer>
+// © {new Date().getFullYear()}, Built with
+// {` `}
+// <a href="https://www.gatsbyjs.com">Gatsby</a>
+// {` `}
+// And <a href="https://wordpress.org/">WordPress</a>
+// </footer>

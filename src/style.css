@@ -40,13 +40,17 @@
   content-visibility: auto;
   contain-intrinsic-size: 1000px;
 } */
+body {
+  margin: 0;
+  margin-bottom: 8rem;
+  color: #727272;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 40vh, rgba(108,108,108,0.2) 120vh, rgba(255,255,255,1) 200vh);
+}
 body .font-loaded {
   font-family: 'CatamaranC';
 }
 body .all-fonts-loaded {
   font-family: 'Catamaran';
-  color: #727272;
-  background: linear-gradient(180deg, rgba(255,255,255,1) 40vh, rgba(108,108,108,0.2) 120vh, rgba(255,255,255,1) 200vh);
 }
 
 .all-fonts-loaded .logo a {
