@@ -68,12 +68,14 @@ function IndexPage({location}) {
   var clickLink = (i) => {
     navigate(i);
   }
-  var taglist  = filterMenu.map((tag, i) => {
+  if (articles.length === 0 && filterMenu.length === 0) {
     return (
-      <li key={i}><Link  to={`/artikelen`}
-            state={{ articleTag: tag.node.name }}>{tag.node.name}</Link></li>
+            <Layout>
+      <div className="vh-100"></div>
+            </Layout >
     )
-  })
+  }
+
   var headline = articles.slice(0,1).map((post, i) => {
       return (
         <li className="headline" key={post.node.uri}>
@@ -129,6 +131,13 @@ function IndexPage({location}) {
           </article>
         </li>
       )
+  })
+
+  var taglist  = filterMenu.map((tag, i) => {
+    return (
+      <li key={i}><Link  to={`/artikelen`}
+            state={{ articleTag: tag.node.name }}>{tag.node.name}</Link></li>
+    )
   })
 
   return (

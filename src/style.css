@@ -46,6 +46,9 @@ body {
   color: #727272;
   background: linear-gradient(180deg, rgba(255,255,255,1) 40vh, rgba(108,108,108,0.2) 120vh, rgba(255,255,255,1) 200vh);
 }
+.vh-100 {
+  min-height: 100vh;
+}
 body .font-loaded {
   font-family: 'CatamaranC';
 }

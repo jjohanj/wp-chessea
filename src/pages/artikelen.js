@@ -101,7 +101,6 @@ function Artikelen({location}) {
   if (articles.length === 0 && filterMenu.length === 0) {
     return (
             <Layout>
-            <Seo title="home"/>
       <div className="vh-100"></div>
             </Layout >
     )
