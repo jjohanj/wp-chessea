@@ -43,6 +43,7 @@
 body {
   margin: 0;
   margin-bottom: 8rem;
+  min-height: 100vh;
   color: #727272;
   background: linear-gradient(180deg, rgba(255,255,255,1) 40vh, rgba(108,108,108,0.2) 120vh, rgba(255,255,255,1) 200vh);
 }
@@ -150,6 +151,9 @@ h2, .h2 {
 .shadow {
     box-shadow: 0 .2rem 0 rgba(0,0,0,.15)!important;
 }
+.third {
+  content-visibility: auto;
+}
 
 .blog-post .content {
   border-bottom: 1px solid #c2005b;
@@ -165,6 +169,11 @@ h2, .h2 {
   font-size: 0.9rem;
   margin: 0;
   display: block;
+  top: -2rem;
+  display: relative;
+  height: 4rem;
+  display: flex;
+  align-items: center;
 }
 .blog-nav li {
   position: relative;

@@ -118,7 +118,7 @@ function IndexPage({location}) {
         <li className="third" key={post.node.uri}>
           <article onClick = {() => clickLink(post.node.uri)} className="pointer">
               <Image imgName={post.node.featuredImage.node.localFile.publicURL} />
-            <div className="content border-right shadow">
+            <div className="content border-right">
               <h2>
                 <Link className="text-dark font-weight-bold" to={post.node.uri} itemProp="url">
                   <span itemProp="headline">{parse(post.node.title)}</span>

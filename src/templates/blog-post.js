@@ -46,25 +46,24 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         <li className="column-full"><h3 className="display">Meer artikelen</h3></li>
           <li className="column-1">
             {previous && (
-              <div>
-              <p>Volgend artikel</p>
-              <div><Image imgName={previous.featuredImage.node.localFile.publicURL} /></div>
-              <Link className="btn btn-primary" to={previous.uri} rel="prev">
+              <>
+              <Image imgName={previous.featuredImage.node.localFile.publicURL} />
+              <Link className="btn btn-light" to={previous.uri} rel="prev">
                 ← {parse(previous.title)}
               </Link>
-              </div>
+              </>
             )}
           </li>
 
           <li className="column-2">
 
           {next && (
-            <div><p>Vorig artikel</p>
+            <>
             <div><Image imgName={next.featuredImage.node.localFile.publicURL} /></div>
-            <Link className="btn btn-primary" to={next.uri} rel="next">
+            <Link className="btn btn-light" to={next.uri} rel="next">
             {parse(next.title)} →
             </Link>
-            </div>
+            </>
           )}
           </li>
         </ul>

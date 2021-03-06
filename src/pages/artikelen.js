@@ -116,7 +116,7 @@ function Artikelen({location}) {
       <div>
         <Image imgName={item.node.featuredImage.node.localFile.publicURL} />
       </div>
-      <div className="content border-right shadow">
+      <div className="content border-right">
        <div>
         <h2>
           <Link className="text-dark font-weight-bold" to={item.node.uri} itemProp="url">

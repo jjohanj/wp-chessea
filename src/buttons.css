@@ -20,11 +20,23 @@
 .btn-primary::before {
   background: #c2005b;
 }
+.btn-light {
+  box-shadow: 0 4px 1px -1px #f2f2f2;
+  background: #fff;
+  color: #000;
+}
+.btn-light::before {
+  background: #f9f9f9;
+}
 /* .btn:hover {
   background: transparent;
 } */
-
-
+.lc {
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
 .btn::before {
     -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
