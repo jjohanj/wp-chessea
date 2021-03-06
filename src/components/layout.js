@@ -28,8 +28,8 @@ const Layout = ({ isHomePage, children }) => {
   const [font, setFont] = useState("");
 
   useEffect(() => {
-    if (sessionStorage.fontsLoaded) {
-  setFont("all-fonts-loaded");
+    if (font === 'all-fonts-loaded') {
+  return null;
 }
 else {
     var FontFaceObserver = require('fontfaceobserver');
@@ -43,7 +43,7 @@ else {
     });
     Promise.all([fontA.load(), fontB.load()]).then(function () {
   setFont("all-fonts-loaded");
-  sessionStorage.fontsLoaded = true;
+  // sessionStorage.fontsLoaded = true;
 });
 }
   }, []
