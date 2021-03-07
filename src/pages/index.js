@@ -32,7 +32,7 @@ function IndexPage({location}) {
             excerpt
             slug
             uri
-            date
+            date (formatString: "D MMMM, YYYY", locale: "nl")
             databaseId
             categories {
               nodes {

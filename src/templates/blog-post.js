@@ -86,11 +86,10 @@ export const pageQuery = graphql`
     post: wpPost(id: { eq: $id }) {
       id
       excerpt
+      date (formatString: "D MMMM, YYYY", locale: "nl")
       content
       title
       databaseId
-      date(formatString: "MMMM DD, YYYY")
-
       featuredImage {
           node {
             localFile {
