@@ -12,7 +12,6 @@ import SEO from "../components/seo"
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
-  console.log(previous);
   return (
     <Layout>
       <SEO title={post.title} description={post.excerpt} />
@@ -40,14 +39,14 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         </div>
       </section>
       <section className="column-2">
-                <div className="hero"><Image imgName={post.featuredImage.node.localFile.publicURL} /></div>
+                <div className="hero"><Image imgName={post.featuredImage.node.localFile.base} /></div>
       <nav>
         <ul className="blog-nav">
         <li className="column-full"><h3 className="display">Meer artikelen</h3></li>
           <li className="column-1">
             {previous && (
               <>
-              <Image imgName={previous.featuredImage.node.localFile.publicURL} />
+              <Image imgName={previous.featuredImage.node.localFile.base} />
               <Link className="btn btn-light" to={previous.uri} rel="prev">
                 ← {parse(previous.title)}
               </Link>
@@ -59,7 +58,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
           {next && (
             <>
-            <div><Image imgName={next.featuredImage.node.localFile.publicURL} /></div>
+            <div><Image imgName={next.featuredImage.node.localFile.base} /></div>
             <Link className="btn btn-light" to={next.uri} rel="next">
             {parse(next.title)} →
             </Link>
@@ -95,7 +94,7 @@ export const pageQuery = graphql`
       featuredImage {
           node {
             localFile {
-              publicURL
+              base
             }
           }
         }
@@ -108,7 +107,7 @@ export const pageQuery = graphql`
       featuredImage {
           node {
             localFile {
-              publicURL
+              base
             }
           }
         }
@@ -121,7 +120,7 @@ export const pageQuery = graphql`
       featuredImage {
           node {
             localFile {
-              publicURL
+              base
             }
           }
         }
