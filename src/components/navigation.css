@@ -1,7 +1,7 @@
 
 header {
   display: flex;
-  height: 6rem;
+  height: 8rem;
   align-items: center;}
 .logo {
   margin-right: auto;
@@ -30,6 +30,10 @@ header {
   position: relative;
 }
 
+@media (min-width: 544px) {
+   .logo a {
+     font-size: 4rem;
+ }}
 .closed ul {
   display: none;
 }
