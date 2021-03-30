@@ -1,8 +1,10 @@
 
 header {
   display: flex;
-  height: 8rem;
+  height: 6rem;
   align-items: center;}
+
+
 .logo {
   margin-right: auto;
 }
@@ -58,6 +60,9 @@ header {
   .open button,
   .closed button {
     display: none;
+  }
+  header nav {
+    margin-right:  4rem;
   }
 
   header nav ul {

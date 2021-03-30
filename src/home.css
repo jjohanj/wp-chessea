@@ -1,7 +1,6 @@
 article {
   position: relative;
 }
-
 .headline article {
   display: grid;
   grid-template-columns: 1fr;
@@ -108,15 +107,26 @@ overflow: hidden;
 }
 .third p {
 margin: 0.8rem 0;
+line-height: 1;
 }
 /* .third .date {
   position: absolute;
   top: 4.5rem;
   left: 37%;
 } */
+@media (max-width: 544px) {
+.third h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
 
+}
 .third p {
+  font-size: 0.9em;
+}
+
+.third .btn {
   display: none;
+}
 }
 .third h2 {
   display: -webkit-box;

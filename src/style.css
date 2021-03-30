@@ -42,6 +42,7 @@
 } */
 body {
   margin: 0;
+  font-size: 1.125rem;
   min-height: 100vh;
   color: #727272;
   background: linear-gradient(180deg, rgba(255,255,255,1) 40vh, rgba(108,108,108,0.2) 120vh, rgba(255,255,255,1) 200vh);
@@ -119,6 +120,7 @@ h2, .h2 {
 }
 .tags-list a {
   line-height: 2rem;
+  font-size: 0.9rem;
   margin: 0.25rem;
   padding: 0 1rem;
   text-align: center;
@@ -126,7 +128,7 @@ h2, .h2 {
   cursor: pointer;
   color: rgba(0,0,0,.7);
   background-color: #fff;
-  background: #f2f2f2;
+  border: 1px solid #aaa;
 }
 
 .list .gatsby-image-wrapper {
@@ -194,12 +196,12 @@ h2, .h2 {
 }
 
 @media (max-width: 767.98px) {
-  .grid-container-article {
+  .grid-container-article > .column-1 {
     margin-top: 20rem;
   }
 .hero .gatsby-image-wrapper {
   position: absolute!important;
-  top: 6rem;
+  top: 0;
   height: 18rem;
   left: 0;
   right: 0;
@@ -249,29 +251,23 @@ input {
   background: #fff;
     border: none;
     color: #c2005b;
-    padding: 0.55rem;
-    font-size: 0.8rem;
-    top: -8rem;
-    right: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    top: -4.5rem;
+    right: 6rem;
     position: absolute;
     display: flex;
+}
+@media (min-width: 768px) {
+  .toggle {
+      top: -5rem;
+      right: 0;
+    }
 }
 main {
   position: relative;
 }
-header {
-  padding-top: 2rem!important;
-}
+
 header nav li:last-of-type {
   padding-right: 0;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 1.75rem;
-  background: #f3f3f3;
 }
