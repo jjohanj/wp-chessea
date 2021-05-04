@@ -21,7 +21,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
           <div className="content">
             <h1 className="font-weight-bold" itemProp="headline">{parse(post.title)}</h1>
 
-            <p>{post.date}</p>
+            <p class="date">{post.date}</p>
             {!!post.content && (
               <section itemProp="articleBody">{parse(post.content)}</section>
             )}

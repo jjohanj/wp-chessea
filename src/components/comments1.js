@@ -27,7 +27,7 @@ class Comments extends Component {
     const submitButtonMarkup = formIsSubmitting ? (
       <input type="submit" value="Submitting comment..." disabled />
     ) : (
-        <input className="btn btn-primary" type="submit" value="Plaats reactie!" />
+        <input className="btn btn-primary" type="submit" value="Plaats reactie" />
       );
 
     const successMessageMarkup = formSubmittedSuccessfully ? (

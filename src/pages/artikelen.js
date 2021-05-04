@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import ReactDOM from 'react-dom';
 import Image from '../components/image'
 import {graphql, useStaticQuery, Link, navigate } from "gatsby"
 import Img from "gatsby-image"
@@ -42,6 +43,7 @@ function Artikelen({location}) {
             featuredImage {
                 node {
                   localFile {
+                    name
                     base
                   }
                 }
@@ -91,7 +93,7 @@ function Artikelen({location}) {
     });
      menu = filterMenu.map((item, i) => {
       return (
-         <React.Fragment key={i}><li className="d-inline"><a onClick={() => setTag(item.node.name)}>{item.node.name}</a></li>
+         <React.Fragment key={i}><li className="d-inline"><button onClick={() => setTag(item.node.name)}>{item.node.name}</button></li>
         </React.Fragment>
       )
     });
@@ -140,7 +142,7 @@ function Artikelen({location}) {
           <li className="tags-list row-1">
             <ul>
               <li><h3>Tags</h3></li>
-              <li className="d-inline"><a onClick={() => setTag("all")}>Toon alles</a></li>
+              <li className="d-inline"><button onClick={() => setTag("all")}>Toon alles</button></li>
               {menu}
             </ul>
           </li>

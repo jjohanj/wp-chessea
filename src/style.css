@@ -118,6 +118,7 @@ h2, .h2 {
 .tags-list > ul li:first-of-type {
   width: 100%;
 }
+.tags-list button,
 .tags-list a {
   line-height: 2rem;
   font-size: 0.9rem;

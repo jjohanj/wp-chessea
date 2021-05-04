@@ -26,9 +26,8 @@
 //     `}
 //
 //     render={data => {
-//
 //       const image = data.allImageSharp.edges.find(
-//         edge => edge.node.fluid.originalName === imgName
+//         edge => edge.node.fluid.originalName.slice(0, -4) === imgName
 //       );
 //       if (!image) {
 //         return null

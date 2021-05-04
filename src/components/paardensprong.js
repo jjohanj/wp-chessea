@@ -7,13 +7,13 @@ const Paardensprong = () => {
     <>
     <div className="igrid">
       <div className="koning iframe-container">
-        <iframe src="https://brambaptist.nl/competitie/2020-2021/koning/p2/" height="500" width="450"></iframe>
+        <iframe title="stand koningsgroep" src="https://brambaptist.nl/competitie/2020-2021/koning/p4/" height="500" width="450"></iframe>
       </div>
       <div className="dame iframe-container">
-        <iframe src="https://brambaptist.nl/competitie/2020-2021/dame/p2/" height="500" width="450"></iframe>
+        <iframe title="stand damegroep" src="https://brambaptist.nl/competitie/2020-2021/dame/p4/" height="500" width="450"></iframe>
       </div>
       <div className="iframe-container toren">
-        <iframe src="https://brambaptist.nl/competitie/2020-2021/toren/p2/" height="500" width="450"></iframe>
+        <iframe title="stand torengroep" src="https://brambaptist.nl/competitie/2020-2021/toren/p4/" height="500" width="450"></iframe>
       </div>
     </div>
     </>

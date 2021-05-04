@@ -19,6 +19,10 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         url: "https://flonxchess.nl/graphql",
+        schema: {
+          requestConcurrency: 5,
+          previewRequestConcurrency: 2,
+        }
       },
     },
     "gatsby-plugin-gatsby-cloud",

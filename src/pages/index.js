@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Image from '../components/image'
 import {graphql, useStaticQuery, Link, navigate } from "gatsby"
-import Img from "gatsby-image"
 import Layout from '../components/layout';
 import SEO from '../components/seo'
 import parse from "html-react-parser"
@@ -47,6 +46,7 @@ function IndexPage({location}) {
             featuredImage {
                 node {
                   localFile {
+                    name
                     base
                   }
                 }

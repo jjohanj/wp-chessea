@@ -16,11 +16,22 @@
 .darkmode .filter-select::after {
   border-top: 7px solid #bebebe;
 }
+.darkmode.page-content-wrapper {
+  min-height: 100vh;
+}
+.darkmode .form-control,
+.darkmode .open .btn-nav::after,
+.darkmode .open ul a,
+.darkmode .open ul,
+.darkmode .toggle,
 .darkmode .filter-select {
   background-color: #1c1c1c;
   color: #eee;
 }
+.darkmode .btn-nav,
 .darkmode h1,
+.darkmode h2,
+.darkmode h4,
 .darkmode .matches svg,
 .darkmode a {
   color: #eee;
