@@ -13,9 +13,9 @@ import SEO from "../components/seo"
 
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
-    const imageNext = getImage(next.featuredImage.node.localFile)
-    const imagePrev = getImage(previous.featuredImage.node.localFile)
-        const imageHero = getImage(post.featuredImage.node.localFile)
+    const imageNext = next ? getImage(next.featuredImage.node.localFile) : null
+    const imagePrev = previous ? getImage(previous.featuredImage.node.localFile) : null
+    const imageHero = getImage(post.featuredImage.node.localFile)
   return (
     <Layout>
       <SEO title={post.title} description={post.excerpt} />
