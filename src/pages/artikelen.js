@@ -5,6 +5,7 @@ import {graphql, useStaticQuery, Link, navigate } from "gatsby"
 import Img from "gatsby-image"
 import Layout from '../components/layout';
 import Seo from '../components/seo';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 function Artikelen({location}) {
 
@@ -43,8 +44,11 @@ function Artikelen({location}) {
             featuredImage {
                 node {
                   localFile {
-                    name
-                    base
+                    childImageSharp {
+                      gatsbyImageData (
+                         formats: [AUTO, WEBP, AVIF]
+                       )
+                    }
                   }
                 }
               }
@@ -109,13 +113,14 @@ function Artikelen({location}) {
   }
 
   var blog = articles.map((item, i) => {
+        const image = getImage(item.node.featuredImage.node.localFile)
 
-    var className = i % 2 === 0 || i == 0 ? "grid-1" : "grid-2";
+    var className = i % 2 === 0 || i == 0 ? "grid-1 pointer" : "grid-2 pointer";
     return (
       <li className={className} key={i}>
       <article onClick = {() => clickLink(item.node.uri)}>
       <div>
-        <Image imgName={item.node.featuredImage.node.localFile.base} />
+        <GatsbyImage className="h-full" image={image} alt="" />
       </div>
       <div className="content border-right">
        <div>

@@ -4,6 +4,7 @@ import {graphql, useStaticQuery, Link, navigate } from "gatsby"
 import Layout from '../components/layout';
 import SEO from '../components/seo'
 import parse from "html-react-parser"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 function IndexPage({location}) {
 
@@ -46,8 +47,11 @@ function IndexPage({location}) {
             featuredImage {
                 node {
                   localFile {
-                    name
-                    base
+                    childImageSharp {
+                      gatsbyImageData (
+                         formats: [AUTO, WEBP, AVIF]
+                       )
+                    }
                   }
                 }
               }
@@ -77,6 +81,7 @@ function IndexPage({location}) {
   }
 
   var headline = articles.slice(0,1).map((post, i) => {
+    const image = getImage(post.node.featuredImage.node.localFile)
       return (
         <li className="headline" key={post.node.uri}>
           <article onClick = {() => clickLink(post.node.uri)} className="pointer">
@@ -89,13 +94,14 @@ function IndexPage({location}) {
                   </h1>
                   <div>{parse(post.node.excerpt.substr(0, 200))} <span className="btn btn btn-primary">Lees meer</span></div>
                   </div>
-            <Image imgName={post.node.featuredImage.node.localFile.base} />
+            <GatsbyImage className="h-full" image={image} alt="" />
           </article>
         </li>
       )
   })
 
   var secondHeadline = articles.slice(1,4).map((post, i) => {
+        const image = getImage(post.node.featuredImage.node.localFile)
       return (
         <li className="second" key={post.node.uri}>
           <article onClick = {() => clickLink(post.node.uri)} className="pointer">
@@ -107,17 +113,18 @@ function IndexPage({location}) {
                   </Link>
                 </h2>
               </div>
-            <Image imgName={post.node.featuredImage.node.localFile.base} />
+              <GatsbyImage className="h-full" image={image} alt="" />
           </article>
         </li>
       )
   })
 
   var archives = articles.slice(4).map((post, i) => {
+    const image = getImage(post.node.featuredImage.node.localFile)
       return (
         <li className="third" key={post.node.uri}>
           <article onClick = {() => clickLink(post.node.uri)} className="pointer">
-              <Image imgName={post.node.featuredImage.node.localFile.base} />
+              <GatsbyImage className="h-full" image={image} alt="" />
             <div className="content border-right">
               <h2>
                 <Link className="text-dark font-weight-bold" to={post.node.uri} itemProp="url">
