@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import ReactDOM from 'react-dom';
-import Image from '../components/image'
 import {graphql, useStaticQuery, Link, navigate } from "gatsby"
-import Img from "gatsby-image"
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -79,14 +77,17 @@ function Artikelen({location}) {
    }
  },[tag, location.state]
   );
-
+  var handleClick = (i) => {
+    setTag("test");
+    setTimeout(function(){ setTag(i); }, 10);
+  }
   var clickLink = (i) => {
     navigate(i);
   }
 
-  var menu = null;
-  var options = null;
-  var blog = null;
+  let menu = null;
+  let options = null;
+  let blog = null;
 
   if (filterMenu) {
     options = filterMenu.map((item, i) => {
@@ -97,7 +98,7 @@ function Artikelen({location}) {
     });
      menu = filterMenu.map((item, i) => {
       return (
-         <React.Fragment key={i}><li className="d-inline"><button onClick={() => setTag(item.node.name)}>{item.node.name}</button></li>
+         <React.Fragment key={i}><li className="d-inline"><button onClick = {() => handleClick(item.node.name)}>{item.node.name}</button></li>
         </React.Fragment>
       )
     });
@@ -111,11 +112,11 @@ function Artikelen({location}) {
             </Layout >
     )
   }
-
-  var blog = articles.map((item, i) => {
+ if (articles.length > 0) {
+   blog = articles.map((item, i) => {
         const image = getImage(item.node.featuredImage.node.localFile)
 
-    var className = i % 2 === 0 || i == 0 ? "grid-1 pointer" : "grid-2 pointer";
+    let className = i % 2 === 0 || i == 0 ? "grid-1 pointer" : "grid-2 pointer";
     return (
       <li className={className} key={i}>
       <article onClick = {() => clickLink(item.node.uri)}>
@@ -137,7 +138,7 @@ function Artikelen({location}) {
     )
   }
 );
-
+}
 
   return (
     <>
@@ -145,9 +146,9 @@ function Artikelen({location}) {
         <ul className="list grid-container-4">
           {blog}
           <li className="tags-list row-1">
-            <ul>
+            <ul className="tags-list">
               <li><h3>Tags</h3></li>
-              <li className="d-inline"><button onClick={() => setTag("all")}>Toon alles</button></li>
+              <li className="d-inline"><button onClick = {() => handleClick('all')}>Toon alles</button></li>
               {menu}
             </ul>
           </li>

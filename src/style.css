@@ -52,8 +52,9 @@ body {
   min-height: 100vh;
 }
 body .font-loaded {
-  font-family: 'CatamaranC';
+  font-family: 'Catamaran';
 }
+button,
 body .all-fonts-loaded {
   font-family: 'Catamaran';
 }

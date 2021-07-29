@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Image from '../components/image'
 import parse from "html-react-parser"
 import Comments from "../components/comments1"
 import CommentsList from "../components/commentslist"
@@ -16,6 +15,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
     const imageNext = next ? getImage(next.featuredImage.node.localFile) : null
     const imagePrev = previous ? getImage(previous.featuredImage.node.localFile) : null
     const imageHero = getImage(post.featuredImage.node.localFile)
+
   return (
     <Layout>
       <SEO title={post.title} description={post.excerpt} />
@@ -43,7 +43,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         </div>
       </section>
       <section className="column-2">
-                <div className="hero"><GatsbyImage className="h-full" image={imagePrev} alt="" /></div>
+                <div className="hero"><GatsbyImage className="h-full" image={imageHero} alt="" /></div>
       <nav>
         <ul className="blog-nav">
         <li className="column-full"><h3 className="display">Meer artikelen</h3></li>

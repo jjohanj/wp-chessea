@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import Image from '../components/image'
 import {graphql, useStaticQuery, Link, navigate } from "gatsby"
 import Layout from '../components/layout';
 import SEO from '../components/seo'
