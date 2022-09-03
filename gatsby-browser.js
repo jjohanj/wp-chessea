@@ -9,3 +9,5 @@ import "./src/css/normalize.css"
 import './src/css/milligram.css'
 import './src/css/darkmode.css'
 import './src/css/navigation.css'
+
+export const onServiceWorkerUpdateReady = () => window.location.reload();
