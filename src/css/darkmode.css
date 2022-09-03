@@ -19,6 +19,10 @@
 .darkmode.page-content-wrapper {
   min-height: 100vh;
 }
+.darkmode .bg-white,
+.darkmode .comment-author,
+.darkmode .tags a,
+.darkmode .tags button,
 .darkmode .form-control,
 .darkmode .open .btn-nav::after,
 .darkmode .open ul a,
@@ -49,6 +53,7 @@
 .darkmode .secondary-articles {
   box-shadow: 0 -2px 10px rgba(10, 10, 10, 0.3);
 }
+.darkmode .blog-post .content,
 .darkmode .article-selected > div {
   border-bottom: solid 1px #a24766;
 }
@@ -58,7 +63,7 @@
 }
 
 .darkmode .logo a{
-  ackground: #eee;
+
     background-color: #eee;
     background-image: linear-gradient(55deg, #eee, #eee 15%, #b65879 15%, #b65879 22%, #eee 22%, #eee 73%, #b65879 73%, #b65879 85%, #eee 85%);
 }
@@ -76,9 +81,19 @@
   z-index: 3;
   position: absolute;
 }
+.darkmode .comment,
 .darkmode .btn-light,
 .darkmode .tags-list a,
 .darkmode .contact {
   background-color: #222;
   box-shadow: none;
+}
+.darkmode .btn-light::before {
+    background: #1c1c1c;
+}
+
+.darkmode header nav ul li a::before,
+.darkmode header nav > a::after,
+.darkmode header nav > a::before {
+  background-color: #eee;
 }

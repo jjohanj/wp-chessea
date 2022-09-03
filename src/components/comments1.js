@@ -30,23 +30,22 @@ class Comments extends Component {
         <input className="btn btn-primary" type="submit" value="Plaats reactie" />
       );
 
-    const successMessageMarkup = formSubmittedSuccessfully ? (
-      <div className="alert alert-primary" role="alert">
-        Bedankt voor je reactie!
-      </div>
-    ) : null;
+    // const successMessageMarkup = formSubmittedSuccessfully ? (
+    //   <div className="alert alert-primary" role="alert">
+    //     Bedankt voor je reactie!
+    //   </div>
+    // ) : null;
 
     const errorMessageMarkup = formSubmittedFailed && formSubmittedSuccessfully === false ? (
       <p>
-        Sorry er is iets misgegaan, dit ligt waarschijnlijk aan de webbouwer...
+        Sorry er is iets misgegaan
       </p>
     ) : null;
 
     return (
       <>
       <div className="comments-form">
-        <h4 id="CommentsHeading">Plaats reactie</h4>
-        {successMessageMarkup}
+        <h4 className="h5" id="CommentsHeading">Comments</h4>
         {errorMessageMarkup}
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input type="hidden" id="postId" value={this.props.wpId} />

@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, navigate } from "gatsby"
 import parse from "html-react-parser"
 import Comments from "../components/comments1"
 import CommentsList from "../components/commentslist"
@@ -15,6 +15,11 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
     const imageNext = next ? getImage(next.featuredImage.node.localFile) : null
     const imagePrev = previous ? getImage(previous.featuredImage.node.localFile) : null
     const imageHero = getImage(post.featuredImage.node.localFile)
+
+    var clickLink = (i) => {
+      navigate(i);
+    }
+
 
   return (
     <Layout>
@@ -50,9 +55,9 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
           <li className="column-1">
             {previous && (
               <>
-              <div><GatsbyImage className="h-full" image={imagePrev} alt="" /></div>
+              <div   className="pointer" onClick = {() => clickLink(previous.uri)}><GatsbyImage className="h-full" image={imagePrev} alt="" /></div>
               <Link className="btn btn-light" to={previous.uri} rel="previous">
-                ← {parse(previous.title)}
+                {parse(previous.title)}
               </Link>
               </>
             )}
@@ -62,9 +67,9 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
           {next && (
             <>
-            <div><GatsbyImage className="h-full" image={imageNext} alt="" /></div>
+            <div  className="pointer" onClick = {() => clickLink(next.uri)}><GatsbyImage className="h-full" image={imageNext} alt="" /></div>
             <Link className="btn btn-light" to={next.uri} rel="next">
-            {parse(next.title)} →
+            {parse(next.title)}
             </Link>
             </>
           )}
@@ -142,3 +147,14 @@ export const pageQuery = graphql`
     }
   }
 `
+
+
+
+// <div>
+// <div className="comments-wrapper">
+// <Comments wpId={post.databaseId} />
+// </div>
+// <div className="comments-wrapper">
+// <CommentsList wpId={post.databaseId} />
+// </div>
+// </div>

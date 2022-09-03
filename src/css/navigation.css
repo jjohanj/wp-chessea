@@ -119,12 +119,16 @@ header nav > a span {
   padding-bottom: 4rem;
 }
 
+ header nav > a.close {
+   letter-spacing: -1px;
+ }
+
  header nav > a.close::after,
  header nav > a.close::before {
-  transform: rotate(30deg);
+  transform: rotate(20deg);
   top: -8px;
 }
  header nav > a.close::before {
-   transform: rotate(-30deg);
+   transform: rotate(-20deg);
 
  }
