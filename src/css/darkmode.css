@@ -19,6 +19,7 @@
 .darkmode.page-content-wrapper {
   min-height: 100vh;
 }
+.darkmode .grid-container-article>.column-1,
 .darkmode .bg-white,
 .darkmode .comment-author,
 .darkmode .tags a,
@@ -90,10 +91,4 @@
 }
 .darkmode .btn-light::before {
     background: #1c1c1c;
-}
-
-.darkmode header nav ul li a::before,
-.darkmode header nav > a::after,
-.darkmode header nav > a::before {
-  background-color: #eee;
 }
