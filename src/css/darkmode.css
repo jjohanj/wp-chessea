@@ -64,7 +64,6 @@
 }
 
 .darkmode .logo a{
-
     background-color: #eee;
     background-image: linear-gradient(55deg, #eee, #eee 15%, #b65879 15%, #b65879 22%, #eee 22%, #eee 73%, #b65879 73%, #b65879 85%, #eee 85%);
 }
@@ -91,4 +90,8 @@
 }
 .darkmode .btn-light::before {
     background: #1c1c1c;
+}
+
+.darkmode header nav ul li a:before,.darkmode  header nav>a:after,.darkmode  header nav>a:before {
+  background: #eee;
 }

@@ -55,6 +55,7 @@ const BlogIndex = ({
                       <GatsbyImage
                       image={featuredImage.data}
                       alt={featuredImage.alt}
+                      fetchpriority="high" 
                       />
                   </div>
                   <div className="content">
@@ -146,9 +147,8 @@ export const pageQuery = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  quality: 100
-                  placeholder: TRACED_SVG
-                  layout: FULL_WIDTH
+                  placeholder: DOMINANT_COLOR
+                  layout: CONSTRAINED
                 )
               }
             }
