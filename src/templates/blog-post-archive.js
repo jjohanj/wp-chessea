@@ -55,7 +55,8 @@ const BlogIndex = ({
                       <GatsbyImage
                       image={featuredImage.data}
                       alt={featuredImage.alt}
-                      fetchpriority="high" 
+                      fetchpriority="high"
+                      loading="eager"
                       />
                   </div>
                   <div className="content">
